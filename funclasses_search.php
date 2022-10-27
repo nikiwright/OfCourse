@@ -19,7 +19,7 @@ if($mysql->connect_errno) {
 }
 ?>
 <htmL>
-<title>Search Page2</title>
+<title>Search Page2v3</title>
 <header>
     <style>
 
