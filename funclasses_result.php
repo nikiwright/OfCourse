@@ -1,10 +1,7 @@
 <?php
-$host = "webdev.iyaclasses.com";
-$userid = "ddwright";
-$userpw = "AcadDev_Wright_9518225131";
-$db = "ddwright_funclasses";
+session_start();
 
-include '../pdloginvariables.php';
+include 'nwloginvariables.php';
 
 $mysql = new mysqli(
     $host,

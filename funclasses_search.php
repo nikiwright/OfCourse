@@ -1,10 +1,7 @@
 <?php
-$host = "webdev.iyaclasses.com";
-$userid = "ddwright";
-$userpw = "AcadDev_Wright_9518225131";
-$db = "ddwright_funclasses";
+session_start();
 
-include '../pdloginvariables.php';
+include 'nwloginvariables.php';
 
 $mysql = new mysqli(
     $host,
@@ -19,7 +16,7 @@ if($mysql->connect_errno) {
 }
 ?>
 <htmL>
-<title>Search Page2v3</title>
+<title>Search Page</title>
 <header>
     <style>
 
@@ -128,6 +125,17 @@ if($mysql->connect_errno) {
     <br style="clear:both;">
 
         Weekdays:
+        <input type="checkbox" id="monday" name="monday" value="monday">
+        <label for="monday"> Monday</label>
+        <input type="checkbox" id="tuesday" name="tuesday" value="tuesday">
+        <label for="tuesday"> Tuesday</label>
+        <input type="checkbox" id="wednesday" name="wednesday" value="wednesday">
+        <label for="wednesday"> Wednesday</label>
+        <input type="checkbox" id="thursday" name="thursday" value="thursday">
+        <label for="thursday"> Thursday</label>
+        <input type="checkbox" id="friday" name="friday" value="friday">
+        <label for="friday"> Friday</label><br>
+        <br style="clear:both;">
 
    <input type="submit" value="Search">
 </div>
