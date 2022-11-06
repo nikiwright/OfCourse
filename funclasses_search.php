@@ -43,7 +43,7 @@ if($mysql->connect_errno) {
 <body>
 
 <div id="container">
-    <h1> Search page</h1>
+    <h1> Search page </h1>
 
     <form action="funclasses_result.php">
       Class Title:<input type="text" name="className">
@@ -55,7 +55,7 @@ if($mysql->connect_errno) {
      Department:<input type="text" name="classDepartment">
      <br style="clear:both;">
 
-     Instructor Name:<input type="text" name="professorName">
+     Instructor Name:<input type="text" name="instructorName">
      <br style="clear:both;">
 
    School: <select name="school">
