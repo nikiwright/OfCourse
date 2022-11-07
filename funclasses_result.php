@@ -24,13 +24,6 @@ if($mysql->connect_errno) {
         }
 
         #container{
-            width: 80%;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            flex-direction: column;
-            text-align: center;
 
             background-color: white;
             border: solid 1px lightgrey;
