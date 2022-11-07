@@ -1,0 +1,144 @@
+body{
+    font-family: Helvetica Neue;
+    background-color: #F4F1DE;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.dot{
+    background-color: #20A4F3;
+    border-radius: 50%;
+}
+
+#dot1{
+    height: 300px;
+    width: 300px;
+    top: -100px;
+    left: -100px;
+    position: absolute;
+}
+
+#dot2{
+    height: 600px;
+    width: 600px;
+    bottom: -250px;
+    right: -300px;
+    position: absolute;
+}
+
+#header{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+}
+h1{
+    font-size: 36pt;
+    font-weight: bold;
+}
+
+h2{
+    font-size: 24pt;
+}
+
+p1{
+    font-size: 16pt;
+
+}
+
+#nav{
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+    font-size: 10pt;
+    margin: auto;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color: #011627;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+#mainbox{
+    display:flex;
+    flex-direction: column;
+    width: 550px;
+    height: 350px;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 22px;
+}
+
+#box1{
+    flex-grow: 1;
+    background-color: #B31E39;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#box2{
+    flex-grow: 6;
+    background-color: #F7C654;
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#preferences{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.searchselect{
+    font-size: 10pt;
+    font-weight: bold;
+    border-width: 2px;
+    border-color: black;
+    text-align: center;
+    padding: 2px;
+    background-color: #F7C654;
+}
+
+.button{
+    width: 80px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-family: "Helvetica Neue";
+    font-size: 10pt;
+}
+
+#search{
+    background-color: #F4F1DE;
+    padding-left: 10px;
+}
+
+#submit{
+    font-weight: bold;
+    border-width: 2px;
+    text-align: center;
+    padding: 2px;
+    background-color: #B31E39;
+    color: white;
+}
+
+#submit:hover{
+    background-color: white;
+    color: #B31E39;
+}
+
+#text1{
+    width: 400px;
+    position: absolute;
+    left: 150px;
+    bottom: -200px;
+}
