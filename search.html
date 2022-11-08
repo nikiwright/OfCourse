@@ -33,6 +33,7 @@
   </div>
   <div id="box2">
     <form id="preferences">
+      <div id="dropdowns">
       <select name="interests" class="searchselect">
         <option>Interests</option>
         <option value="culinary">Culinary</option>
@@ -55,15 +56,6 @@
         <option value="kaufman">Kaufman</option>
       </select>
 
-      <select name="Weekday" class="searchselect">
-        <option>Weekday</option>
-        <option value="monday">Monday</option>
-        <option value="tuesday">Tuesday</option>
-        <option value="wednesday">Wednesday</option>
-        <option value="thursday">Thursday</option>
-        <option value="friday">Friday</option>
-      </select>
-
       <select name="Units" class="searchselect">
         <option>Units</option>
         <option value="1">1.0</option>
@@ -71,6 +63,23 @@
         <option value="3">3.0</option>
         <option value="4">4.0</option>
       </select>
+      </div>
+        <br><space></space><space></space><space></space><space></space><br>
+
+      <div id="checkboxes">
+        <input type="checkbox" id="monday" name="monday" value="Monday">
+        <label for="monday">Monday</label>
+        <input type="checkbox" id="tuesday" name="tuesday" value="Tuesday">
+        <label for="tuesday">Tuesday</label>
+        <input type="checkbox" id="wednesday" name="wednesday" value="Wednesday">
+        <label for="wednesday">Wednesday</label>
+        <input type="checkbox" id="thursday" name="thursday" value="Thursday">
+        <label for="thursday">Thursday</label>
+        <input type="checkbox" id="friday" name="friday" value="Friday">
+        <label for="friday">Friday</label><br>
+      </div>
+      <br><space></space><space></space><space></space><space></space><br>
+
     <input type="submit" value="Submit" id="submit" class="button">
     </form>
   </div>
