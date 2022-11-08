@@ -20,15 +20,10 @@ if($mysql->connect_errno) {
 <html>
 <title> Details Page </title>
 <header>
-    <style>
-        body {
-            background-color: white;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </header>
 <body>
-
+<div id="resultbox">
 <?php
 
 if (empty($_REQUEST["recordid"])){
@@ -66,6 +61,6 @@ while ($currentrow = $results -> fetch_assoc()){
 }
 
 ?>
-
+</div>
 </body>
 </html>
