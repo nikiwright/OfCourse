@@ -19,18 +19,7 @@ if($mysql->connect_errno) {
 <html>
 <title> Results Page </title>
 <header>
-    <style>
-        body {
-            background-color: white;
-        }
-
-        #container{
-
-            background-color: white;
-            border: solid 1px lightgrey;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </header>
 <body>
 <div id="container">
@@ -110,7 +99,7 @@ if($mysql->connect_errno) {
 
 
     $results = $mysql->query($sql);
-//    echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
+    //    echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
 
     if(!$results) {
         echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
@@ -120,7 +109,7 @@ if($mysql->connect_errno) {
 
     echo "<em>Your results returned <strong>" .
         $results->num_rows .
-        "</strong> results.</em>";
+        "</strong> results. </em>";
     echo "<br><br>";
 
     while($currentrow = $results->fetch_assoc()) {
@@ -128,8 +117,8 @@ if($mysql->connect_errno) {
             $currentrow['className'] . "</strong>" .
             " (<em>" . $currentrow['courseID'] . "</em>)" .
 
-            "<a href='funclasses_detail.php?recordid=" . $currentrow["fun_classes_id"]. "'>".
-            "[View Class Details]". "</a>"."</div>"."<br>";
+            "<a href='funclasses_detail.php?recordid=" . $currentrow["fun_classes_id"]. "' class='detaillink'>".
+            " [View Class Details]". "</a>"."</div>"."<br>";
 
     }
     ?>
