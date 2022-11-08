@@ -62,39 +62,51 @@ if($mysql->connect_errno) {
     if(!empty($_REQUEST['monday'])){
         #Checkbox selected code
         $x = 1;
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty($_REQUEST['tuesday'])){
-        $x = 1;
+        $x = 2;
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty($_REQUEST['wednesday'])){
         $x = 3;
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty($_REQUEST['thursday'])){
         $x = 4;
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty($_REQUEST['friday'])){
         $x = 5;
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty(($_REQUEST['monday']) AND ($_REQUEST['wednesday']))){
         $x = 6;
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty(($_REQUEST['tuesday']) AND ($_REQUEST['thursday']))){
         $x = 10;
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty(($_REQUEST['monday']) AND ($_REQUEST['tuesday']) AND ($_REQUEST['wednesday']))){
         $x = 11;
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty(($_REQUEST['monday']) AND ($_REQUEST['tuesday']) AND ($_REQUEST['wednesday']) AND ($_REQUEST['friday']))){
         $x = 8;
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty(($_REQUEST['monday']) AND ($_REQUEST['tuesday']) AND ($_REQUEST['wednesday']) AND ($_REQUEST['thursday']))){
         $x = 7;
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty(($_REQUEST['monday']) AND ($_REQUEST['tuesday']) AND ($_REQUEST['wednesday']) AND ($_REQUEST['thursday']) AND ($_REQUEST['friday']))){
         $x = 9;
+        $sql .= " AND weekday_id = $x";
     }
 
-    $sql .= " AND weekday_id = $x";
+
+
 
 
     $results = $mysql->query($sql);
