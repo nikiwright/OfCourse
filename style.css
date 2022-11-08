@@ -31,6 +31,7 @@ body{
     display: flex;
     flex-direction: column;
     align-content: center;
+    margin: auto;
 
 }
 h1{
@@ -68,8 +69,8 @@ a:hover{
 #mainbox{
     display:flex;
     flex-direction: column;
-    width: 550px;
-    height: 350px;
+    width: 500px;
+    height: 300px;
     margin: auto;
     border: 2px solid black;
     border-radius: 22px;
@@ -86,7 +87,7 @@ a:hover{
 }
 
 #box2{
-    flex-grow: 6;
+    flex-grow: 5;
     background-color: #F7C654;
     padding: 20px;
     border-bottom-left-radius: 20px;
@@ -95,8 +96,13 @@ a:hover{
 
 #preferences{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    //width: 200px;
+   // height: 200px;
+    margin-left: 100px;
+
 }
 
 .searchselect{
@@ -140,5 +146,12 @@ a:hover{
     width: 400px;
     position: absolute;
     left: 150px;
-    bottom: -200px;
+    bottom: -100px;
+}
+
+#checkboxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 280px;
 }
