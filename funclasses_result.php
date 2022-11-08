@@ -110,7 +110,7 @@ if($mysql->connect_errno) {
 
 
     $results = $mysql->query($sql);
-    echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
+//    echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
 
     if(!$results) {
         echo "<hr>Your SQL:<br> " . $sql . "<br><br>";

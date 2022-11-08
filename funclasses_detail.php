@@ -40,7 +40,7 @@ $sql = "SELECT * from generalView
          WHERE fun_classes_id =" .
     $_REQUEST['recordid'];
 
-echo "SQL: ". $sql. "<br>"."<br>";
+//echo "SQL: ". $sql. "<br>"."<br>";
 
 $results = $mysql -> query($sql);
 
