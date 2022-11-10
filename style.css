@@ -1,12 +1,19 @@
 body{
     font-family: Helvetica Neue;
-    background-color: #F4F1DE;
+    background-image: url('uscjohnmckay.jpg');
+    background-blend-mode: multiply;
+    background-color: #9BA2FF;
     overflow-x: hidden;
     overflow-y: scroll;
 }
 
+
 #container{
     margin: 20px;
+}
+
+img{
+    width: 100px;
 }
 
 .dot{
@@ -39,26 +46,33 @@ body{
 
 }
 h1{
-    font-size: 36pt;
+    font-size: 42pt;
     font-weight: bold;
+    color: white;
 }
 
 h2{
     font-size: 24pt;
+    color: white;
 }
 
 p1{
     font-size: 16pt;
+    color: white;
 
 }
 
 #nav{
     display: flex;
-    width: 40%;
+    width: 50%;
     justify-content: space-evenly;
-    font-size: 10pt;
-    margin: auto;
     text-decoration: none;
+}
+
+.navitem{
+    margin-top: 30px;
+    color: white;
+    font-size: 16pt;
 }
 
 a{
@@ -82,17 +96,18 @@ a:hover{
 
 #box1{
     flex-grow: 1;
-    background-color: #B31E39;
+    background-color:#9BA2FF;
     color: white;
     text-align: center;
     padding-top: 20px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    height: 40px;
 }
 
 #box2{
     flex-grow: 5;
-    background-color: #F7C654;
+    background-color: white;
     padding: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -118,7 +133,7 @@ a:hover{
     border-color: black;
     text-align: center;
     padding: 2px;
-    background-color: #F7C654;
+    background-color: white;
     width: 100px;
 }
 
@@ -140,20 +155,20 @@ a:hover{
     border-width: 2px;
     text-align: center;
     padding: 2px;
-    background-color: #B31E39;
+    background-color: #9BA2FF;
     color: white;
 }
 
 #submit:hover{
     background-color: white;
-    color: #B31E39;
+    color: black;
 }
 
 #text1{
     position: relative;
     margin-left: 100px;
-    margin-top: 100px;
-    width: 400px;
+    margin-top: 50px;
+    width: 750px;
 }
 
 #checkboxes {
