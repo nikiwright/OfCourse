@@ -22,7 +22,7 @@ if($mysql->connect_errno) {
 <header>
     <link rel="stylesheet" href="style.css">
 </header>
-<body>
+<body id="body2">
 <div id="resultbox">
 <?php
 
@@ -55,7 +55,7 @@ while ($currentrow = $results -> fetch_assoc()){
     echo "<strong>"."School: " ."</strong>". $currentrow["school"]. "<br>"."<br>";
 
     echo "<strong>"."Instructor Name: " ."</strong>". $currentrow["instructorName"]. "<br>";
-    echo "<strong>"."Instructor Rating (ratemyprofessor): " ."</strong>". $currentrow["instructorRating"]. "<br>"."<br>";
+    echo "<strong>"."Instructor Rating: " ."</strong>". $currentrow["instructorRating"]. "<br>"."<br>";
 
     echo "<strong>"."Course Review: " ."</strong>". $currentrow["review"]. "<br>";
 }
