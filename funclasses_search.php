@@ -18,13 +18,13 @@ if($mysql->connect_errno) {
 <htmL>
 <title>Search Page</title>
 <header>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </header>
 
 <body id="body1">
 <div id="nav">
     <br>&nbsp
-    <img src="Of-Course-Logo.png" id="logo">
+    <img src="./css/Of-Course-Logo.png" id="logo">
     <a href="userprofile.php" class="navitem">
         USER PROFILE
     </a><br>
