@@ -115,8 +115,8 @@ if($mysql->connect_errno) {
     while($currentrow = $results->fetch_assoc()) {
         echo "<div Class='className'><strong>" .
             $currentrow['className'] . "</strong>" .
-            " (<em>" . $currentrow['courseID'] . "</em>)" .
-
+            " (<em>" . $currentrow['courseID'] . "</em>)" . "<br>".
+            $currentrow["classBio"]. "<br>".
             "<a href='funclasses_detail.php?recordid=" . $currentrow["fun_classes_id"]. "' class='detaillink'>".
             " [View Class Details]". "</a>"."</div>"."<br>";
 
