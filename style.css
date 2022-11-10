@@ -1,11 +1,15 @@
-#body1{
+body{
     font-family: Helvetica Neue;
+}
+
+#body1{
     background-image: url('uscjohnmckay.jpg');
     background-blend-mode: multiply;
     background-color: #9BA2FF;
     overflow-x: hidden;
     overflow-y: scroll;
 }
+
 
 #body2{
     background-color: #9BA2FF;
