@@ -21,7 +21,7 @@ if($mysql->connect_errno) {
 <header>
     <link rel="stylesheet" href="style.css">
 </header>
-<body>
+<body id="body2">
 <div id="container">
 
     <h1>We Found You Fun Classes! <br></h1>
@@ -51,57 +51,55 @@ if($mysql->connect_errno) {
     if(!empty($_REQUEST['monday'])){
         #Checkbox selected code
         $x = 1;
-//        $sql .= " AND weekday_id = $x";
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty($_REQUEST['tuesday'])){
         $x = 2;
-//        $sql .= " AND weekday_id = $x";
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty($_REQUEST['wednesday'])){
         $x = 3;
-//        $sql .= " AND weekday_id = $x";
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty($_REQUEST['thursday'])){
         $x = 4;
-//        $sql .= " AND weekday_id = $x";
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty($_REQUEST['friday'])){
         $x = 5;
-//        $sql .= " AND weekday_id = $x";
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty(($_REQUEST['monday']) AND ($_REQUEST['wednesday']))){
         $x = 6;
-//        $sql .= " AND weekday_id = $x";
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty(($_REQUEST['tuesday']) AND ($_REQUEST['thursday']))){
         $x = 10;
-//        $sql .= " AND weekday_id = $x";
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty(($_REQUEST['monday']) AND ($_REQUEST['tuesday']) AND ($_REQUEST['wednesday']))){
         $x = 11;
-//        $sql .= " AND weekday_id = $x";
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty(($_REQUEST['monday']) AND ($_REQUEST['tuesday']) AND ($_REQUEST['wednesday']) AND ($_REQUEST['friday']))){
         $x = 8;
-//        $sql .= " AND weekday_id = $x";
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty(($_REQUEST['monday']) AND ($_REQUEST['tuesday']) AND ($_REQUEST['wednesday']) AND ($_REQUEST['thursday']))){
         $x = 7;
-//        $sql .= " AND weekday_id = $x";
+        $sql .= " AND weekday_id = $x";
     }
     if(!empty(($_REQUEST['monday']) AND ($_REQUEST['tuesday']) AND ($_REQUEST['wednesday']) AND ($_REQUEST['thursday']) AND ($_REQUEST['friday']))){
         $x = 9;
-//        $sql .= " AND weekday_id = $x";
+        $sql .= " AND weekday_id = $x";
     }
 
-    if ($x == 0){
-        $sql .= "";
-    }else{
-    $sql .= " AND weekday_id = $x";}
+
+
 
 
     $results = $mysql->query($sql);
-        echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
+    //    echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
 
     if(!$results) {
         echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
