@@ -21,7 +21,7 @@ if($mysql->connect_errno) {
     <link rel="stylesheet" href="style.css">
 </header>
 
-<body>
+<body id="body1">
 <div id="nav">
     <br>&nbsp
     <img src="Of-Course-Logo.png" id="logo">
