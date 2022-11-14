@@ -19,7 +19,7 @@ if($mysql->connect_errno) {
 <html>
 <title> Results Page </title>
 <header>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </header>
 <body id="body2">
 <div id="container">
@@ -87,7 +87,6 @@ if($mysql->connect_errno) {
     if  ($x = 0) {
         $sql .= " AND weekday_id = '";
     }
-
 
     $results = $mysql->query($sql);
      echo "<hr>Your SQL:<br> " . $sql . "<br><br>";

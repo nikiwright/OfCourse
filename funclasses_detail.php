@@ -20,7 +20,7 @@ if($mysql->connect_errno) {
 <html>
 <title> Details Page </title>
 <header>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </header>
 <body id="body2">
 <div id="resultbox">
