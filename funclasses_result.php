@@ -83,9 +83,11 @@ if($mysql->connect_errno) {
         $x = 9;
     }
 
-    $sql .= " AND weekday_id = $x";
-    if  ($x = 0) {
-        $sql .= " AND weekday_id = '";
+
+    if  ($x == 0) {
+        $sql .= "";
+    } else {
+        $sql .= " AND weekday_id = $x";
     }
 
     $results = $mysql->query($sql);
