@@ -57,7 +57,7 @@ while ($currentrow = $results -> fetch_assoc()){
     echo "<strong>"."Instructor Name: " ."</strong>". $currentrow["instructorName"]. "<br>";
     echo "<strong>"."Instructor Rating: " ."</strong>". $currentrow["instructorRating"]. "<br>"."<br>";
 
-    echo "<strong>"."Course Review: " ."</strong>". $currentrow["review"]. "<br>";
+    echo "<strong>"."Course Reviews: " ."</strong>";
 }
 
 ?>
