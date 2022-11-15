@@ -11,7 +11,21 @@ body{
 }
 
 #body2{
+    background-image: url('resultsimage.png');
+    background-blend-mode: overlay;
     background-color: #9BA2FF;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+}
+
+#body3{
+    background-image: url('detailsimage.png');
+    background-size: 100%;
+    background-blend-mode: overlay;
+    background-color: #9BA2FF;
+    overflow-x: hidden;
+    overflow-y: scroll;
 
 }
 
@@ -68,6 +82,11 @@ p1{
     font-size: 16pt;
     color: white;
 
+}
+
+#resultheader{
+    margin:auto;
+    text-align: center;
 }
 
 #nav{
@@ -191,8 +210,30 @@ a:hover{
 
 .detaillink{
     color:#8E0013;
+    opacity: 100% !important;
 }
 
 #resultbox{
+    width: 70%;
+}
+
+#transparentbox{
+    width: 80%;
+    background-color: rgba(255,255,255,.5);
+    border-radius: 20px;
+    height: auto;
+    padding: 20px;
+    z-index: -1;
+    margin: auto;
+}
+
+
+#transparentbox2{
     width: 50%;
+    background-color: rgba(255,255,255,.5);
+    border-radius: 20px;
+    height: auto;
+    padding: 20px;
+    z-index: -1;
+    margin: auto;
 }
