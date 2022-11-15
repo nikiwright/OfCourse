@@ -19,13 +19,18 @@ if($mysql->connect_errno) {
 <html>
 <title> Results Page </title>
 <header>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="style.css">
 </header>
 <body id="body2">
-<div id="container">
 
-    <h1>We Found You Fun Classes! <br></h1>
-    <h3>Search Results: <hr></h3>
+<div id="container">
+    <img src="Of-Course-Logo.png" id="logo">
+
+    <h1 id="resultheader">Congrats!</h1><br>
+    <h2 id="resultheader"> We Found You Fun Classes!</h2> <br>
+    <div id="transparentbox">
+    <h2 style="color: black;">SEARCH RESULTS: <hr></h2>
+       <div id="resultbox">
 
     <?php
 
@@ -91,7 +96,7 @@ if($mysql->connect_errno) {
     }
 
     $results = $mysql->query($sql);
-//     echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
+    //     echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
 
     if(!$results) {
         echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
@@ -105,7 +110,7 @@ if($mysql->connect_errno) {
     echo "<br><br>";
 
     while($currentrow = $results->fetch_assoc()) {
-        echo "<div Class='className'><strong>" .
+        echo "<div class='classname'><strong>" .
             $currentrow['className'] . "</strong>" .
             " (<em>" . $currentrow['courseID'] . "</em>)" . "<br>".
             $currentrow["classBio"]. "<br>".
@@ -114,7 +119,8 @@ if($mysql->connect_errno) {
 
     }
     ?>
-
+    </div>
+    </div>
 </div>
 </body>
 </html>
