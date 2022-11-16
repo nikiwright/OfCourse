@@ -20,11 +20,11 @@ if($mysql->connect_errno) {
 <html>
 <title> Details Page </title>
 <header>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </header>
 <body id="body3">
 <div id="container">
-<img src="Of-Course-Logo.png" id="logo">
+    <img src="./css/Of-Course-Logo.png" id="logo">
 
     <?php
 
@@ -59,7 +59,7 @@ if($mysql->connect_errno) {
         echo "<strong>"."School: " ."</strong>". $currentrow["school"]. "<br>"."<br>";
 
         echo "<strong>"."Instructor Name: " ."</strong>". $currentrow["instructorName"]. "<br>";
-        echo "<strong>"."Instructor Rating: " ."</strong>". $currentrow["instructorRating"]. "<br>"."<br>";
+        echo "<strong>"."Instructor Rating (ratemyprofessor): " ."</strong>". $currentrow["instructorRating"]. "<br>"."<br>";
 
         echo "<strong>"."Course Reviews: " ."</strong>";
     }

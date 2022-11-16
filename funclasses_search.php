@@ -49,19 +49,6 @@ if($mysql->connect_errno) {
     </div>
     <div id="box2">
         <form action="funclasses_result.php">
-        <div id="textinputs">
-                Class Title: <input type="text" name="className" style="width: 100px;">
-                <br style="clear:both;">
-
-                CourseID: <input type="text" name="courseID" style="width: 100px;">
-                <br style="clear:both;">
-
-                Department: <input type="text" name="classDepartment" style="width: 100px;">
-                <br style="clear:both;">
-
-                Instructor Name: <input type="text" name="instructorName" style="width: 100px;">
-                <br style="clear:both;">
-            </div>  <br><space></space><space></space><space></space><space></space><br>
 
          <div id="dropdowns">
              <select name="interest" class="searchselect">
@@ -106,7 +93,7 @@ if($mysql->connect_errno) {
                  ?>
              </select>
 
-             <select name="unit" class="searchselect">
+             <select name="unit_num" class="searchselect">
                  <option value="ALL">Units</option>
                  <?php
 

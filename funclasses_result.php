@@ -19,12 +19,12 @@ if($mysql->connect_errno) {
 <html>
 <title> Results Page </title>
 <header>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </header>
 <body id="body2">
 
 <div id="container">
-    <img src="Of-Course-Logo.png" id="logo">
+    <img src="./css/Of-Course-Logo.png" id="logo">
 
     <h1 id="resultheader">Congrats!</h1><br>
     <h2 id="resultheader"> We Found You Fun Classes!</h2> <br>
@@ -34,11 +34,7 @@ if($mysql->connect_errno) {
 
     <?php
 
-    $sql = "SELECT * FROM generalView WHERE 1=1
-    AND courseID LIKE '%" . $_REQUEST["courseID"] . "%'
-     AND className LIKE '%" . $_REQUEST["className"] . "%'
-     AND classDepartment LIKE '%" . $_REQUEST["classDepartment"] . "%'
-      AND instructorName LIKE '%" . $_REQUEST["instructorName"] . "%'";
+    $sql = "SELECT * FROM generalView WHERE 1=1";
 
     if ($_REQUEST['school'] != "ALL") {
         $sql .= " AND school_id ='" . $_REQUEST["school"] . "'";
@@ -46,8 +42,8 @@ if($mysql->connect_errno) {
     if ($_REQUEST['interest'] != "ALL") {
         $sql .= " AND interest_id ='" . $_REQUEST["interest"] . "'";
     }
-    if ($_REQUEST['unit'] != "ALL") {
-        $sql .= " AND unit_id ='" . $_REQUEST["unit"] . "'";
+    if ($_REQUEST['unit_num'] != "ALL") {
+        $sql .= " AND unit_id ='" . $_REQUEST["unit_num"] . "'";
     }
 
     $x = 0;
@@ -96,7 +92,7 @@ if($mysql->connect_errno) {
     }
 
     $results = $mysql->query($sql);
-    //     echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
+//         echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
 
     if(!$results) {
         echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
@@ -104,23 +100,107 @@ if($mysql->connect_errno) {
         exit();
     }
 
-    echo "<em>Your results returned <strong>" .
+    echo "<em>Your search returned <strong>" .
         $results->num_rows .
         "</strong> results. </em>";
     echo "<br><br>";
 
+
+    //start of counter
+    if(empty($_REQUEST["start"])) {
+        $start=1;
+    }
+    else {
+        $start = $_REQUEST["start"];
+    }
+
+    $end = $start + 5;
+
+    if ($results->num_rows < $end) {
+        $end = $results->num_rows;
+    }
+
+    $counter = $start;
+
+    $results->data_seek($start-1);
+
+    if($start != 1) {
+        ?>
+        <form action="" method="get">
+            <input type="hidden" name="start"
+                   value="<?= ($start - 6) ?>">
+            <input type="hidden" name="interest"
+                   value="<?= $_REQUEST["interest"] ?>">
+            <input type="hidden" name="school"
+                   value="<?= $_REQUEST["school"] ?>">
+            <input type="hidden" name="unit_num"
+                   value="<?= $_REQUEST["unit_num"] ?>">
+            <input type="hidden" name="monday"
+                   value="<?= $_REQUEST["monday"] ?>">
+            <input type="hidden" name="tuesday"
+                   value="<?= $_REQUEST["tuesday"] ?>">
+            <input type="hidden" name="wednesday"
+                   value="<?= $_REQUEST["wednesday"] ?>">
+            <input type="hidden" name="thursday"
+                   value="<?= $_REQUEST["thursday"] ?>">
+            <input type="hidden" name="friday"
+                   value="<?= $_REQUEST["friday"] ?>">
+
+            <input type="submit" value="Previous">
+        </form>
+        <?php
+    }
+    if($end < $results->num_rows) {
+        ?>
+        <form action="" method="get">
+            <input type="hidden" name="start"
+                   value="<?= ($start + 6) ?>">
+            <input type="hidden" name="interest"
+                   value="<?= $_REQUEST["interest"] ?>">
+            <input type="hidden" name="school"
+                   value="<?= $_REQUEST["school"] ?>">
+            <input type="hidden" name="unit_num"
+                   value="<?= $_REQUEST["unit_num"] ?>">
+            <input type="hidden" name="monday"
+                   value="<?= $_REQUEST["monday"] ?>">
+            <input type="hidden" name="tuesday"
+                   value="<?= $_REQUEST["tuesday"] ?>">
+            <input type="hidden" name="wednesday"
+                   value="<?= $_REQUEST["wednesday"] ?>">
+            <input type="hidden" name="thursday"
+                   value="<?= $_REQUEST["thursday"] ?>">
+            <input type="hidden" name="friday"
+                   value="<?= $_REQUEST["friday"] ?>">
+
+            <input type="submit" value="Next">
+        </form>
+        <?php
+    }
+    echo "<br><br>";
+
+
+    // end of counter
+
     while($currentrow = $results->fetch_assoc()) {
         echo "<div class='classname'><strong>" .
+            $counter . ") " .
             $currentrow['className'] . "</strong>" .
             " (<em>" . $currentrow['courseID'] . "</em>)" . "<br>".
             $currentrow["classBio"]. "<br>".
             "<a href='funclasses_detail.php?recordid=" . $currentrow["fun_classes_id"]. "' class='detaillink'>".
-            " [View Class Details]". "</a>"."</div>"."<br>";
+            " [View Class Details]". "</a>"."</div>"."<br>".
+        "<br style='clear:both;'>";
+         if($counter==$end){
+            break;
+        }
+
+        $counter++;
 
     }
     ?>
-    </div>
-    </div>
-</div>
-</body>
+
+                 </div>
+            </div>
+        </div>
+    </body>
 </html>
