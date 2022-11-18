@@ -76,10 +76,10 @@ if($mysql->connect_errno) {
         echo "ERROR: " . $mysql -> error;
     }
 
+    echo "<strong>"."Course Reviews: "."</strong>"."<br>";
     while ($currentrow = $results -> fetch_assoc()){
-        echo "<strong>"."Course Reviews: "."</strong>";
         echo $currentrow["review"]."<br>";
-
+        "<br style='clear:both;'>";
     }
 
 
