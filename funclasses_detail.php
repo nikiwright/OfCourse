@@ -60,12 +60,31 @@ if($mysql->connect_errno) {
 
         echo "<strong>"."Instructor Name: " ."</strong>". $currentrow["instructorName"]. "<br>";
         echo "<strong>"."Instructor Rating (ratemyprofessor): " ."</strong>". $currentrow["instructorRating"]. "<br>"."<br>";
-
-        echo "<strong>"."Course Reviews: " ."</strong>";
+        echo "</div>";
+        echo "</div>";
     }
 
+    $sql2 = "SELECT * from reviewsView
+         WHERE fun_classes_id =" .
+        $_REQUEST['recordid'];
+
+//    echo "SQL: ". $sql2. "<br>"."<br>";
+
+    $results = $mysql -> query($sql2);
+
+    if(!$results){
+        echo "ERROR: " . $mysql -> error;
+    }
+
+    while ($currentrow = $results -> fetch_assoc()){
+        echo "<strong>"."Course Reviews: "."</strong>";
+        echo $currentrow["review"]."<br>";
+
+    }
+
+
     ?>
-</div>
+
 </div>
 </div>
 </body>

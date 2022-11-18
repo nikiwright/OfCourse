@@ -178,7 +178,6 @@ if($mysql->connect_errno) {
     }
     echo "<br><br>";
 
-
     // end of counter
 
     while($currentrow = $results->fetch_assoc()) {
