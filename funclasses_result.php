@@ -71,6 +71,12 @@ if($mysql->connect_errno) {
     if(!empty(($_REQUEST['tuesday']) AND ($_REQUEST['thursday']))){
         $x = 10;
     }
+    if(!empty(($_REQUEST['thursday']) AND ($_REQUEST['friday']))){
+        $x = 12;
+    }
+    if(!empty(($_REQUEST['wednesday']) AND ($_REQUEST['friday']))){
+        $x = 13;
+    }
     if(!empty(($_REQUEST['monday']) AND ($_REQUEST['tuesday']) AND ($_REQUEST['wednesday']))){
         $x = 11;
     }
