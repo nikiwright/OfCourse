@@ -60,8 +60,6 @@ if($mysql->connect_errno) {
 
         echo "<strong>"."Instructor Name: " ."</strong>". $currentrow["instructorName"]. "<br>";
         echo "<strong>"."Instructor Rating (ratemyprofessor): " ."</strong>". $currentrow["instructorRating"]. "<br>"."<br>";
-        echo "</div>";
-        echo "</div>";
     }
 
     $sql2 = "SELECT * from reviewsView
@@ -82,7 +80,8 @@ if($mysql->connect_errno) {
         "<br style='clear:both;'>";
     }
 
-
+    echo "</div>";
+    echo "</div>";
     ?>
 
 </div>
