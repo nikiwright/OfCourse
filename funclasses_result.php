@@ -80,6 +80,12 @@ if($mysql->connect_errno) {
     if(!empty(($_REQUEST['monday']) AND ($_REQUEST['tuesday']) AND ($_REQUEST['wednesday']))){
         $x = 11;
     }
+    if(!empty(($_REQUEST['monday']) AND ($_REQUEST['tuesday']) AND ($_REQUEST['thursday']))){
+        $x = 16;
+    }
+    if(!empty(($_REQUEST['tuesday']) AND ($_REQUEST['wednesday']) AND ($_REQUEST['thursday']))){
+        $x = 15;
+    }
     if(!empty(($_REQUEST['monday']) AND ($_REQUEST['tuesday']) AND ($_REQUEST['wednesday']) AND ($_REQUEST['friday']))){
         $x = 8;
     }
