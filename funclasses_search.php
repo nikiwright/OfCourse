@@ -34,6 +34,12 @@ if($mysql->connect_errno) {
     <a href="sitepurpose.php" class="navitem">
         SITE PURPOSE
     </a><br>
+    <a href="login.php" class="navitem">
+        LOG IN
+    </a><br>
+    <a href="signup.php" class="navitem">
+        SIGN UP
+    </a><br>
 </div>
 
 <div id="header">

@@ -15,7 +15,6 @@ if($mysql->connect_errno) {
 }
 ?>
 
-
 <?php
 session_start();   // session starts
 
