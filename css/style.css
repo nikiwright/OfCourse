@@ -100,7 +100,24 @@ p1{
 .navitem{
     margin-top: 30px;
     color: white;
-    font-size: 12pt;
+    font-size: 9pt;
+}
+
+#mainadmin{
+    padding: 20px;
+    background-color: #FFBD00;
+    text-decoration: none;
+    text-align: center;
+}
+.adminbutton{
+    width: 50%;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family: "Helvetica Neue";
+    font-size: 10pt;
+    background-color: white;
+    margin: 5px;
+    padding: 5px;
 }
 
 a{
@@ -146,9 +163,9 @@ a:hover{
     flex-direction: column;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    //width: 200px;
-   // height: 200px;
-    //margin-left: 100px;
+//width: 200px;
+// height: 200px;
+//margin-left: 100px;
     font-size: 10pt;
     align-content: center;
     margin: auto;
@@ -239,4 +256,69 @@ a:hover{
     z-index: -1;
     margin: auto;
     box-shadow: 2px 2px 5px black;
+}
+
+/* Admin Page Nav Bar */
+
+/* Links inside the navbar */
+.navbar a {
+    float: left;
+    font-size: 9pt;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+    font-size: 9pt;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    width: 140px;
+}
+
+/* Add a purple background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #9BA2FF;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 9pt;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
 }

@@ -1,7 +1,9 @@
 <div id="nav">
     <br>&nbsp
-    <img src="./css/Of-Course-Logo.png" id="logo">
-    <a href="userprofile.php" class="navitem">
+    <a href="funclasses_search.php">
+        <img src="./css/Of-Course-Logo.png" id="logo" >
+    </a>
+    <a href="user_profile.php" class="navitem">
         USER PROFILE
     </a><br>
     <a href="wellnessblog.php" class="navitem">
