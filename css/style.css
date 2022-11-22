@@ -259,15 +259,11 @@ a:hover{
 }
 
 /* Admin Page Nav Bar */
-.adminnav {
-    overflow: hidden;
-    font-family: Arial;
-}
 
 /* Links inside the navbar */
 .navbar a {
     float: left;
-    font-size: 16px;
+    font-size: 9px;
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -282,19 +278,17 @@ a:hover{
 
 /* Dropdown button */
 .dropdown .dropbtn {
-    font-size: 16px;
+    font-size: 9px;
     border: none;
     outline: none;
     color: white;
     padding: 14px 16px;
     background-color: inherit;
-    font-family: inherit; /* Important for vertical align on mobile phones */
-    margin: 0; /* Important for vertical align on mobile phones */
 }
 
-/* Add a red background color to navbar links on hover */
+/* Add a purple background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color: #9BA2FF;
 }
 
 /* Dropdown content (hidden by default) */
