@@ -48,7 +48,7 @@ if($mysql->connect_errno) {
 
 <div id="mainbox">
     <div id="box1">
-        <p1>EDITING OPTIONS</p1>
+        <p1>ADMINISTRATIVE OPTIONS</p1>
     </div>
     <div id="mainadmin">
         <p1>USER PROFILES:</p1>
