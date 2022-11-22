@@ -13,6 +13,8 @@ if($mysql->connect_errno) {
     echo "db connection error : " . $mysql->connect_error;
     exit();
 }
+
+session_start();   // session starts
 ?>
 
 
@@ -36,12 +38,11 @@ if($mysql->connect_errno) {
     </style>
 </head>
 
-<body id="loginpage">
+<body>
 <?php
 include 'sitenav.php';
 ?>
-
-Session Variables: <em><?= print_r($_SESSION) ?></em>
+<!--Session Variables: <em>--><?//= print_r($_SESSION) ?><!--</em>-->
 
 <h1 id="resultheader">LOG IN</h1><br>
 <div id="mainbox">
@@ -54,24 +55,32 @@ Session Variables: <em><?= print_r($_SESSION) ?></em>
             <table width="200" border="0">
                 <tr>
                     <td> UserName</td>
-                    <td><input type="text" name="user"></td>
+                    <td><input type="text" name="user" required></td>
                 </tr>
                 <tr>
                     <td> PassWord</td>
-                    <td><input type="password" name="pass"></td>
+                    <td><input type="password" name="pass" required></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" name="login" value="LOGIN" id="submit" class="button"></td>
+
+                    <td> <br> <input type="submit" name="login" value="LOGIN" id="submit" class="button"></td>
                     <td></td>
                 </tr>
             </table>
         </form>
 
         <?php
-        session_start();   // session starts
 
         $user = ($_POST['user']);
         $pass = ($_POST['pass']);
+
+        if ((empty($user))&(empty($pass))) {
+
+            echo "";
+
+            exit();
+
+        }
 
         if ($_SESSION['loggedin'] == "yes")   // Checking whether the session is already there or not
         {
@@ -82,12 +91,6 @@ Session Variables: <em><?= print_r($_SESSION) ?></em>
 
         } else {
 
-            if (empty(($user)&($pass))) {
-
-                echo "User Name and Password is required";
-                exit();
-
-            } else {
                 $sql = "SELECT * FROM users WHERE username='$user' AND password='$pass'";
                 $results = $mysql->query($sql);
 
@@ -115,14 +118,12 @@ Session Variables: <em><?= print_r($_SESSION) ?></em>
                         echo "invalid Username or Password";
                         exit();
                     }
-                } else {
-                    echo "Invalid Username or Password, please try again.";
+                }  else {
+                    echo "invalid Username or Password, try again.";
                     exit();
                 }
-
             }
 
-        }
         ?>
     </div>
 </div>
@@ -131,5 +132,3 @@ Session Variables: <em><?= print_r($_SESSION) ?></em>
 
 </body>
 </html>
-
-
