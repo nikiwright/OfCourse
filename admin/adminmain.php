@@ -103,10 +103,10 @@ if($mysql->connect_errno) {
         <a href="class_add.php" class="adminbutton">
             ADD
         </a>
-        <a href="class_edit.php" class="adminbutton">
+        <a href="classlist_edit.php" class="adminbutton">
             EDIT
         </a>
-        <a href="class_delete.php" class="adminbutton">
+        <a href="classlist_delete.php" class="adminbutton">
             DELETE
         </a><br><br>
         <p1>REVIEWS:</p1>
