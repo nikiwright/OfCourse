@@ -9,6 +9,12 @@ h1{
 
 #adminsubmit{
     background-color: #FFBD00;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+#adminsubmit hover{
+    background-color: #9BA2FF;
 }
 
 #body2{
