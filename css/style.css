@@ -284,7 +284,7 @@ a:hover{
     color: white;
     padding: 14px 16px;
     background-color: inherit;
-    min-width: 130px;
+    width: 130px;
 }
 
 /* Add a purple background color to navbar links on hover */
