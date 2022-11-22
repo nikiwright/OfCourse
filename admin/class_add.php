@@ -20,7 +20,7 @@ if($mysql->connect_errno) {
 <htmL>
 <title>Search Page</title>
 <header>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="adminstyle.css">
 </header>
 
 <body>
