@@ -30,6 +30,8 @@ include 'sitenav.php';
         </a>
     </div>
 </div>
+</body>
+</html>
 
 
 
