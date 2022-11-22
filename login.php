@@ -85,44 +85,44 @@ include 'sitenav.php';
         if ($_SESSION['loggedin'] == "yes")   // Checking whether the session is already there or not
         {
             // all good
-            echo "Logged in!";
-            print_r($_SESSION);
+//            echo "Logged in!";
+//            print_r($_SESSION);
             header('Location:user_profile.php');
 
         } else {
 
-                $sql = "SELECT * FROM users WHERE username='$user' AND password='$pass'";
-                $results = $mysql->query($sql);
+            $sql = "SELECT * FROM users WHERE username='$user' AND password='$pass'";
+            $results = $mysql->query($sql);
 
-                if (!$results) {
-                    echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
-                    echo "SQL Error: " . $mysql->error . "<hr>";
-                    exit();
-                }
-
-                if ($results->num_rows === 1) {
-
-                    $row = mysqli_fetch_array($results);
-
-                    if ($row['username'] === $user && $row['password'] === $pass) {
-
-                        $_SESSION['loggedin'] = "yes";
-                        $_SESSION['username'] = $row['username'];
-                        $_SESSION['first'] = $row['user_firstName'];
-                        $_SESSION['last'] = $row['user_lastName'];
-                        $_SESSION['id'] = $row['user_id'];
-                        header("refresh: 0.5");
-                        exit();
-
-                    } else {
-                        echo "invalid Username or Password";
-                        exit();
-                    }
-                }  else {
-                    echo "invalid Username or Password, try again.";
-                    exit();
-                }
+            if (!$results) {
+                echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
+                echo "SQL Error: " . $mysql->error . "<hr>";
+                exit();
             }
+
+            if ($results->num_rows === 1) {
+
+                $row = mysqli_fetch_array($results);
+
+                if ($row['username'] === $user && $row['password'] === $pass) {
+
+                    $_SESSION['loggedin'] = "yes";
+                    $_SESSION['username'] = $row['username'];
+                    $_SESSION['first'] = $row['user_firstName'];
+                    $_SESSION['last'] = $row['user_lastName'];
+                    $_SESSION['id'] = $row['user_id'];
+                    header('Location:user_profile.php');
+                    exit();
+
+                } else {
+                    echo "invalid Username or Password";
+                    exit();
+                }
+            }  else {
+                echo "invalid Username or Password, try again.";
+                exit();
+            }
+        }
 
         ?>
     </div>
