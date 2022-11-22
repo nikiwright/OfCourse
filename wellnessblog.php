@@ -5,12 +5,10 @@
     <title>Wellness Blog</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-<div>
+<body id="purplebody">
 <?php
 include 'sitenav.php';
 ?>
-</div>
 <div id="header">
     <h1>Wellness Blog</h1>
 </div>
