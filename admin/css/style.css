@@ -104,6 +104,7 @@ p1{
 }
 
 #mainadmin{
+    display: flex;
     padding: 20px;
     background-color: #FFBD00;
     justify-content: space-evenly;
