@@ -15,7 +15,20 @@ if($mysql->connect_errno) {
     echo "db connection error : " . $mysql->connect_error;
     exit();
 }
+?>
 
+<htmL>
+<title>Add Page</title>
+<header>
+    <link rel="stylesheet" href="../css/style.css">
+</header>
+<body id="body2">
+<div>
+<?php
+include 'adminnavbar.php';
+?>
+</div>
+<?php
 $sql = "SELECT * from fun_classes WHERE 1=1";
 
 $results = $mysql -> query($sql);
@@ -24,7 +37,7 @@ if(!$results){
     echo "ERROR: " . $mysql -> error;
 }
 
-echo "<br><h1>Add Class</h1><br>";
+echo "<br><br><br><h1>Add Class</h1><br>";
 ?>
 <form action="insertclass.php">
 
@@ -86,7 +99,9 @@ echo "<br><h1>Add Class</h1><br>";
         }
         ?>
     </select>
-    <br>
+    <br><br>
 
-    <input type="submit" value="Save Edits">
+    <input type="submit" value="Save Edits" id="adminsubmit">
 </form>
+</body>
+</html>

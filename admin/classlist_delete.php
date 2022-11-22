@@ -16,12 +16,17 @@ if($mysql->connect_errno) {
 
 }
 ?>
-<html>
-<head>
-    <title>Class List Delete</title>
-
-</head>
-<body>
+<htmL>
+<title>Delete Page</title>
+<header>
+    <link rel="stylesheet" href="../css/style.css">
+</header>
+<body id="body3">
+<div>
+    <?php
+    include 'adminnavbar.php';
+    ?>
+</div>
 <div id="container">
     <h1>Choose a class to delete:<hr></h1>
 

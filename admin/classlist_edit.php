@@ -16,12 +16,17 @@ if($mysql->connect_errno) {
 
 }
 ?>
-<html>
-<head>
-    <title>Class List Edit</title>
-
-</head>
-<body>
+<htmL>
+<title>Edit Page</title>
+<header>
+    <link rel="stylesheet" href="../css/style.css">
+</header>
+<body id="body3">
+<div>
+    <?php
+    include 'adminnavbar.php';
+    ?>
+</div>
 <div id="container">
     <h1>Choose a class to edit:<hr></h1>
 
@@ -49,4 +54,5 @@ if($mysql->connect_errno) {
 
 </div>
 
-</body></html>
+</body>
+</html>

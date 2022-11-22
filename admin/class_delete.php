@@ -21,13 +21,27 @@ if(empty($_REQUEST["recordid"])){
     exit();
 }
 
+?>
+<htmL>
+<title>Add Page</title>
+<header>
+    <link rel="stylesheet" href="../css/style.css">
+</header>
+<body id="body2">
+<div>
+<?php
+include 'adminnavbar.php';
+?>
+</div>
+
+<?php
 if(empty($_REQUEST["confirm"])) {
     //ask to confirm
     echo "Do you really want to delete this movie?";
 
 ?>
 
-<form action="delete_drilldown.php">
+<form action="class_delete.php">
     <input type="hidden" name="confirm" value="1">
     <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"];?>">
     <input type="submit" value="YES">
@@ -39,7 +53,7 @@ if(empty($_REQUEST["confirm"])) {
     Echo "Deleting movie . . .";
 
     $sql = "DELETE FROM fun_classes
-    WHERE fun_class_id= " . $_REQUEST["recordid"];
+    WHERE fun_classes_id= " . $_REQUEST["recordid"];
 
     $results = $mysql -> query($sql);
 
@@ -50,6 +64,6 @@ if(empty($_REQUEST["confirm"])) {
     }
 
 }
-
-
 ?>
+</body>
+</htmL>
