@@ -27,6 +27,16 @@ if($mysql->connect_errno) {
     include 'sitenav.php';
 ?>
 
+<div id="text2">
+    <?php
+    if ($_SESSION['loggedin'] == "yes") {
+        echo "Hello ". "<strong>".$_SESSION['first']. "! "."</strong>". "You are logged in."."<br>";
+    } else {
+       echo "You are not logged in. Click" ."<a id='a' href='login.php'> here </a>" . " to log in/signup!";
+    }
+    ?>
+</div>
+
 <div id="header">
     <h1 style="margin-bottom: -10px;">FUN CLASSES AT USC</h1><br>
     <br>
@@ -130,7 +140,7 @@ if($mysql->connect_errno) {
 <div id="text1">
     <h2>LOOKING TO SWITCH UP YOUR SCHEDULE?</h2><br>
     <p1>OfCourse believes in the importance of taking advantage of the wide range of classes that USC has to offer. Taking classes outside your major/minor requirements can be a great opportunity for growth and relaxation. But we know that a hindrance for many students is not knowing which classes to take. OfCourse is a tool made by students for students to help you find courses that boost your physical and mental wellbeing.</p1>
-
 </div>
+
 </body>
 </htmL>
