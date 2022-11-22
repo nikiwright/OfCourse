@@ -18,16 +18,16 @@ if($mysql->connect_errno) {
 $sql = "INSERT INTO fun_classes
         (courseID, className, classBio, classDepartment, professorFirstName, professorLastName, professorRating, school_id, weekday_id, unit_id)
         VALUES
-        (" . $_REQUEST["courseid"] . ",
-        " . $_REQUEST["classname"] . ",
-        " . $_REQUEST["classbio"] . ",
-        " . $_REQUEST["classdepartment"] . ",
-        " . $_REQUEST["fname"] . ",
-        " . $_REQUEST["lname"] . ",
+        ('" . $_REQUEST["courseid"] . "',
+        '" . $_REQUEST["classname"] . "',
+        '" . $_REQUEST["classbio"] . "',
+        '" . $_REQUEST["classdepartment"] . "',
+        '" . $_REQUEST["fname"] . "',
+        '" . $_REQUEST["lname"] . "',
         '" . $_REQUEST["professorrating"] . "',
-        '" . $_REQUEST["school"] . "',
-        '" . $_REQUEST["weekday"] . "',
-        '" . $_REQUEST["unit"] . "')";
+        " . $_REQUEST["school"] . ",
+        " . $_REQUEST["weekday"] . ",
+        " . $_REQUEST["unit"] . ")";
 echo "<hr>" . $sql;
 
 $results = $mysql->query($sql);
