@@ -47,7 +47,7 @@ include 'sitenav.php';
 <h1 id="resultheader">LOG IN</h1><br>
 <div id="mainbox">
     <div id="box1">
-        Need an account? <a href="signupform.php"> Sign Up </a>
+        Need an account? <a href="signup.php"> Sign Up </a>
     </div>
     <div id="box2">
         <form action="" method="post">
@@ -62,7 +62,6 @@ include 'sitenav.php';
                     <td><input type="password" name="pass" required></td>
                 </tr>
                 <tr>
-
                     <td> <br> <input type="submit" name="login" value="LOGIN" id="submit" class="button"></td>
                     <td></td>
                 </tr>
