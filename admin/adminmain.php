@@ -18,13 +18,13 @@ if($mysql->connect_errno) {
 <htmL>
 <title>Search Page</title>
 <header>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </header>
 
 <body id="body1">
 <div id="nav">
     <br>&nbsp
-    <img src="./css/Of-Course-Logo.png" id="logo">
+    <img src="../css/Of-Course-Logo.png" id="logo">
     <div class="dropdown">
         <button class="dropbtn">Dropdown
             <i class="fa fa-caret-down"></i>
