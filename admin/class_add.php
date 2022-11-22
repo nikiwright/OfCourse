@@ -45,11 +45,9 @@ echo "<br><h1>Add Class</h1><br>";
     <br>
     Class Department: <input type="text" name="classdepartment" value="<?php echo $recorddata["classDepartment"]; ?>">
     <br>
-    Professor First Name: <input type="text" name="fname" value="<?php echo $recorddata["professorFirstName"]; ?>">
+    Instructor Name: <input type="text" name="instructorname" value="<?php echo $recorddata["instructorName"]; ?>">
     <br>
-    Professor Last Name: <input type="text" name="lname" value="<?php echo $recorddata["professorLastName"]; ?>">
-    <br>
-    Professor Rating: <input type="text" name="professorrating" value="<?php echo $recorddata["professorRating"]; ?>">
+    Instructor Rating: <input type="text" name="instructorrating" value="<?php echo $recorddata["instructorRating"]; ?>">
     <br>
     School: <select name="school" value ="<?php echo $recorddata['school']; ?>">
         <?php
