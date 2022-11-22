@@ -28,8 +28,6 @@ if($mysql->connect_errno) {
 include 'adminnavbar.php';
 ?>
 </div>
-
-<body id="body4">
 <?php
 $sql = "SELECT * from fun_classes WHERE 1=1";
 
@@ -41,6 +39,7 @@ if(!$results){
 
 echo "<br><br><br><h1>Add Class</h1><br>";
 ?>
+<body id="body4">
 <form action="insertclass.php">
 
     <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"]; ?>">
