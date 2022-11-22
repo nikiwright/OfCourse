@@ -47,7 +47,7 @@ echo "<br><h1>Add Class</h1><br>";
     <br>
     Instructor Name: <input type="text" name="instructorname" value="<?php echo $recorddata["instructorName"]; ?>">
     <br>
-    Instructor Rating: <input type="number" name="instructorrating" value="<?php echo $recorddata["instructorRating"]; ?>">
+    Instructor Rating: <input type="text" name="instructorrating" value="<?php echo $recorddata["instructorRating"]; ?>">
     <br>
     School: <select name="school" value ="<?php echo $recorddata['school']; ?>">
         <?php
