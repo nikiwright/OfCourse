@@ -1,6 +1,6 @@
 <div id="nav">
     <br>&nbsp
-    <a href="funclasses_search.php">
+    <a href="../funclasses_search.php">
         <img src="../css/Of-Course-Logo.png" id="logo" >
     </a>
     <div class="dropdown">
