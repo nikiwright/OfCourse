@@ -63,19 +63,41 @@ if($mysql->connect_errno) {
         </a>
         <a href="userprofile_delete.php" class="adminbutton">
             DELETE
+        </a><br><br>
+        <p1>WELLNESS BLOG:</p1>
+        <a href="wellnessblog_add.php" class="adminbutton">
+            ADD
         </a>
-        <a href="wellnessblog.php" class="adminbutton">
-            WELLNESS BLOG
-        </a><br>
-        <a href="sitepurpose.php" class="adminbutton">
-            SITE PURPOSE
-        </a><br>
-        <a href="class_edit.php.php" class="adminbutton">
-            CLASSES
-        </a><br>
+        <a href="wellnessblog_edit.php" class="adminbutton">
+            EDIT
+        </a>
+        <a href="wellnessblog_delete.php" class="adminbutton">
+            DELETE
+        </a><br><br>
+        <p1>SITE PURPOSE:</p1>
+        <a href="sitepurpose_edit.php" class="adminbutton">
+            EDIT
+        </a><br><br>
+        <p1>CLASSES:</p1>
+        <a href="class_add.php" class="adminbutton">
+            ADD
+        </a>
+        <a href="class_edit.php" class="adminbutton">
+            EDIT
+        </a>
+        <a href="class_delete.php" class="adminbutton">
+            DELETE
+        </a><br><br>
+        <p1>REVIEWS:</p1>
+        <a href="review_add.php" class="adminbutton">
+            ADD
+        </a>
         <a href="review_edit.php" class="adminbutton">
-            REVIEWS
-        </a><br>
+            EDIT
+        </a>
+        <a href="review_delete.php" class="adminbutton">
+            DELETE
+        </a>
     </div>
 </body>
 </htmL>
