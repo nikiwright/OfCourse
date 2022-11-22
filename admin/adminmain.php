@@ -26,13 +26,19 @@ if($mysql->connect_errno) {
     <br>&nbsp
     <img src="./css/Of-Course-Logo.png" id="logo">
     <a href="userprofile.php" class="navitem">
-        USER PROFILE
+        USER PROFILES
     </a><br>
     <a href="wellnessblog.php" class="navitem">
         WELLNESS BLOG
     </a><br>
     <a href="sitepurpose.php" class="navitem">
         SITE PURPOSE
+    </a><br>
+    <a href="class_edit.php.php" class="navitem">
+        CLASSES
+    </a><br>
+    <a href="review_edit.php" class="navitem">
+        REVIEWS
     </a><br>
 </div>
 
@@ -45,7 +51,7 @@ if($mysql->connect_errno) {
 
 <div id="mainbox">
     <div id="box1">
-        <p1>EDIT USER REVIEWS</p1>
+        <p1>EDITING OPTIONS</p1>
     </div>
     <div id="box2">
     <p1><strong>Classes:</strong></p1><br>
