@@ -23,14 +23,13 @@ if($mysql->connect_errno) {
     <link rel="stylesheet" href="../css/style.css">
 </header>
 
-<body id="body4">
-
 <div>
 <?php
 include 'adminnavbar.php';
 ?>
 </div>
 
+<body id="body4">
 <?php
 $sql = "SELECT * from fun_classes WHERE 1=1";
 
