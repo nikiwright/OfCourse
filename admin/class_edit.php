@@ -20,7 +20,20 @@ if(empty($_REQUEST["recordid"])){
     echo "ERROR. Please go through class edit list page.";
     exit();
 }
+?>
+<htmL>
+<title>Edit Page</title>
+<header>
+    <link rel="stylesheet" href="../css/style.css">
+</header>
+<body id="body2">
+<div>
+<?php
+include 'adminnavbar.php';
+?>
+</div>
 
+<?php
 $sql = "SELECT * from fun_classes WHERE fun_classes_id = " . $_REQUEST["recordid"];
 
 $results = $mysql -> query($sql);
@@ -148,3 +161,5 @@ while($currentrow = $results -> fetch_assoc()){
 
     <input type="submit" value="Save Edits">
 </form>
+</body>
+</htmL>

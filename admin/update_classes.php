@@ -16,6 +16,21 @@ if($mysql->connect_errno) {
     exit();
 }
 
+?>
+
+<htmL>
+<title>Add Page</title>
+<header>
+    <link rel="stylesheet" href="../css/style.css">
+</header>
+<body id="body2">
+<div>
+<?php
+include 'adminnavbar.php';
+?>
+</div>
+
+<?php
 $sql= "UPDATE fun_classes
     SET
     courseID = '". $_REQUEST["courseid"] ."',
@@ -36,9 +51,12 @@ echo $sql;
 $results = $mysql -> query($sql);
 
 if($results){
-    echo "Class Updated";
+    echo "<br><br> Class Updated!";
 } else{
     echo "Error: " . $mysql->error;
 }
 
 ?>
+
+</body>
+</htmL>
