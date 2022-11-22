@@ -59,6 +59,17 @@ echo "<br><h1>Add Class</h1><br>";
         ?>
     </select>
     <br>
+    Interest: <select name="interest" value ="<?php echo $recorddata['interest']; ?>">
+        <?php
+        $sql = "SELECT * from interests";
+        $results = $mysql -> query($sql);
+        while($currentrow = $results -> fetch_assoc()){
+            echo"<option value='" . $currentrow["interest_id"] . "'>" . $currentrow["interest"] . "</option>";
+        }
+        ?>
+    </select>
+    <br>
+    <br>
     Weekday: <select name="weekday" value ="<?php echo $recorddata['weekday']; ?>">
         <?php
         $sql = "SELECT * from weekdays";

@@ -16,7 +16,7 @@ if($mysql->connect_errno) {
 }
 
 $sql = "INSERT INTO fun_classes
-        (courseID, className, classBio, classDepartment, instructorName, instructorRating, school_id, weekday_id, unit_id)
+        (courseID, className, classBio, classDepartment, instructorName, instructorRating, school_id, interest_id, weekday_id, unit_id)
         VALUES
         ('" . $_REQUEST["courseid"] . "',
         '" . $_REQUEST["classname"] . "',
@@ -25,6 +25,7 @@ $sql = "INSERT INTO fun_classes
         '" . $_REQUEST["instructorName"] . "',
         '" . $_REQUEST["instructorRating"] . "',
         " . $_REQUEST["school"] . ",
+        " . $_REQUEST["interest"] . ",
         " . $_REQUEST["weekday"] . ",
         " . $_REQUEST["unit"] . ")";
 echo "<hr>" . $sql;
