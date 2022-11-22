@@ -18,8 +18,6 @@ if($mysql->connect_errno) {
 
 $sql = "SELECT * from fun_classes WHERE 1=1";
 
-echo "SQL: " . $sql;
-
 $results = $mysql -> query($sql);
 
 if(!$results){
