@@ -37,7 +37,7 @@ if($mysql->connect_errno) {
 </div>
 
 <div id="header">
-    <h1 style="margin-bottom: -10px;">FUN CLASSES AT USC</h1><br>
+    <h1 style="margin-bottom: -10px;">ADMIN PAGE</h1><br>
     <br>
 </div>
 <br>
@@ -45,7 +45,7 @@ if($mysql->connect_errno) {
 
 <div id="mainbox">
     <div id="box1">
-        <p1>FIND YOUR NEW FAVORITE CLASS TODAY</p1>
+        <p1>EDIT USER REVIEWS</p1>
     </div>
     <div id="box2">
     <p1><strong>Classes:</strong></p1><br>
