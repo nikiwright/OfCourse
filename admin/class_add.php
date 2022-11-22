@@ -23,7 +23,7 @@ if($mysql->connect_errno) {
     <link rel="stylesheet" href="../css/style.css">
 </header>
 
-<body id="body1">
+<body id="body4">
 
 <div>
 <?php
