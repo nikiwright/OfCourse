@@ -105,6 +105,7 @@ p1{
 
 .adminbutton{
     display: flex;
+    flex-direction: row;
     width: 20%;
     justify-content: space-evenly;
     border: 1px solid black;
