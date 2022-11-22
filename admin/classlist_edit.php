@@ -21,7 +21,7 @@ if($mysql->connect_errno) {
 <header>
     <link rel="stylesheet" href="../css/style.css">
 </header>
-<body id="body3">
+<body id="body2">
 <div>
     <?php
     include 'adminnavbar.php';
