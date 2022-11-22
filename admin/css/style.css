@@ -92,7 +92,7 @@ p1{
 
 #nav{
     display: flex;
-    width: 90%;
+    width: 100%;
     justify-content: space-evenly;
     text-decoration: none;
 }
@@ -100,7 +100,7 @@ p1{
 .navitem{
     margin-top: 30px;
     color: white;
-    font-size: 12pt;
+    font-size: 9pt;
 }
 
 #mainadmin{
