@@ -26,7 +26,7 @@ if(!$results){
     echo "ERROR: " . $mysql -> error;
 }
 
-echo "<br><h1>Edit Class</h1><br>";
+echo "<br><h1>Add Class</h1><br>";
 ?>
 <form action="update_classes.php">
 
