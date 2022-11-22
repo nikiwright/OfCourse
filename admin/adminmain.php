@@ -56,19 +56,19 @@ if($mysql->connect_errno) {
     <div id="box2">
         <a href="userprofile.php" class="adminbutton">
             USER PROFILES
-        </a>
+        </a><br>
         <a href="wellnessblog.php" class="adminbutton">
             WELLNESS BLOG
-        </a>
+        </a><br>
         <a href="sitepurpose.php" class="adminbutton">
             SITE PURPOSE
-        </a>
+        </a><br>
         <a href="class_edit.php.php" class="adminbutton">
             CLASSES
-        </a>
+        </a><br>
         <a href="review_edit.php" class="adminbutton">
             REVIEWS
-        </a>
+        </a><br>
     </div>
 </body>
 </htmL>

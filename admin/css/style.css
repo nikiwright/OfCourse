@@ -105,7 +105,8 @@ p1{
 
 .adminbutton{
     display: flex;
-    width: 80px;
+    width: 20%;
+    justify-content: space-evenly;
     border: 1px solid black;
     border-radius: 10px;
     font-family: "Helvetica Neue";
