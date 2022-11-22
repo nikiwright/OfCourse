@@ -36,5 +36,5 @@ if(!$results) {
     echo "ERROR! " . $mysql->error;
     echo "<hr>" . $sql;
 } else {
-    echo "<br>SUCCESS! Class added to fun_classes db.";
+    echo "<br><br>SUCCESS! Class added to fun_classes db.";
 }
