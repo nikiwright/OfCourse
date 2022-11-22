@@ -104,6 +104,7 @@ p1{
 }
 
 .adminbutton{
+    display: flex;
     width: 80px;
     border: 1px solid black;
     border-radius: 10px;
