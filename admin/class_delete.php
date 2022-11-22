@@ -53,7 +53,7 @@ if(empty($_REQUEST["confirm"])) {
     Echo "Deleting movie . . .";
 
     $sql = "DELETE FROM fun_classes
-    WHERE fun_class_id= " . $_REQUEST["recordid"];
+    WHERE fun_classes_id= " . $_REQUEST["recordid"];
 
     $results = $mysql -> query($sql);
 
