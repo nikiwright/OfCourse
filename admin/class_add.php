@@ -37,7 +37,7 @@ echo "<br><h1>Add Class</h1><br>";
     $recorddata = $results -> fetch_assoc();
 
     ?>
-    Course ID: <input type="text" name="courseid" value="<?php echo $recorddata["courseID"]; ?>">
+    Course ID: <input type="text" name="courseid" value="<?php echo $recorddate["courseID"]; ?>">
     <br>
     Class Name: <input type="text" name="classname" value="<?php echo $recorddata["className"]; ?>">
     <br>
