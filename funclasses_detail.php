@@ -48,9 +48,11 @@ if($mysql->connect_errno) {
     }
 
     while ($currentrow = $results -> fetch_assoc()){
-        echo "<h1 id='resultheader'>". $currentrow["className"]. " Details" ."</h1> <br>";
-        echo "<div id='transparentbox2'>
-<div id='resultbox'>";
+        echo "<div id='detailbox'>";
+        echo "<div id='box1' style='background-color: white;'>";
+        echo "<h1 id='resultheader' style='color: black; line-height: 0px !important; margin-top: 10px;'>". $currentrow["className"]. " Details" ."</h1> <br>";
+        echo "</div>";
+        echo "<div id='details'>";
         echo "<strong>"."Course Title: " ."</strong>". $currentrow["className"]. "<br>";
         echo "<strong>"."CourseID: " ."</strong>". $currentrow["courseID"]. "<br>";
         echo "<strong>"."About: " ."</strong>". $currentrow["classBio"]. "<br>";
@@ -81,7 +83,7 @@ if($mysql->connect_errno) {
         echo $currentrow["review"]."<br>";
         "<br style='clear:both;'>";
     }
-
+    echo"</div>";
     echo "</div>";
     echo "</div>";
     ?>

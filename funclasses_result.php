@@ -30,9 +30,8 @@ include 'sitenav.php';
 
     <h1 id="resultheader">Congrats!</h1><br>
     <h2 id="resultheader"> We Found You Fun Classes!</h2> <br>
-    <div id="transparentbox">
+    <div id="resultbox">
         <h2 style="color: black;">SEARCH RESULTS: <hr></h2>
-        <div id="resultbox">
 
             <?php
 
@@ -214,8 +213,6 @@ include 'sitenav.php';
 
             }
             ?>
-
-        </div>
     </div>
 </div>
 </body>

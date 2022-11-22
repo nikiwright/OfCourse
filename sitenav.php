@@ -1,8 +1,7 @@
 <div id="nav">
     <br>&nbsp
     <a href="funclasses_search.php">
-        <img src="./css/Of-Course-Logo.png" id="logo" >
-    </a>
+       <a href="funclasses_search.php"> <img src="./css/Of-Course-Logo.png" id="logo" ></a>
     <a href="user_profile.php" class="navitem">
         USER PROFILE
     </a><br>
