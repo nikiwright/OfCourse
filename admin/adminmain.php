@@ -54,7 +54,7 @@ if($mysql->connect_errno) {
         <p1>EDITING OPTIONS</p1>
     </div>
     <div id="box2">
-        <a href="userprofile.php" class="navitem">
+        <a href="userprofile.php" class="button">
             USER PROFILES
         </a><br>
         <a href="wellnessblog.php" class="navitem">
