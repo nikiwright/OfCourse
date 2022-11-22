@@ -108,10 +108,9 @@ p1{
     background-color: #FFBD00;
     justify-content: space-evenly;
     text-decoration: none;
-    text-align: center;
 }
 .adminbutton{
-    width: 20%;
+    width: 30%;
     justify-content: space-evenly;
     border: 1px solid white;
     border-radius: 10px;
