@@ -18,8 +18,6 @@ if($mysql->connect_errno) {
 
 $sql = "SELECT * from fun_classes WHERE 1=1";
 
-echo "SQL: " . $sql;
-
 $results = $mysql -> query($sql);
 
 if(!$results){
@@ -37,7 +35,7 @@ echo "<br><h1>Add Class</h1><br>";
     $recorddata = $results -> fetch_assoc();
 
     ?>
-    Course ID: <input type="text" name="courseid" value="<?php echo $recorddate["courseID"]; ?>">
+    Course ID: <input type="text" name="courseid" value="<?php echo $recorddata["courseID"]; ?>">
     <br>
     Class Name: <input type="text" name="classname" value="<?php echo $recorddata["className"]; ?>">
     <br>
@@ -45,11 +43,9 @@ echo "<br><h1>Add Class</h1><br>";
     <br>
     Class Department: <input type="text" name="classdepartment" value="<?php echo $recorddata["classDepartment"]; ?>">
     <br>
-    Professor First Name: <input type="text" name="fname" value="<?php echo $recorddata["professorFirstName"]; ?>">
+    Instructor Name: <input type="text" name="instructorname" value="<?php echo $recorddata["instructorName"]; ?>">
     <br>
-    Professor Last Name: <input type="text" name="lname" value="<?php echo $recorddata["professorLastName"]; ?>">
-    <br>
-    Professor Rating: <input type="text" name="professorrating" value="<?php echo $recorddata["professorRating"]; ?>">
+    Instructor Rating: <input type="text" name="instructorrating" value="<?php echo $recorddata["instructorRating"]; ?>">
     <br>
     School: <select name="school" value ="<?php echo $recorddata['school']; ?>">
         <?php
@@ -57,6 +53,16 @@ echo "<br><h1>Add Class</h1><br>";
         $results = $mysql -> query($sql);
         while($currentrow = $results -> fetch_assoc()){
             echo"<option value='" . $currentrow["school_id"] . "'>" . $currentrow["school"] . "</option>";
+        }
+        ?>
+    </select>
+    <br>
+    Interest: <select name="interest" value ="<?php echo $recorddata['interest']; ?>">
+        <?php
+        $sql = "SELECT * from interests";
+        $results = $mysql -> query($sql);
+        while($currentrow = $results -> fetch_assoc()){
+            echo"<option value='" . $currentrow["interest_id"] . "'>" . $currentrow["interest"] . "</option>";
         }
         ?>
     </select>

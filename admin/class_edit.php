@@ -17,7 +17,7 @@ if($mysql->connect_errno) {
 }
 
 if(empty($_REQUEST["recordid"])){
-    echo "ERROR. Please go through search page.";
+    echo "ERROR. Please go through class edit list page.";
     exit();
 }
 
@@ -43,20 +43,54 @@ while($currentrow = $results -> fetch_assoc()){
     $recorddata = $results -> fetch_assoc();
 
     ?>
-    Course ID: <input type="text" name="courseID" value="<?php echo $recorddata["courseID"];
-    ?>">
+    Course ID: <input type="text" name="courseID" value="<?php
+    $sql = "SELECT * from fun_classes WHERE fun_classes_id = " . $_REQUEST["recordid"];
+    $results = $mysql -> query($sql);
+    while($currentrow = $results -> fetch_assoc()){
+    echo $currentrow["courseID"];
+    }?>">
     <br>
-    Class Name: <input type="text" name="className" value="<?php echo $recorddata["className"]; ?>">
+    Class Name: <input type="text" name="className" value="<?php
+    $sql = "SELECT * from fun_classes WHERE fun_classes_id = " . $_REQUEST["recordid"];
+    $results = $mysql -> query($sql);
+    while($currentrow = $results -> fetch_assoc()){
+        echo $currentrow["className"];
+    }?>">
     <br>
-    Class Bio: <input type="text" name="classBio" value="<?php echo $recorddata["classBio"]; ?>">
+    Class Bio: <input type="text" name="classBio" value="<?php
+    $sql = "SELECT * from fun_classes WHERE fun_classes_id = " . $_REQUEST["recordid"];
+    $results = $mysql -> query($sql);
+    while($currentrow = $results -> fetch_assoc()){
+        echo $currentrow["classBio"];
+    }?>">
     <br>
-    Class Department: <input type="text" name="classDepartment" value="<?php echo $recorddata["classDepartment"]; ?>">
+    Class Department: <input type="text" name="classDepartment" value="<?php
+    $sql = "SELECT * from fun_classes WHERE fun_classes_id = " . $_REQUEST["recordid"];
+    $results = $mysql -> query($sql);
+    while($currentrow = $results -> fetch_assoc()){
+        echo $currentrow["classDepartment"];
+    }?>">
     <br>
-    Instructor Name: <input type="text" name="instructorName" value="<?php echo $recorddata["instructorName"]; ?>">
+    Instructor Name: <input type="text" name="instructorName" value="<?php
+    $sql = "SELECT * from fun_classes WHERE fun_classes_id = " . $_REQUEST["recordid"];
+    $results = $mysql -> query($sql);
+    while($currentrow = $results -> fetch_assoc()){
+        echo $currentrow["instructorName"];
+    }?>">
     <br>
-    Instructor Rating: <input type="text" name="instructorRating" value="<?php echo $recorddata["instructorRating"]; ?>">
+    Instructor Rating: <input type="text" name="instructorRating" value="<?php
+    $sql = "SELECT * from fun_classes WHERE fun_classes_id = " . $_REQUEST["recordid"];
+    $results = $mysql -> query($sql);
+    while($currentrow = $results -> fetch_assoc()){
+        echo $currentrow["instructorRating"];
+    }?>">
     <br>
-    School: <select name="school" value ="<?php echo $recorddata['school']; ?>">
+    School: <select name="school" value ="<?php
+    $sql = "SELECT * from fun_classes WHERE fun_classes_id = " . $_REQUEST["recordid"];
+    $results = $mysql -> query($sql);
+    while($currentrow = $results -> fetch_assoc()){
+        echo $currentrow["school_id"];
+    }?>">
         <?php
         $sql = "SELECT * from schools";
         $results = $mysql -> query($sql);
@@ -66,7 +100,12 @@ while($currentrow = $results -> fetch_assoc()){
         ?>
     </select>
     <br>
-    Interest: <select name="interest" value ="<?php echo $recorddata['interest']; ?>">
+    Interest: <select name="interest" value ="<?php
+    $sql = "SELECT * from fun_classes WHERE fun_classes_id = " . $_REQUEST["recordid"];
+    $results = $mysql -> query($sql);
+    while($currentrow = $results -> fetch_assoc()){
+        echo $currentrow["interest_id"];
+    }?>">
         <?php
         $sql = "SELECT * from interests";
         $results = $mysql -> query($sql);
@@ -76,7 +115,12 @@ while($currentrow = $results -> fetch_assoc()){
         ?>
     </select>
     <br>
-   Weekday: <select name="weekday" value ="<?php echo $recorddata['weekday']; ?>">
+   Weekday: <select name="weekday" value ="<?php
+    $sql = "SELECT * from fun_classes WHERE fun_classes_id = " . $_REQUEST["recordid"];
+    $results = $mysql -> query($sql);
+    while($currentrow = $results -> fetch_assoc()){
+        echo $currentrow["weekday_id"];
+    }?>">
         <?php
         $sql = "SELECT * from weekdays";
         $results = $mysql -> query($sql);
@@ -86,7 +130,12 @@ while($currentrow = $results -> fetch_assoc()){
         ?>
     </select>
     <br>
-    Units: <select name="unit_num" value ="<?php echo $recorddata['unit_num']; ?>">
+    Units: <select name="unit_num" value ="<?php
+    $sql = "SELECT * from fun_classes WHERE fun_classes_id = " . $_REQUEST["recordid"];
+    $results = $mysql -> query($sql);
+    while($currentrow = $results -> fetch_assoc()){
+        echo $currentrow["unit_id"];
+    }?>">
         <?php
         $sql = "SELECT * from units";
         $results = $mysql -> query($sql);

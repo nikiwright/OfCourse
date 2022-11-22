@@ -18,12 +18,12 @@ if($mysql->connect_errno) {
 ?>
 <html>
 <head>
-    <title>Class List Edit</title>
+    <title>Class List Delete</title>
 
 </head>
 <body>
 <div id="container">
-    <h1>Choose a class to edit:<hr></h1>
+    <h1>Choose a class to delete:<hr></h1>
 
     <?php
 
@@ -41,7 +41,7 @@ if($mysql->connect_errno) {
     while($currentrow = $results->fetch_assoc()) {
         echo "<div class='title'><strong>" . $currentrow['className'] . "</strong>".
             "<p1> ". $currentrow["courseID"]. "</p1>" .
-            "<a href='class_edit.php?recordid=" . $currentrow["fun_classes_id"] . "'> Edit </a>" .
+            "<a href='class_delete.php?recordid=" . $currentrow["fun_classes_id"] . "'> Delete </a>" .
             "<br style='clear:both;'>";
 
     }
