@@ -104,7 +104,8 @@ p1{
 }
 
 .adminbutton{
-    width: 100px;
+    display: flex;
+    width: 15%;
     border: 1px solid black;
     border-radius: 10px;
     font-family: "Helvetica Neue";
