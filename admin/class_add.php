@@ -22,7 +22,7 @@ if($mysql->connect_errno) {
 <header>
     <link rel="stylesheet" href="../css/style.css">
 </header>
-
+<body id="body4">
 <div>
 <?php
 include 'adminnavbar.php';
@@ -39,7 +39,6 @@ if(!$results){
 
 echo "<br><br><br><h1>Add Class</h1><br>";
 ?>
-<body id="body4">
 <form action="insertclass.php">
 
     <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"]; ?>">
