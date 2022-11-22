@@ -65,18 +65,6 @@ if($mysql->connect_errno) {
             <a href="review_delete.php">DELETE</a>
         </div>
     </div>
-    <a href="" class="navitem">
-        USER PROFILES
-    </a><br>
-    <a href="" class="navitem">
-        WELLNESS BLOG
-    </a><br>
-    <a href="" class="navitem">
-        CLASSES
-    </a><br>
-    <a href="" class="navitem">
-        REVIEWS
-    </a><br>
 </div>
 
 <div id="header">
