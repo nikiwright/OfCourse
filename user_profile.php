@@ -76,7 +76,6 @@ include 'sitenav.php';
          echo "Log in/ sign up to view your profile!";
         }
         ?>
-
     </div>
 </div>
 </body>

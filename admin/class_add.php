@@ -26,9 +26,9 @@ if(!$results){
     echo "ERROR: " . $mysql -> error;
 }
 
-echo "<br><h1>Edit Class</h1><br>";
+echo "<br><h1>Add Class</h1><br>";
 ?>
-<form action="update_classes.php">
+<form action="insertclass.php">
 
     <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"]; ?>">
 
@@ -43,19 +43,13 @@ echo "<br><h1>Edit Class</h1><br>";
     <br>
     Class Bio: <input type="text" name="classbio" value="<?php echo $recorddata["classBio"]; ?>">
     <br>
-    Class Department: <select name="classdepartment" value ="<?php echo $recorddata['classDepartment']; ?>">
-        <?php
-        $sql = "SELECT * from fun_classes";
-        $results = $mysql -> query($sql);
-        while($currentrow = $results -> fetch_assoc()){
-            echo"<option value='" . $currentrow["fun_classes_id"] . "'>" . $currentrow["classDepartment"] . "</option>";
-        }
-        ?>
-    </select>
+    Class Department: <input type="text" name="classdepartment" value="<?php echo $recorddata["classDepartment"]; ?>">
     <br>
-    Instructor Name: <input type="text" name="instructorname" value="<?php echo $recorddata["instructorName"]; ?>">
+    Professor First Name: <input type="text" name="fname" value="<?php echo $recorddata["professorFirstName"]; ?>">
     <br>
-    Instructor Rating: <input type="text" name="instructorrating" value="<?php echo $recorddata["instructorRating"]; ?>">
+    Professor Last Name: <input type="text" name="lname" value="<?php echo $recorddata["professorLastName"]; ?>">
+    <br>
+    Professor Rating: <input type="text" name="professorrating" value="<?php echo $recorddata["professorRating"]; ?>">
     <br>
     School: <select name="school" value ="<?php echo $recorddata['school']; ?>">
         <?php
