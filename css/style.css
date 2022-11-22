@@ -31,6 +31,15 @@ body{
 
 }
 
+#body4{
+    background-image: url('uscjohnmckay.jpg');
+    background-blend-mode: multiply;
+    background-size: 100%;
+    background-color: #9BA2FF;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 #container{
     margin: 20px;
 }
@@ -258,15 +267,6 @@ a:hover{
     z-index: -1;
     margin: auto;
     box-shadow: 2px 2px 5px black;
-}
-
-#body4{
-    background-image: url('uscjohnmckay.jpg');
-    background-blend-mode: multiply;
-    background-size: 100%;
-    background-color: #9BA2FF;
-    overflow-x: hidden;
-    overflow-y: scroll;
 }
 
 #mainadmin{
