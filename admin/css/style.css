@@ -104,16 +104,12 @@ p1{
 }
 
 #mainadmin{
-    display: flex;
-    flex-grow: 5;
     padding: 20px;
     background-color: #FFBD00;
     justify-content: space-evenly;
     text-decoration: none;
 }
 .adminbutton{
-    display: flex;
-    flex-direction: column;
     width: 20%;
     justify-content: space-evenly;
     border: 1px solid white;
