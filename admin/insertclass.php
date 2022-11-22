@@ -49,7 +49,7 @@ $results = $mysql->query($sql);
 
 if(!$results) {
     echo "ERROR! " . $mysql->error;
-    echo "<hr>" . $sql;
+    echo "<hr><br><br>" . $sql;
 } else {
     echo "<br><br>SUCCESS! Class added to fun_classes db.";
 }
