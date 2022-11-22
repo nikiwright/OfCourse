@@ -92,7 +92,7 @@ p1{
 
 #nav{
     display: flex;
-    width: 100%;
+    width: 50%;
     justify-content: space-evenly;
     text-decoration: none;
 }
