@@ -18,15 +18,14 @@ if($mysql->connect_errno) {
 ?>
 
 <htmL>
-<title>Search Page</title>
+<title>Add Page</title>
 <header>
     <link rel="stylesheet" href="../css/style.css">
 </header>
 
-<body id="bodyadmin">
+<body id="body1">
 
 <div>
-
 <?php
 include 'adminnavbar.php';
 ?>
