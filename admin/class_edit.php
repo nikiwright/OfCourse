@@ -16,9 +16,12 @@ if($mysql->connect_errno) {
     exit();
 }
 
-$sql = "SELECT * from fun_classes WHERE 1=1";
+if(empty($_REQUEST["recordid"])){
+    echo "ERROR. Please go through search page.";
+    exit();
+}
 
-echo "SQL: " . $sql;
+$sql = "SELECT * from fun_classes WHERE fun_classes_id = " . $_REQUEST["recordid"];
 
 $results = $mysql -> query($sql);
 
@@ -26,7 +29,10 @@ if(!$results){
     echo "ERROR: " . $mysql -> error;
 }
 
-echo "<br><h1>Edit Class</h1><br>";
+while($currentrow = $results -> fetch_assoc()){
+    echo"<h1>Edit " . $currentrow["className"] . "</h1>";
+
+}
 ?>
 <form action="update_classes.php">
 
@@ -37,25 +43,18 @@ echo "<br><h1>Edit Class</h1><br>";
     $recorddata = $results -> fetch_assoc();
 
     ?>
-    Course ID: <input type="text" name="courseid" value="<?php echo $recorddata["courseID"]; ?>">
+    Course ID: <input type="text" name="courseID" value="<?php echo $recorddata["courseID"];
+    ?>">
     <br>
-    Class Name: <input type="text" name="classname" value="<?php echo $recorddata["className"]; ?>">
+    Class Name: <input type="text" name="className" value="<?php echo $recorddata["className"]; ?>">
     <br>
-    Class Bio: <input type="text" name="classbio" value="<?php echo $recorddata["classBio"]; ?>">
+    Class Bio: <input type="text" name="classBio" value="<?php echo $recorddata["classBio"]; ?>">
     <br>
-    Class Department: <select name="classdepartment" value ="<?php echo $recorddata['classDepartment']; ?>">
-        <?php
-        $sql = "SELECT * from fun_classes";
-        $results = $mysql -> query($sql);
-        while($currentrow = $results -> fetch_assoc()){
-            echo"<option value='" . $currentrow["fun_classes_id"] . "'>" . $currentrow["classDepartment"] . "</option>";
-        }
-        ?>
-    </select>
+    Class Department: <input type="text" name="classDepartment" value="<?php echo $recorddata["classDepartment"]; ?>">
     <br>
-    Instructor Name: <input type="text" name="instructorname" value="<?php echo $recorddata["instructorName"]; ?>">
+    Instructor Name: <input type="text" name="instructorName" value="<?php echo $recorddata["instructorName"]; ?>">
     <br>
-    Instructor Rating: <input type="text" name="instructorrating" value="<?php echo $recorddata["instructorRating"]; ?>">
+    Instructor Rating: <input type="text" name="instructorRating" value="<?php echo $recorddata["instructorRating"]; ?>">
     <br>
     School: <select name="school" value ="<?php echo $recorddata['school']; ?>">
         <?php
@@ -63,6 +62,16 @@ echo "<br><h1>Edit Class</h1><br>";
         $results = $mysql -> query($sql);
         while($currentrow = $results -> fetch_assoc()){
             echo"<option value='" . $currentrow["school_id"] . "'>" . $currentrow["school"] . "</option>";
+        }
+        ?>
+    </select>
+    <br>
+    Interest: <select name="interest" value ="<?php echo $recorddata['interest']; ?>">
+        <?php
+        $sql = "SELECT * from interests";
+        $results = $mysql -> query($sql);
+        while($currentrow = $results -> fetch_assoc()){
+            echo"<option value='" . $currentrow["interest_id"] . "'>" . $currentrow["interest"] . "</option>";
         }
         ?>
     </select>
@@ -77,7 +86,7 @@ echo "<br><h1>Edit Class</h1><br>";
         ?>
     </select>
     <br>
-    Units: <select name="unit" value ="<?php echo $recorddata['unit_num']; ?>">
+    Units: <select name="unit_num" value ="<?php echo $recorddata['unit_num']; ?>">
         <?php
         $sql = "SELECT * from units";
         $results = $mysql -> query($sql);
