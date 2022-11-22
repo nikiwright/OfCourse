@@ -54,19 +54,19 @@ if($mysql->connect_errno) {
         <p1>EDITING OPTIONS</p1>
     </div>
     <div id="box2">
-        <a href="userprofile.php" class="button">
+        <a href="userprofile.php" class="adminbuttonbutton">
             USER PROFILES
         </a><br>
-        <a href="wellnessblog.php" class="navitem">
+        <a href="wellnessblog.php" class="adminbutton">
             WELLNESS BLOG
         </a><br>
-        <a href="sitepurpose.php" class="navitem">
+        <a href="sitepurpose.php" class="adminbutton">
             SITE PURPOSE
         </a><br>
-        <a href="class_edit.php.php" class="navitem">
+        <a href="class_edit.php.php" class="adminbutton">
             CLASSES
         </a><br>
-        <a href="review_edit.php" class="navitem">
+        <a href="review_edit.php" class="adminbutton">
             REVIEWS
         </a><br>
     </div>

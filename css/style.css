@@ -103,6 +103,14 @@ p1{
     font-size: 12pt;
 }
 
+.adminbutton{
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-family: "Helvetica Neue";
+    font-size: 10pt;
+}
+
 a{
     text-decoration: none;
     color: #FFBD00;
@@ -171,7 +179,6 @@ a:hover{
     border-radius: 10px;
     font-family: "Helvetica Neue";
     font-size: 10pt;
-    padding: 10px;
 }
 
 #search{
