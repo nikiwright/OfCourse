@@ -1,4 +1,4 @@
-<div id="nav">
+<div id="adminnavbar">
     <br>&nbsp
     <img src="../css/Of-Course-Logo.png" id="logo">
     <div class="dropdown">
