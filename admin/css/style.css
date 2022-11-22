@@ -104,14 +104,13 @@ p1{
 }
 
 #mainadmin{
-    display: flex;
     padding: 20px;
     background-color: #FFBD00;
     justify-content: space-evenly;
     text-decoration: none;
 }
 .adminbutton{
-    width: 30%;
+    width: 50%;
     justify-content: space-evenly;
     border: 1px solid white;
     border-radius: 10px;
