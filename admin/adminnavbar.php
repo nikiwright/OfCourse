@@ -1,7 +1,7 @@
 <div id="adminnavbar">
     <br>&nbsp
     <a href="funclasses_search.php">
-        <img src="./css/Of-Course-Logo.png" id="logo" >
+        <img src="../css/Of-Course-Logo.png" id="logo" >
     </a>
     <div class="dropdown">
         <button class="dropbtn">USER PROFILES
