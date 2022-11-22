@@ -41,7 +41,7 @@ if(empty($_REQUEST["confirm"])) {
 
 ?>
 
-<form action="delete_drilldown.php">
+<form action="class_delete.php">
     <input type="hidden" name="confirm" value="1">
     <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"];?>">
     <input type="submit" value="YES">
