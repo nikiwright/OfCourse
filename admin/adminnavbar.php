@@ -1,6 +1,8 @@
 <div id="adminnavbar">
     <br>&nbsp
-    <img src="../css/Of-Course-Logo.png" id="logo">
+    <a href="funclasses_search.php">
+        <img src="./css/Of-Course-Logo.png" id="logo" >
+    </a>
     <div class="dropdown">
         <button class="dropbtn">USER PROFILES
             <i class="fa fa-caret-down"></i>
