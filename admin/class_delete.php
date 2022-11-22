@@ -21,6 +21,20 @@ if(empty($_REQUEST["recordid"])){
     exit();
 }
 
+?>
+<htmL>
+<title>Add Page</title>
+<header>
+    <link rel="stylesheet" href="../css/style.css">
+</header>
+<body id="body2">
+<div>
+<?php
+include 'adminnavbar.php';
+?>
+</div>
+
+<?php
 if(empty($_REQUEST["confirm"])) {
     //ask to confirm
     echo "Do you really want to delete this movie?";
@@ -50,6 +64,6 @@ if(empty($_REQUEST["confirm"])) {
     }
 
 }
-
-
 ?>
+</body>
+</htmL>
