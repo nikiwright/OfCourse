@@ -22,7 +22,7 @@ if($mysql->connect_errno) {
 </header>
 
 <body id="body1">
-<div id="nav">
+<div class="adminnav">
     <br>&nbsp
     <img src="../css/Of-Course-Logo.png" id="logo">
     <div class="dropdown">
