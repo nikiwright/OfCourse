@@ -104,12 +104,11 @@ p1{
 }
 
 .adminbutton{
-    width: 80px;
+    width: 100px;
     border: 1px solid black;
     border-radius: 10px;
     font-family: "Helvetica Neue";
     font-size: 10pt;
-    padding: 2px;
 }
 
 a{
