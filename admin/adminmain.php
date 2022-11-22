@@ -52,11 +52,9 @@ if($mysql->connect_errno) {
 <div id="mainbox">
     <div id="box1">
         <p1>EDITING OPTIONS</p1>
-        <a href="class_edit.php">Classes</a>
     </div>
     <div id="box2">
-    <p1><strong>Classes</strong></p1><br>
-        <a href="class_edit.php"></a>
+        <a href="class_edit.php">Classes</a>
     </div>
 </body>
 </htmL>
