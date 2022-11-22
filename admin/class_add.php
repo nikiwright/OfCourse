@@ -25,11 +25,12 @@ if($mysql->connect_errno) {
 
 <body id="bodyadmin">
 
-<div
+<div>
 
 <?php
 include 'adminnavbar.php';
 ?>
+</div>
 
 <?php
 $sql = "SELECT * from fun_classes WHERE 1=1";
