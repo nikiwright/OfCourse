@@ -263,7 +263,7 @@ a:hover{
 /* Links inside the navbar */
 .navbar a {
     float: left;
-    font-size: 9px;
+    font-size: 9pt;
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -278,7 +278,7 @@ a:hover{
 
 /* Dropdown button */
 .dropdown .dropbtn {
-    font-size: 9px;
+    font-size: 9pt;
     border: none;
     outline: none;
     color: white;
