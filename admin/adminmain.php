@@ -55,7 +55,7 @@ if($mysql->connect_errno) {
     </div>
     <div id="box2">
     <p1><strong>Classes:</strong></p1><br>
-        <a href=""
+        <a href="class_edit.php"
     </div>
 </body>
 </htmL>
