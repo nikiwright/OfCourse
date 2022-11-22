@@ -277,6 +277,12 @@ a:hover{
     box-shadow: 2px 2px 5px black;
 }
 
+#bodyadmin{
+    background-color: #9BA2FF;
+    font-family: Helvetica Neue;
+    font-size: 9pt;
+}
+
 #adminsubmit{
     background-color: white;
     border: 2px solid white;
