@@ -25,7 +25,6 @@ if($mysql->connect_errno) {
 <?php
 include 'adminnavbar.php';
 ?>
-</div>
 
 <div id="header">
     <h1 style="margin-bottom: -10px;">ADMIN PAGE</h1><br>

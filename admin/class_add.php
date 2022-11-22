@@ -25,6 +25,8 @@ if($mysql->connect_errno) {
 
 <body id="bodyadmin">
 
+<div
+
 <?php
 include 'adminnavbar.php';
 ?>
