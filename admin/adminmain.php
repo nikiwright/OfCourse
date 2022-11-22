@@ -52,7 +52,7 @@ if($mysql->connect_errno) {
         <div class="dropdown-content">
             <a href="class_add.php">ADD</a>
             <a href="classlist_edit.php">EDIT</a>
-            <a href="class_delete.php">DELETE</a>
+            <a href="classlist_delete.php">DELETE</a>
         </div>
     </div>
     <div class="dropdown">

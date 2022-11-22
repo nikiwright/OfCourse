@@ -21,16 +21,35 @@ if(empty($_REQUEST["recordid"])){
     exit();
 }
 
-$sql = "SELECT * from fun_classes WHERE fun_classes_id = " . $_REQUEST["recordid"];
+if(empty($_REQUEST["confirm"])) {
+    //ask to confirm
+    echo "Do you really want to delete this movie?";
 
-$results = $mysql -> query($sql);
+?>
 
-if(!$results){
-    echo "ERROR: " . $mysql -> error;
+<form action="delete_drilldown.php">
+    <input type="hidden" name="confirm" value="1">
+    <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"];?>">
+    <input type="submit" value="YES">
+</form>
+
+
+<?php
+} else {
+    Echo "Deleting movie . . .";
+
+    $sql = "DELETE FROM fun_classes
+    WHERE fun_class_id= " . $_REQUEST["recordid"];
+
+    $results = $mysql -> query($sql);
+
+    if($results) {
+        echo "<br> Class deleted.";
+    } else {
+        echo "Error: " . $mysql -> error;
+    }
+
 }
 
-while($currentrow = $results -> fetch_assoc()){
-    echo"<h1>Delete " . $currentrow["className"] . "</h1>";
 
-}
 ?>
