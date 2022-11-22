@@ -43,15 +43,7 @@ echo "<br><h1>Add Class</h1><br>";
     <br>
     Class Bio: <input type="text" name="classbio" value="<?php echo $recorddata["classBio"]; ?>">
     <br>
-    Class Department: <select name="classdepartment" value ="<?php echo $recorddata['classDepartment']; ?>">
-        <?php
-        $sql = "SELECT * from fun_classes";
-        $results = $mysql -> query($sql);
-        while($currentrow = $results -> fetch_assoc()){
-            echo"<option value='" . $currentrow["fun_classes_id"] . "'>" . $currentrow["classDepartment"] . "</option>";
-        }
-        ?>
-    </select>
+    Class Department: <input type="text" name="classdepartment" value="<?php echo $recorddata["classDepartment"]; ?>">
     <br>
     Professor First Name: <input type="text" name="fname" value="<?php echo $recorddata["professorFirstName"]; ?>">
     <br>
