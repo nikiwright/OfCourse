@@ -2,7 +2,6 @@
     <br>&nbsp
     <a href="funclasses_search.php">
        <a href="funclasses_search.php"> <img src="./css/Of-Course-Logo.png" id="logo" ></a>
-    </a>
     <a href="user_profile.php" class="navitem">
         USER PROFILE
     </a><br>
