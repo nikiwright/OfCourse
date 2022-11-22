@@ -3,13 +3,12 @@ body{
     background-color: #9BA2FF;
 }
 
-#body1{
-    background-image: url('uscjohnmckay.jpg');
-    background-blend-mode: multiply;
-    background-size: 100%;
-    background-color: #9BA2FF;
-    overflow-x: hidden;
-    overflow-y: scroll;
+h1{
+    color: #FFBD00;
+}
+
+#adminsubmit{
+    background-color: #FFBD00;
 }
 
 #body2{

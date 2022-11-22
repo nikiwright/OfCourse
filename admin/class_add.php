@@ -98,7 +98,7 @@ echo "<br><h1>Add Class</h1><br>";
     </select>
     <br>
 
-    <input type="submit" value="Save Edits">
+    <input type="submit" value="Save Edits" id="adminsubmit">
 </form>
 </body>
 </html>
