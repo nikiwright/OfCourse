@@ -31,15 +31,6 @@ body{
 
 }
 
-#body4{
-    background-image: url('uscjohnmckay.jpg');
-    background-blend-mode: multiply;
-    background-size: 100%;
-    background-color: #9BA2FF;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-
 #container{
     margin: 20px;
 }
