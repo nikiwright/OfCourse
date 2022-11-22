@@ -26,6 +26,10 @@ if($mysql->connect_errno) {
 <body>
 
 <?php
+include 'adminnavbar.php';
+?>
+
+<?php
 $sql = "SELECT * from fun_classes WHERE 1=1";
 
 $results = $mysql -> query($sql);

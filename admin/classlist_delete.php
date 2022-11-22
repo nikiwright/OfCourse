@@ -22,6 +22,9 @@ if($mysql->connect_errno) {
 
 </head>
 <body>
+<?php
+include 'adminnavbar.php';
+?>
 <div id="container">
     <h1>Choose a class to delete:<hr></h1>
 
