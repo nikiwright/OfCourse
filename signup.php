@@ -29,11 +29,11 @@ session_start();
         }
 
         #box1 {
-            background-color:#FF5E5B;
+            background-color:#7BC950;
         }
 
         #submit {
-            background-color:#FF5E5B;
+            background-color:#7BC950;
         }
         h3{
             text-align: center;
