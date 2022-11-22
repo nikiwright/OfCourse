@@ -54,7 +54,7 @@ if($mysql->connect_errno) {
         <p1>EDITING OPTIONS</p1>
     </div>
     <div id="mainadmin">
-        USER PROFILES:
+        <p1>USER PROFILES:</p1>
         <a href="userprofile_add.php" class="adminbutton">
             ADD
         </a>
