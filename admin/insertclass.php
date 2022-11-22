@@ -21,6 +21,7 @@ $sql = "INSERT INTO fun_classes
         (" . $_REQUEST["courseid"] . ",
         " . $_REQUEST["classname"] . ",
         " . $_REQUEST["classbio"] . ",
+        " . $_REQUEST["classdepartment"] . ",
         " . $_REQUEST["fname"] . ",
         " . $_REQUEST["lname"] . ",
         '" . $_REQUEST["professorrating"] . "',
