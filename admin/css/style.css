@@ -106,7 +106,7 @@ p1{
 #mainadmin{
     display: flex;
     flex-grow: 5;
-    margin: 20px;
+    padding: 20px;
     background-color: white;
     justify-content: space-evenly;
     text-decoration: none;
