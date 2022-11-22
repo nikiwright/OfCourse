@@ -103,6 +103,12 @@ p1{
     font-size: 12pt;
 }
 
+#mainadmin{
+    display: flex;
+    flex-grow: 5;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
 .adminbutton{
     display: flex;
     flex-direction: row;

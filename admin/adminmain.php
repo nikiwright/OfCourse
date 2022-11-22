@@ -53,7 +53,7 @@ if($mysql->connect_errno) {
     <div id="box1">
         <p1>EDITING OPTIONS</p1>
     </div>
-    <div id="box2">
+    <div id="mainadmin">
         <a href="userprofile.php" class="adminbutton">
             USER PROFILES
         </a><br>
