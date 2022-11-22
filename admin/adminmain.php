@@ -74,10 +74,6 @@ if($mysql->connect_errno) {
         <a href="wellnessblog_delete.php" class="adminbutton">
             DELETE
         </a><br><br>
-        <p1>SITE PURPOSE:</p1>
-        <a href="sitepurpose_edit.php" class="adminbutton">
-            EDIT
-        </a><br><br>
         <p1>CLASSES:</p1>
         <a href="class_add.php" class="adminbutton">
             ADD
