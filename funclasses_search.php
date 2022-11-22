@@ -16,31 +16,16 @@ if($mysql->connect_errno) {
 }
 ?>
 <htmL>
-<title>Search Page</title>
+
 <header>
+    <title>Search Page</title>
     <link rel="stylesheet" href="./css/style.css">
 </header>
 
 <body id="body1">
-<div id="nav">
-    <br>&nbsp
-    <img src="./css/Of-Course-Logo.png" id="logo">
-    <a href="userprofile.php" class="navitem">
-        USER PROFILE
-    </a><br>
-    <a href="wellnessblog.php" class="navitem">
-        WELLNESS BLOG
-    </a><br>
-    <a href="sitepurpose.php" class="navitem">
-        SITE PURPOSE
-    </a><br>
-    <a href="login.php" class="navitem">
-        LOG IN
-    </a><br>
-    <a href="signup.php" class="navitem">
-        SIGN UP
-    </a><br>
-</div>
+<?php
+    include 'sitenav.php';
+?>
 
 <div id="header">
     <h1 style="margin-bottom: -10px;">FUN CLASSES AT USC</h1><br>

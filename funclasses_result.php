@@ -17,14 +17,16 @@ if($mysql->connect_errno) {
 }
 ?>
 <html>
-<title> Results Page </title>
 <header>
+    <title> Results Page </title>
     <link rel="stylesheet" href="./css/style.css">
 </header>
 <body id="body2">
+<?php
+include 'sitenav.php';
+?>
 
 <div id="container">
-    <img src="./css/Of-Course-Logo.png" id="logo">
 
     <h1 id="resultheader">Congrats!</h1><br>
     <h2 id="resultheader"> We Found You Fun Classes!</h2> <br>

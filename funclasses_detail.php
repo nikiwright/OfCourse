@@ -18,13 +18,15 @@ if($mysql->connect_errno) {
 
 
 <html>
-<title> Details Page </title>
 <header>
+    <title> Details Page </title>
     <link rel="stylesheet" href="./css/style.css">
 </header>
 <body id="body3">
 <div id="container">
-    <img src="./css/Of-Course-Logo.png" id="logo">
+    <?php
+    include 'sitenav.php';
+    ?>
 
     <?php
 
