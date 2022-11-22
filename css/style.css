@@ -277,6 +277,16 @@ a:hover{
     box-shadow: 2px 2px 5px black;
 }
 
+#adminsubmit{
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+#adminsubmit:hover{
+    background-color: #FFBD00;
+}
+
 /* Admin Page Nav Bar */
 
 /* Links inside the navbar */
