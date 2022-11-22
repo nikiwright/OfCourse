@@ -57,16 +57,16 @@ if($mysql->connect_errno) {
         <a href="userprofile.php" class="adminbutton">
             USER PROFILES
         </a><br>
-        <a href="wellnessblog.php" class="adminbutton">
+        <a href="wellnessblog.php" >
             WELLNESS BLOG
         </a><br>
-        <a href="sitepurpose.php" class="adminbutton">
+        <a href="sitepurpose.php" >
             SITE PURPOSE
         </a><br>
-        <a href="class_edit.php.php" class="adminbutton">
+        <a href="class_edit.php.php" >
             CLASSES
         </a><br>
-        <a href="review_edit.php" class="adminbutton">
+        <a href="review_edit.php" >
             REVIEWS
         </a><br>
     </div>
