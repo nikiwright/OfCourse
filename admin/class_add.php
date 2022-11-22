@@ -15,7 +15,17 @@ if($mysql->connect_errno) {
     echo "db connection error : " . $mysql->connect_error;
     exit();
 }
+?>
 
+<htmL>
+<title>Search Page</title>
+<header>
+    <link rel="stylesheet" href="../css/style.css">
+</header>
+
+<body>
+
+<?php
 $sql = "SELECT * from fun_classes WHERE 1=1";
 
 $results = $mysql -> query($sql);
@@ -90,3 +100,5 @@ echo "<br><h1>Add Class</h1><br>";
 
     <input type="submit" value="Save Edits">
 </form>
+</body>
+</html>
