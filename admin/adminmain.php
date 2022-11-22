@@ -34,6 +34,8 @@ if($mysql->connect_errno) {
             <a href="userprofile_edit.php">EDIT</a>
             <a href="userprofile_delete.php">DELETE</a>
         </div>
+    </div>
+    <div class="dropdown">
         <button class="dropbtn">WELLNESS BLOG
             <i class="fa fa-caret-down"></i>
         </button>
@@ -42,6 +44,8 @@ if($mysql->connect_errno) {
             <a href="wellnessblog_edit.php">EDIT</a>
             <a href="wellnessblog_delete.php">DELETE</a>
         </div>
+    </div>
+    <div class="dropdown">
         <button class="dropbtn">CLASSES
             <i class="fa fa-caret-down"></i>
         </button>
@@ -50,6 +54,8 @@ if($mysql->connect_errno) {
             <a href="class_edit.php">EDIT</a>
             <a href="class_delete.php">DELETE</a>
         </div>
+    </div>
+    <div class="dropdown">
         <button class="dropbtn">REVIEWS
             <i class="fa fa-caret-down"></i>
         </button>
