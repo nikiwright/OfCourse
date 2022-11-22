@@ -5,7 +5,8 @@
     <title>Wellness Blog</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<div id="body1">
+<body id="purplebody">
+<div>
 <?php
 include 'sitenav.php';
 ?>
