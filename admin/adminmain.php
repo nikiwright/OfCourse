@@ -18,23 +18,33 @@ if($mysql->connect_errno) {
 <htmL>
 <title>Search Page</title>
 <header>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </header>
 
 <body id="body1">
 <div id="nav">
     <br>&nbsp
-    <img src="./css/Of-Course-Logo.png" id="logo">
-    <a href="userprofile.php" class="navitem">
+    <img src="../css/Of-Course-Logo.png" id="logo">
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+    <a href="" class="navitem">
         USER PROFILES
     </a><br>
-    <a href="wellnessblog.php" class="navitem">
+    <a href="" class="navitem">
         WELLNESS BLOG
     </a><br>
-    <a href="class_edit.php.php" class="navitem">
+    <a href="" class="navitem">
         CLASSES
     </a><br>
-    <a href="review_edit.php" class="navitem">
+    <a href="" class="navitem">
         REVIEWS
     </a><br>
 </div>

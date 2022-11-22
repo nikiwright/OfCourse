@@ -100,7 +100,24 @@ p1{
 .navitem{
     margin-top: 30px;
     color: white;
-    font-size: 12pt;
+    font-size: 9pt;
+}
+
+#mainadmin{
+    padding: 20px;
+    background-color: #FFBD00;
+    text-decoration: none;
+    text-align: center;
+}
+.adminbutton{
+    width: 50%;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family: "Helvetica Neue";
+    font-size: 10pt;
+    background-color: white;
+    margin: 5px;
+    padding: 5px;
 }
 
 a{
@@ -146,9 +163,9 @@ a:hover{
     flex-direction: column;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    //width: 200px;
-   // height: 200px;
-    //margin-left: 100px;
+//width: 200px;
+// height: 200px;
+//margin-left: 100px;
     font-size: 10pt;
     align-content: center;
     margin: auto;
