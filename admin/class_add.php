@@ -38,7 +38,7 @@ if(!$results){
     echo "ERROR: " . $mysql -> error;
 }
 
-echo "<br><h1>Add Class</h1><br>";
+echo "<br><br><br><h1>Add Class</h1><br>";
 ?>
 <form action="insertclass.php">
 
