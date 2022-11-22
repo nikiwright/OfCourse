@@ -1,12 +1,13 @@
 body{
     font-family: Helvetica Neue;
     background-color: #9BA2FF;
+    font-size: 10pt;
 }
 
 h1{
     font-size: 42pt;
     font-weight: bold;
-    color: #FFBD00;
+    color: white;
 }
 
 #adminsubmit{
