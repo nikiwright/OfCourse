@@ -145,7 +145,7 @@ a:hover{
 }
 
 #box2{
-    flex-grow: 1;
+    flex-grow: 5;
     background-color: white;
     padding: 20px;
     border-bottom-left-radius: 20px;
