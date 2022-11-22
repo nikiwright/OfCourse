@@ -103,15 +103,6 @@ p1{
     font-size: 12pt;
 }
 
-.adminbutton{
-    display: flex;
-    width: 15%;
-    border: 1px solid black;
-    border-radius: 10px;
-    font-family: "Helvetica Neue";
-    font-size: 10pt;
-}
-
 a{
     text-decoration: none;
     color: #FFBD00;
