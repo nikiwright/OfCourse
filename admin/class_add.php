@@ -69,7 +69,6 @@ echo "<br><h1>Add Class</h1><br>";
         ?>
     </select>
     <br>
-    <br>
     Weekday: <select name="weekday" value ="<?php echo $recorddata['weekday']; ?>">
         <?php
         $sql = "SELECT * from weekdays";
