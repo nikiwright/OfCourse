@@ -23,7 +23,7 @@ $sql = "INSERT INTO fun_classes
         '" . $_REQUEST["classbio"] . "',
         '" . $_REQUEST["classdepartment"] . "',
         '" . $_REQUEST["instructorName"] . "',
-        '" . $_REQUEST["instructorRating"] . "',
+        " . $_REQUEST["instructorRating"] . ",
         " . $_REQUEST["school"] . ",
         " . $_REQUEST["interest"] . ",
         " . $_REQUEST["weekday"] . ",
