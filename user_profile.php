@@ -41,6 +41,22 @@ session_start();   // session starts
             background-color: #FF5E5B;
         }
 
+        #edit {
+            background-color: #7BC950;
+            font-weight: bold;
+            border-width: 2px;
+            text-align: center;
+            padding: 2px;
+            color: white;
+            width: 120px;
+            margin-left: 3%;
+        }
+
+        #edit:hover{
+            background-color: white;
+            color: black;
+        }
+
     </style>
 </head>
 <body>
@@ -54,7 +70,7 @@ include 'sitenav.php';
 <div id="mainbox">
     <div id="box1">
         <?php
-        if ($_SESSION['loggedin'] == "yes") {
+        if ($_SESSION['logged_in'] == "yes") {
        echo "Hello ". $_SESSION['first'] . "!". "<br>". "You are logged in.";
         } else {
            echo "You are not logged in. Click" ."<a id='a' href='login.php'> here </a>" . " to log in/signup!";
@@ -63,13 +79,18 @@ include 'sitenav.php';
     </div>
     <div id="box2">
         <?php
-        if ($_SESSION['loggedin'] == "yes") {
+        if ($_SESSION['logged_in'] == "yes") {
             echo "First Name: " . $_SESSION['first'] . "<br>" .
                 "Last Name: " . $_SESSION['last'] . "<br>" .
                 "Username: " . $_SESSION['username'] . "<br>";
 
             echo "<a href='logout.php'>"."<br>".
                 "<input type='submit' name='logout' value='LOGOUT' id='submit' class='button'>".
+                "</a>";
+
+
+            echo "<a href='edit_profile.php'>".
+                "<input type='submit' name='edituserprofile' value='EDIT PROFILE' id='edit' class='button'>".
                 "</a>";
 
         } else {

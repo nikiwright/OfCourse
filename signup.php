@@ -84,7 +84,7 @@ include 'sitenav.php';
     <?php
 
 
-    if ($_SESSION['loggedin'] == "yes")   // Checking whether the session is already there or not
+    if ($_SESSION['logged_in'] == "yes")   // Checking whether the session is already there or not
     {
         // all good
 //            echo "Logged in!";

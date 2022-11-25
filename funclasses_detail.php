@@ -139,8 +139,8 @@ if($mysql->connect_errno) {
                 "\r"; // \r is a carriage return in plain text
         }
 
-        $from = $_SESSION['first']. $_SESSION['last']; // from the form
-        $headers = "From: $from" . $_REQUEST["user_email"]; // create a header entry for "FROM" email field
+        $from =  $_REQUEST["user_email"]; // from the form
+        $headers = "From: $from"; // create a header entry for "FROM" email field
 
         $send = mail($to,$subject,$message,$headers);
         if ($send == 1)

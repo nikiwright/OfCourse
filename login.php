@@ -81,7 +81,7 @@ include 'sitenav.php';
 
         }
 
-        if ($_SESSION['loggedin'] == "yes")   // Checking whether the session is already there or not
+        if ($_SESSION['logged_in'] == "yes")   // Checking whether the session is already there or not
         {
             // all good
 //            echo "Logged in!";
@@ -103,13 +103,13 @@ include 'sitenav.php';
 
                 $row = mysqli_fetch_array($results);
 
-                if ($row['username'] === $user && $row['password'] === $pass) {
+               if ($row['username'] === $user && $row['password'] === $pass) {
 
-                    $_SESSION['loggedin'] = "yes";
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['first'] = $row['user_firstName'];
                     $_SESSION['last'] = $row['user_lastName'];
                     $_SESSION['id'] = $row['user_id'];
+                    $_SESSION['logged_in'] = "yes";
                     header('Location:user_profile.php');
                     exit();
 
