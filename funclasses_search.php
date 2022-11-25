@@ -27,7 +27,7 @@ if($mysql->connect_errno) {
     include 'sitenav.php';
 ?>
 
-<div id="text2">
+<div id="floatingbox">
     <?php
     if ($_SESSION['loggedin'] == "yes") {
         echo "Hello ". "<strong>".$_SESSION['first']. "! "."</strong>". "You are logged in."."<br>";
@@ -133,8 +133,11 @@ if($mysql->connect_errno) {
             </div>
             <br><space></space><space></space><space></space><space></space><br>
 
-            <input type="submit" value="Submit" id="submit" class="button">
+            <input type="submit" value="SUBMIT" id="submit" class="button">
+            OR...
+            <input type="submit" value="VIEW ALL" id="view_all" class="button">
         </form>
+
     </div>
 </div>
 <div id="text1">

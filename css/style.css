@@ -228,6 +228,20 @@ a:hover{
     color: black;
 }
 
+#view_all{
+    font-weight: bold;
+    border-width: 2px;
+    text-align: center;
+    padding: 2px;
+    background-color: #7BC950;
+    color: white;
+}
+
+#view_all:hover{
+    background-color: white;
+    color: black;
+}
+
 #text1{
     position: relative;
     margin-left: 100px;
@@ -241,16 +255,17 @@ a:hover{
     box-shadow: 2px 2px 5px black;
 }
 
-#text2{
+#floatingbox{
     position: relative;
     margin-left: 80%;
+    margin-top: 0%;
     width: 15%;
     height: auto;
     background-color: rgba(255,255,255,.5);
     border-radius: 20px;
     height: auto;
     padding: 1%;
-    z-index: 1;
+    z-index: 2;
     box-shadow: 2px 2px 5px black;
 }
 
