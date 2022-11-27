@@ -94,7 +94,7 @@ include 'sitenav.php';
                 "</a>";
 
         } else {
-         echo "Log in/ sign up to view your profile!";
+         echo "Log in/ sign up to view/edit your profile!";
         }
         ?>
     </div>

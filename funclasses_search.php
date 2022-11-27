@@ -29,7 +29,7 @@ if($mysql->connect_errno) {
 
 <div id="floatingbox">
     <?php
-    if ($_SESSION['loggedin'] == "yes") {
+    if ($_SESSION['logged_in'] == "yes") {
         echo "Hello ". "<strong>".$_SESSION['first']. "! "."</strong>". "You are logged in."."<br>";
     } else {
        echo "You are not logged in. Click" ."<a id='a' href='login.php'> here </a>" . " to log in/signup!";
@@ -134,9 +134,10 @@ if($mysql->connect_errno) {
             <br><space></space><space></space><space></space><space></space><br>
 
             <input type="submit" value="SUBMIT" id="submit" class="button">
-            OR...
-            <input type="submit" value="VIEW ALL" id="view_all" class="button">
+
         </form>
+        OR...
+        <input type="submit" value="VIEW ALL" id="view_all" class="button">
 
     </div>
 </div>
