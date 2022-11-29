@@ -134,11 +134,11 @@ if($mysql->connect_errno) {
 
         while($currentrow = $results->fetch_assoc()) {
             $message .= "Course Title: ". $currentrow["className"] .  "\r".
-                "CourseID: " ."</strong>". $currentrow["courseID"].  "\r".
-                "About: ". $currentrow["classBio"].
+                "CourseID: " . $currentrow["courseID"] .  "\r".
+                "About: ". $currentrow["classBio"] .
                 "\r"; // \r is a carriage return in plain text
         }
-
+        $results->seek_row(0);
         $from =  $_REQUEST["user_email"]; // from the form
         $headers = "From: $from"; // create a header entry for "FROM" email field
 

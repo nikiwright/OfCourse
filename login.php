@@ -124,6 +124,7 @@ include 'sitenav.php';
                     $_SESSION['first'] = $row['user_firstName'];
                     $_SESSION['last'] = $row['user_lastName'];
                     $_SESSION['id'] = $row['user_id'];
+                    $_SESSION['pass'] = $row['password'];
                     $_SESSION['logged_in'] = "yes";
                     header('Location:user_profile.php');
                     exit();

@@ -97,8 +97,7 @@ include 'sitenav.php';
                 <tr>
                     <td> Password: </td>
                     <td><input type="text" name="password" minlength="8" placeholder="<?php
-
-                        echo $_SESSION['password']
+                        echo $_SESSION['pass']
                         ?>" required></td>
                 </tr>
 
@@ -116,9 +115,11 @@ include 'sitenav.php';
                 "<input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'>".
                 "</a>";
 
-        } else {
-            echo "Log in/ sign up to view your profile!";
         }
+
+
+
+
         ?>
     </div>
 </div>
