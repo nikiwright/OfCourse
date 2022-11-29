@@ -35,6 +35,22 @@ session_start();   // session starts
             background-color:#FF5E5B;
         }
 
+        #admin {
+            background-color: #9BA2FF;
+            font-weight: bold;
+            border-width: 2px;
+            text-align: center;
+            padding: 2px;
+            color: white;
+            width: 120px;
+            margin-left: 3%;
+        }
+
+        #admin:hover{
+            background-color: white;
+            color: black;
+        }
+
     </style>
 </head>
 
@@ -63,7 +79,6 @@ include 'sitenav.php';
                 </tr>
                 <tr>
                     <td> <br> <input type="submit" name="login" value="LOGIN" id="submit" class="button"></td>
-                    <td></td>
                 </tr>
             </table>
         </form>
