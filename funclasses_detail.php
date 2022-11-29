@@ -129,7 +129,7 @@ if($mysql->connect_errno) {
 
         $to = $_REQUEST["friend_email"]; // from the form
         $subject = "You might like this fun class @ USC...";
-        $message = "Hello! A friend suggested you might like ". $url. "\r";
+        $message = "Hello! A friend suggested you might like: ". $url. "\r";
         $message .="--------------------------------\r";
 
         while($currentrow = $results->fetch_assoc()) {
@@ -146,6 +146,7 @@ if($mysql->connect_errno) {
         if ($send == 1)
         {
             echo "Thank You! Your email sent to " . $_REQUEST["friend_email"];
+            echo $message;
             exit();
         } else {
             echo 'Unable to send email. Please try again.';
