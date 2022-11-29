@@ -162,7 +162,7 @@ include 'sitenav.php';
                     <input type="hidden" name="friday"
                            value="<?= $_REQUEST["friday"] ?>">
 
-                    <input type="submit" value="Previous">
+                    <input type="submit" value="Previous" id="submit" class="button">
                 </form>
                 <?php
             }
@@ -188,7 +188,7 @@ include 'sitenav.php';
                     <input type="hidden" name="friday"
                            value="<?= $_REQUEST["friday"] ?>">
 
-                    <input type="submit" value="Next">
+                    <input type="submit" value="Next" id="submit" class="button">
                 </form>
                 <?php
             }
