@@ -18,10 +18,19 @@ if($mysql->connect_errno) {
 
 
 <html>
-<header>
+<head>
     <title> Details Page </title>
     <link rel="stylesheet" href="./css/style.css">
-</header>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7HR3PWKYET"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7HR3PWKYET');
+</script>
 <body id="body3">
 <div id="container">
     <?php

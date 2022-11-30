@@ -11,10 +11,10 @@
     <a href="sitepurpose.php" class="navitem">
         SITE PURPOSE
     </a><br>
-        <a href="add_course.php" class="navitem">
-           ADD A COURSE
-        </a><br>
     <a href="login.php" class="navitem">
         LOG IN
+    </a><br>
+    <a href="signup.php" class="navitem">
+        SIGN UP
     </a><br>
 </div>

@@ -17,12 +17,21 @@ if($mysql->connect_errno) {
 ?>
 <htmL>
 
-<header>
+<head>
     <title>Search Page</title>
     <link rel="stylesheet" href="./css/style.css">
-</header>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7HR3PWKYET"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-7HR3PWKYET');
+</script>
 <body id="body1">
+
 <?php
     include 'sitenav.php';
 ?>
