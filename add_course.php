@@ -44,6 +44,10 @@ if($mysql->connect_errno) {
             width: 110px;
         }
 
+        a {
+            color: black;
+        }
+
     </style>
 </header>
 <body>
@@ -52,87 +56,101 @@ include 'sitenav.php';
 ?>
 <h1 id="resultheader">ADD A FUN COURSE YOU'VE TAKEN!</h1><br>
 
+
 <div id="transparentbox">
-    <form action="" method="post">
-        <table width="300" border="0">
-            <tr>
-                <td> Course ID: </td>
-                <td> <input type="text" name="courseid" required></td>
-            </tr>
-            <tr>
-                <td> Course Title: </td>
-                <td> <input type="text" name="classname" required></td>
-            </tr>
-            <tr>
-                <td> About/Bio: </td>
-                <td>  <input type="text" name="classbio" required></td>
-            </tr>
-            <tr>
-                <td>  Class Department:  </td>
-                <td> <input type="text" name="classdepartment" required></td>
-            </tr>
-            <tr>
-                <td> Instructor Full Name:  </td>
-                <td> <input type="text" name="instructorname" required></td>
-            </tr>
-            <tr>
-                <td>  Instructor Rating (ratemyprofessor if applicable):  </td>
-                <td> <input type="number" name="instructorrating" min="1.0" max="5.0"></td>
-            </tr>
-            <tr>
-                <td> School:  </td>
-                <td><select name="school" value ="<?php echo $recorddata['interest']; ?>" >
-                        <?php
-                        $sql = "SELECT * from schools";
-                        $results = $mysql -> query($sql);
-                        while($currentrow = $results -> fetch_assoc()){
-                            echo"<option value='" . $currentrow["school_id"] . "'>" . $currentrow["school"] . "</option>";
-                        }
-                        ?>
-                    </select></td>
-            </tr>
-            <tr>
-                <td> Interest: </td>
-                <td><select name="interest" value ="<?php echo $recorddata['interest']; ?>">
-                        <?php
-                        $sql = "SELECT * from interests";
-                        $results = $mysql -> query($sql);
-                        while($currentrow = $results -> fetch_assoc()){
-                            echo"<option value='" . $currentrow["interest_id"] . "'>" . $currentrow["interest"] . "</option>";
-                        }
-                        ?>
-                    </select></td>
-            </tr>
-            <tr>
-                <td> Weekday: </td>
-                <td><select name="weekday" value ="<?php echo $recorddata['weekday']; ?>">
-                        <?php
-                        $sql = "SELECT * from weekdays";
-                        $results = $mysql -> query($sql);
-                        while($currentrow = $results -> fetch_assoc()){
-                            echo"<option value='" . $currentrow["weekday_id"] . "'>" . $currentrow["weekday"] . "</option>";
-                        }
-                        ?>
-                    </select></td>
-            </tr>
-            <tr>
-                <td> Units: </td>
-                <td><select name="unit" value ="<?php echo $recorddata['unit_num']; ?>">
-                        <?php
-                        $sql = "SELECT * from units";
-                        $results = $mysql -> query($sql);
-                        while($currentrow = $results -> fetch_assoc()){
-                            echo"<option value='" . $currentrow["unit_id"] . "'>" . $currentrow["unit_num"] . "</option>";
-                        }
-                        ?>
-                    </select></td>
-            </tr>
-            <tr>
-                <td> <br>  <input type="submit" name="addcourse" value="ADD COURSE" id="submit" class="button"></td>
-                <td></td>
-            </tr>
-        </table>
-    </form>
+
+    <?php
+    if ($_SESSION['logged_in'] == "yes")   // Checking whether the session is already there or not
+    {
+?>
+        <form action="" method="post">
+            <table width="300" border="0">
+                <tr>
+                    <td> Course ID: </td>
+                    <td> <input type="text" name="courseid" required></td>
+                </tr>
+                <tr>
+                    <td> Course Title: </td>
+                    <td> <input type="text" name="classname" required></td>
+                </tr>
+                <tr>
+                    <td> About/Bio: </td>
+                    <td>  <input type="text" name="classbio" required></td>
+                </tr>
+                <tr>
+                    <td>  Class Department:  </td>
+                    <td> <input type="text" name="classdepartment" required></td>
+                </tr>
+                <tr>
+                    <td> Instructor Full Name:  </td>
+                    <td> <input type="text" name="instructorname" required></td>
+                </tr>
+                <tr>
+                    <td>  Instructor Rating (ratemyprofessor if applicable):  </td>
+                    <td> <input type="number" name="instructorrating" min="1.0" max="5.0"></td>
+                </tr>
+                <tr>
+                    <td> School:  </td>
+                    <td><select name="school" value ="<?php echo $recorddata['interest']; ?>" >
+                            <?php
+                            $sql = "SELECT * from schools";
+                            $results = $mysql -> query($sql);
+                            while($currentrow = $results -> fetch_assoc()){
+                                echo"<option value='" . $currentrow["school_id"] . "'>" . $currentrow["school"] . "</option>";
+                            }
+                            ?>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td> Interest: </td>
+                    <td><select name="interest" value ="<?php echo $recorddata['interest']; ?>">
+                            <?php
+                            $sql = "SELECT * from interests";
+                            $results = $mysql -> query($sql);
+                            while($currentrow = $results -> fetch_assoc()){
+                                echo"<option value='" . $currentrow["interest_id"] . "'>" . $currentrow["interest"] . "</option>";
+                            }
+                            ?>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td> Weekday: </td>
+                    <td><select name="weekday" value ="<?php echo $recorddata['weekday']; ?>">
+                            <?php
+                            $sql = "SELECT * from weekdays";
+                            $results = $mysql -> query($sql);
+                            while($currentrow = $results -> fetch_assoc()){
+                                echo"<option value='" . $currentrow["weekday_id"] . "'>" . $currentrow["weekday"] . "</option>";
+                            }
+                            ?>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td> Units: </td>
+                    <td><select name="unit" value ="<?php echo $recorddata['unit_num']; ?>">
+                            <?php
+                            $sql = "SELECT * from units";
+                            $results = $mysql -> query($sql);
+                            while($currentrow = $results -> fetch_assoc()){
+                                echo"<option value='" . $currentrow["unit_id"] . "'>" . $currentrow["unit_num"] . "</option>";
+                            }
+                            ?>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td> <br>  <input type="submit" name="addcourse" value="ADD COURSE" id="submit" class="button"></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+
+    <?php
+    } else {
+        echo "<a href='login.php'> Log In </a>". "to add a course.";
+    }
+
+    ?>
+
 
     <?php
 
