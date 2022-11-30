@@ -130,15 +130,15 @@ if($mysql->connect_errno) {
         $to = $_REQUEST["friend_email"]; // from the form
         $subject = "You might like this fun class @ USC...";
         $message = "Hello! A friend suggested you might like: ". $url. "\r";
-        $message .="--------------------------------\r";
-
+        $message .="-------------------------------------------------------------------------------------------------------------------------\r";
+        $results = $mysql -> query($sql);
         while($currentrow = $results->fetch_assoc()) {
             $message .= "Course Title: ". $currentrow["className"] .  "\r".
                 "CourseID: " . $currentrow["courseID"] .  "\r".
                 "About: ". $currentrow["classBio"] .
                 "\r"; // \r is a carriage return in plain text
         }
-        $results->seek_row(0);
+
         $from =  $_REQUEST["user_email"]; // from the form
         $headers = "From: $from"; // create a header entry for "FROM" email field
 
@@ -146,7 +146,7 @@ if($mysql->connect_errno) {
         if ($send == 1)
         {
             echo "Thank You! Your email sent to " . $_REQUEST["friend_email"];
-            echo $message;
+//            echo $message;
             exit();
         } else {
             echo 'Unable to send email. Please try again.';
