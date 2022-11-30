@@ -57,6 +57,10 @@ session_start();   // session starts
             color: black;
         }
 
+        #admin {
+            color: black;
+        }
+
     </style>
 </head>
 <body>
@@ -75,6 +79,13 @@ include 'sitenav.php';
         } else {
            echo "You are not logged in. Click" ."<a id='a' href='login.php'> here </a>" . " to log in/signup!";
         }
+
+        if ($_SESSION['security_level'] == "0") {
+            echo "You have admin access. Go to". "<a href='admin/adminmain.php' id='admin'> Admin Page. </a>";
+        } else {
+            "";
+        }
+
         ?>
     </div>
     <div id="box2">

@@ -35,22 +35,6 @@ session_start();   // session starts
             background-color:#FF5E5B;
         }
 
-        #admin {
-            background-color: #9BA2FF;
-            font-weight: bold;
-            border-width: 2px;
-            text-align: center;
-            padding: 2px;
-            color: white;
-            width: 120px;
-            margin-left: 3%;
-        }
-
-        #admin:hover{
-            background-color: white;
-            color: black;
-        }
-
     </style>
 </head>
 
@@ -64,17 +48,18 @@ include 'sitenav.php';
 <div id="mainbox">
     <div id="box1">
         Need an account? <a href="signup.php"> Sign Up </a>
+
     </div>
     <div id="box2">
         <form action="" method="post">
 
             <table width="200" border="0">
                 <tr>
-                    <td> UserName</td>
+                    <td> Username</td>
                     <td><input type="text" name="user" required></td>
                 </tr>
                 <tr>
-                    <td> PassWord</td>
+                    <td> Password</td>
                     <td><input type="password" name="pass" required></td>
                 </tr>
                 <tr>
@@ -125,6 +110,7 @@ include 'sitenav.php';
                     $_SESSION['last'] = $row['user_lastName'];
                     $_SESSION['id'] = $row['user_id'];
                     $_SESSION['pass'] = $row['password'];
+                   $_SESSION['security_level'] = $row['security_level'];
                     $_SESSION['logged_in'] = "yes";
                     header('Location:user_profile.php');
                     exit();
@@ -140,7 +126,9 @@ include 'sitenav.php';
         }
 
         ?>
+
     </div>
+
 </div>
 
 
