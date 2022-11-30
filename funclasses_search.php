@@ -143,7 +143,11 @@ if($mysql->connect_errno) {
 </div>
 <div id="text1">
     <h2>LOOKING TO SWITCH UP YOUR SCHEDULE?</h2><br>
-    <p1>OfCourse believes in the importance of taking advantage of the wide range of classes that USC has to offer. Taking classes outside your major/minor requirements can be a great opportunity for growth and relaxation. But we know that a hindrance for many students is not knowing which classes to take. OfCourse is a tool made by students for students to help you find courses that boost your physical and mental wellbeing.</p1>
+    <p1>
+        OfCourse is a tool made by students for students to help you
+        find courses that boost your physical and mental wellbeing.</p1>
+    <a href="sitepurpose.php"> Learn More </a>
+
 </div>
 
 </body>
