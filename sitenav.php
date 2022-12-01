@@ -14,7 +14,4 @@
     <a href="login.php" class="navitem">
         LOG IN
     </a><br>
-    <a href="signup.php" class="navitem">
-        SIGN UP
-    </a><br>
 </div>
