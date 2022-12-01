@@ -79,7 +79,7 @@ include 'sitenav.php';
         ?>
     </div>
     <div id="box2">
-
+        <!-- <form action ="update_profile.php" method="post"> -->
         <form action ="" method="post">
             <table width="250" border="0">
                 <tr>
@@ -102,6 +102,8 @@ include 'sitenav.php';
                 </tr>
 
             </table>
+
+            <!-- <input type = "submit" value = "Save Edits"> -->
         </form>
 
         <?php
@@ -117,7 +119,23 @@ include 'sitenav.php';
 
         }
 
+        $sql = "UPDATE users
+    SET
+    firstName = '". $_REQUEST["firstName"] ."', 
+    lastName = '". $_REQUEST["lastName"] ."',
+    username = '". $_REQUEST["username"] ."',
+    password = '". $_REQUEST["password"] ."'
+    WHERE 
+    ";
+        echo $sql;
 
+        $results = $mysql -> query($sql);
+
+        if($results){
+            echo "PROFILE UPDATED";
+        } else {
+            echo "ERROR; TRY AGAIN";
+        }
 
 
         ?>
