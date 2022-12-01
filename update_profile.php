@@ -19,8 +19,8 @@ session_start();   // session starts
 
 $sql = "UPDATE users
     SET
-    firstName = '". $_REQUEST["firstName"] ."', 
-    lastName = '". $_REQUEST["lastName"] ."',
+    user_firstName = '". $_REQUEST["firstName"] ."', 
+    user_lastName = '". $_REQUEST["lastName"] ."',
     username = '". $_REQUEST["username"] ."',
     password = '". $_REQUEST["password"] ."'
     WHERE 
@@ -34,8 +34,6 @@ if($results){
 } else {
     echo "ERROR; TRY AGAIN";
 }
-
-
 ?>
 
 

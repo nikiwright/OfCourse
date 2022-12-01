@@ -79,8 +79,7 @@ include 'sitenav.php';
         ?>
     </div>
     <div id="box2">
-        <!-- <form action ="update_profile.php" method="post"> -->
-        <form action ="" method="post">
+        <form action ="update_profile.php" method="post">
             <table width="250" border="0">
                 <tr>
                     <td> First Name: </td>
@@ -100,45 +99,16 @@ include 'sitenav.php';
                         echo $_SESSION['pass']
                         ?>" required></td>
                 </tr>
-
+                <tr>  <td> <input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'></td>  </tr>
+                <tr>  <td>  <?php
+                        echo "<a href='user_profile.php'>"."<br>".
+                            "<input type='submit' name='discard' value='DISCARD' id='submit' class='button'>".
+                            "</a>";
+                        ?>
+                    </td>
+                </tr>
             </table>
-
-            <!-- <input type = "submit" value = "Save Edits"> -->
         </form>
-
-        <?php
-        if ($_SESSION['logged_in'] == "yes") {
-            echo "<a href='user_profile.php'>"."<br>".
-                "<input type='submit' name='discard' value='DISCARD' id='submit' class='button'>".
-                "</a>";
-
-
-            echo "<a href='user_profile.php'>".
-                "<input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'>".
-                "</a>";
-
-        }
-
-        $sql = "UPDATE users
-    SET
-    firstName = '". $_REQUEST["firstName"] ."', 
-    lastName = '". $_REQUEST["lastName"] ."',
-    username = '". $_REQUEST["username"] ."',
-    password = '". $_REQUEST["password"] ."'
-    WHERE 
-    ";
-        echo $sql;
-
-        $results = $mysql -> query($sql);
-
-        if($results){
-            echo "PROFILE UPDATED";
-        } else {
-            echo "ERROR; TRY AGAIN";
-        }
-
-
-        ?>
     </div>
 </div>
 </body>
