@@ -31,7 +31,6 @@ if($mysql->connect_errno) {
             margin-left: 23%;
             font-size: 16pt;
             position: relative;
-            height: auto;
             background-color: rgba(255,255,255,.5);
             border-radius: 20px;
             height: auto;

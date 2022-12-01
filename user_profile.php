@@ -119,5 +119,14 @@ include 'sitenav.php';
         ?>
     </div>
 </div>
+
+<div id="">
+    <?php
+    if ($_SESSION['logged_in'] == "yes") {
+        echo "Your reviews" . "<br>";
+        "<br style='clear:both;'>";
+    }
+    ?>
+</div>
 </body>
 </html>

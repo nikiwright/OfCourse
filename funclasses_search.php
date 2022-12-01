@@ -20,6 +20,12 @@ if($mysql->connect_errno) {
 <head>
     <title>Search Page</title>
     <link rel="stylesheet" href="./css/style.css">
+    <style>
+        #floatingbox {
+            width: 18%;
+            margin-left: 76%;
+        }
+    </style>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HR3PWKYET"></script>
@@ -39,7 +45,8 @@ if($mysql->connect_errno) {
 <div id="floatingbox">
     <?php
     if ($_SESSION['logged_in'] == "yes") {
-        echo "Hello ". "<strong>".$_SESSION['first']. "! "."</strong>". "You are logged in."."<br>";
+        echo "Hello ". "<strong>".$_SESSION['first']. "! "."</strong>". "You are logged in."."<br><br>";
+        echo "Your most recently viewed class: "."<a href=". $_SESSION['courseurl']. ">".  $_SESSION['coursename']."</a>" . "<br>";
     } else {
        echo "You are not logged in. Click" ."<a id='a' href='login.php'> here </a>" . " to log in/signup!";
     }
@@ -145,8 +152,7 @@ if($mysql->connect_errno) {
             <input type="submit" value="SUBMIT" id="submit" class="button">
 
         </form>
-        OR...
-        <input type="submit" value="VIEW ALL" id="view_all" class="button">
+        OR <a href="funclasses_result.php?interest=ALL&school=ALL&unit_num=ALL"> VIEW ALL </a>
 
     </div>
 </div>
@@ -155,9 +161,10 @@ if($mysql->connect_errno) {
     <p1>
         OfCourse is a tool made by students for students to help you
         find courses that boost your physical and mental wellbeing.</p1>
-    <a href="sitepurpose.php"> Learn More </a>
 
+    <a href="sitepurpose.php"> Learn More </a>
 </div>
+
 
 </body>
 </htmL>

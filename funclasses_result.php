@@ -139,7 +139,7 @@ include 'sitenav.php';
                 $start = $_REQUEST["start"];
             }
 
-            $end = $start + 5;
+            $end = $start + 4;
 
             if ($results->num_rows < $end) {
                 $end = $results->num_rows;
@@ -153,7 +153,7 @@ include 'sitenav.php';
                 ?>
                 <form action="" method="get">
                     <input type="hidden" name="start"
-                           value="<?= ($start - 6) ?>">
+                           value="<?= ($start - 5) ?>">
                     <input type="hidden" name="interest"
                            value="<?= $_REQUEST["interest"] ?>">
                     <input type="hidden" name="school"
@@ -179,7 +179,7 @@ include 'sitenav.php';
                 ?>
                 <form action="" method="get">
                     <input type="hidden" name="start"
-                           value="<?= ($start + 6) ?>">
+                           value="<?= ($start + 5) ?>">
                     <input type="hidden" name="interest"
                            value="<?= $_REQUEST["interest"] ?>">
                     <input type="hidden" name="school"

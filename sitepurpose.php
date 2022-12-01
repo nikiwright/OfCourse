@@ -31,10 +31,15 @@ if($mysql->connect_errno) {
 <?php
 include 'sitenav.php';
 ?>
-<p1>OfCourse believes in the importance of taking advantage of the wide range of classes that USC has to offer.
-    Taking classes outside your major/minor requirements can be a great opportunity for growth and relaxation.
-    But we know that a hindrance for many students is not knowing which classes to take.
-    OfCourse is a tool made by students for students to help you find courses that boost your physical and mental wellbeing.</p1>
+
+WHAT IS OFCOURSE? <br><br>
+
+OfCourse is a tool made by students for students to help you find courses that boost your physical and mental wellbeing. <br><br>
+
+OfCourse believes in the importance of taking advantage of the wide range of classes that USC has to offer.
+Taking classes outside your major/minor requirements can be a great opportunity for growth and relaxation.
+But we know that a hindrance for many students is not knowing which classes to take.
+
 
 </body>
 </html>
