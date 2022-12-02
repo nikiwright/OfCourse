@@ -87,6 +87,9 @@ include 'sitenav.php';
             if(!empty(($_REQUEST['wednesday']) AND ($_REQUEST['friday']))){
                 $x = 13;
             }
+            if(!empty(($_REQUEST['tuesday']) AND ($_REQUEST['friday']))){
+                $x = 17;
+            }
             if(!empty(($_REQUEST['monday']) AND ($_REQUEST['tuesday']) AND ($_REQUEST['wednesday']))){
                 $x = 11;
             }
