@@ -17,40 +17,53 @@ if($mysql->connect_errno) {
 }
 ?>
 <htmL>
-<title>Delete Page</title>
 <header>
+    <title>Delete Page</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            background-color:#9BA2FF;
+        }
+
+        #box1 {
+            background-color:#FFC72C;
+            color: black;
+        }
+
+    </style>
 </header>
-<body id="body3">
-<div>
+<body>
     <?php
     include 'adminnavbar.php';
     ?>
-</div>
-<div id="container">
-    <h1>Choose a class to delete:<hr></h1>
+    <h1 id="resultheader">Delete Classes</h1><br>
+<div id="mainbox">
+    <div id="box1">
+        Administrative Manual Class Deleting
+    </div>
+    <div id="box2">
+        <?php
 
-    <?php
-
-    $sql = "SELECT * FROM generalView WHERE 1=1";
+        $sql = "SELECT * FROM generalView WHERE 1=1";
 
 
-    $results = $mysql->query($sql);
+        $results = $mysql->query($sql);
 
-    if(!$results) {
-        echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
-        echo "SQL Error: " . $mysql->error . "<hr>";
-        exit();
-    }
+        if(!$results) {
+            echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
+            echo "SQL Error: " . $mysql->error . "<hr>";
+            exit();
+        }
 
-    while($currentrow = $results->fetch_assoc()) {
-        echo "<div class='title'><strong>" . $currentrow['className'] . "</strong>".
-            "<p1> ". $currentrow["courseID"]. "</p1>" .
-            "<a href='class_delete.php?recordid=" . $currentrow["fun_classes_id"] . "'> Delete </a>" .
-            "<br style='clear:both;'>";
+        while($currentrow = $results->fetch_assoc()) {
+            echo "<div class='title'><strong>" . $currentrow['className'] . "</strong>".
+                "<p1> ". $currentrow["courseID"]. "</p1>" .
+                "<a href='class_delete.php?recordid=" . $currentrow["fun_classes_id"] . "'> Delete </a>" .
+                "<br style='clear:both;'>";
 
-    }
-    ?>
+        }
+        ?>
+    </div>
 
 </div>
 

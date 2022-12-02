@@ -18,7 +18,7 @@ if($mysql->connect_errno) {
 ?>
 <htmL>
 <header>
-<title>Edit Page</title>
+    <title>Administrative Manual User Edit</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
         body {
@@ -33,18 +33,20 @@ if($mysql->connect_errno) {
     </style>
 </header>
 <body>
-    <?php
-    include 'adminnavbar.php';
-    ?>
-    <h1 id="resultheader">Edit Classes</h1><br>
+<?php
+include 'adminnavbar.php';
+?>
+<h1 id="resultheader">Edit User</h1><br>
+
 <div id="mainbox">
     <div id="box1">
-        Administrative Manual Class Editing
+        Administrative Manual User Editing
     </div>
+
     <div id="box2">
         <?php
 
-        $sql = "SELECT * FROM generalView WHERE 1=1";
+        $sql = "SELECT * FROM users WHERE 1=1";
 
 
         $results = $mysql->query($sql);
@@ -56,13 +58,13 @@ if($mysql->connect_errno) {
         }
 
         while($currentrow = $results->fetch_assoc()) {
-            echo "<div class='title'><strong>" . $currentrow['className'] . "</strong>".
-                "<p1> ". $currentrow["courseID"]. "</p1>" .
-                "<a href='class_edit.php?recordid=" . $currentrow["fun_classes_id"] . "'> Edit </a>" .
+            echo "<div class='title'><strong>" . $currentrow['user_firstName'] . " " . $currentrow['user_lastName'] . "</strong>".
+                "<p1> ". $currentrow['username']. "</p1>" .
+                "<a href='review_edit.php?recordid=" . $currentrow["user_id"] . "'> Edit </a>" .
                 "<br style='clear:both;'>";
 
         }
-    ?>
+        ?>
     </div>
 
 </div>

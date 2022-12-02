@@ -24,13 +24,21 @@ $sql = "UPDATE users
     username = '". $_REQUEST["username"] ."',
     password = '". $_REQUEST["password"] ."'
     WHERE 
-    ";
-echo $sql;
+    user_id =  ".$_SESSION["id"];
+//echo $sql;
 
 $results = $mysql -> query($sql);
 
 if($results){
-    echo "PROFILE UPDATED";
+
+    $_SESSION['first'] = $_REQUEST['firstName'];
+    $_SESSION['last'] = $_REQUEST['lastName'];
+    $_SESSION['username'] = $_REQUEST['username'];
+    $_SESSION['pass'] = $_REQUEST['password'];
+    header('Location:user_profile.php');
+    exit();
+//    echo "PROFILE UPDATED";
+
 } else {
     echo "ERROR; TRY AGAIN";
 }

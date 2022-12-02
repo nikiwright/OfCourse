@@ -40,7 +40,5 @@ include 'sitenav.php';
     </div>
 </div>
 
-
-
 </body>
 </html>

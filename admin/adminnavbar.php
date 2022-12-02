@@ -1,6 +1,6 @@
 <div id="nav">
     <br>&nbsp
-    <a href="../funclasses_search.php">
+    <a href="adminmain.php">
         <img src="../css/Of-Course-Logo.png" id="logo" >
     </a>
     <div class="dropdown">
@@ -8,19 +8,8 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="userprofile_add.php">ADD</a>
-            <a href="userprofile_edit.php">EDIT</a>
-            <a href="userprofile_delete.php">DELETE</a>
-        </div>
-    </div>
-    <div class="dropdown">
-        <button class="dropbtn">WELLNESS BLOG
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="wellnessblog_add.php">ADD</a>
-            <a href="wellnessblog_edit.php">EDIT</a>
-            <a href="wellnessblog_delete.php">DELETE</a>
+            <a href="user_add.php">ADD</a>
+            <a href="userlist_edit.php">EDIT</a>
         </div>
     </div>
     <div class="dropdown">
@@ -39,7 +28,7 @@
         </button>
         <div class="dropdown-content">
             <a href="review_add.php">ADD</a>
-            <a href="review_edit.php">EDIT</a>
-            <a href="review_delete.php">DELETE</a>
+            <a href="reviewlist_edit.php">EDIT</a>
         </div>
     </div>
+</div>
