@@ -71,7 +71,7 @@ if(!$results){
         <br>
         Instructor Name: <input type="text" name="instructorname">
         <br>
-        Instructor Rating: <input type="text" name="instructorrating" value=NULL>
+        Instructor Rating: <input type="number" name="instructorrating">
         <br>
         School: <select name="school">
             <?php
@@ -117,6 +117,9 @@ if(!$results){
         <input type="submit" name="classcreate" value="Create Class" id="submit" class="button">
     </form>
         <?php
+        if (empty($_POST['instructorrating']) {
+
+        }
         if ((empty($_POST['courseid']))
         &(empty($_POST['classname']))
         &(empty($_POST['classbio']))
