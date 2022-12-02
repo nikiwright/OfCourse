@@ -8,8 +8,8 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="userprofile_add.php">ADD</a>
-            <a href="userprofile_edit.php">EDIT</a>
+            <a href="user_add.php">ADD</a>
+            <a href="userlist_edit.php">EDIT</a>
         </div>
     </div>
     <div class="dropdown">

@@ -41,10 +41,10 @@ include 'adminnavbar.php';
     </div>
     <div id="mainadmin">
         <p1>USER PROFILES:</p1>
-        <a href="userprofile_add.php" class="adminbutton">
+        <a href="user_add.php" class="adminbutton">
             ADD
         </a>
-        <a href="userprofile_edit.php" class="adminbutton">
+        <a href="userlist_edit.php" class="adminbutton">
             EDIT
         </a><br><br>
         <p1>CLASSES:</p1>

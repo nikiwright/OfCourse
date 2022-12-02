@@ -60,7 +60,7 @@ if($mysql->connect_errno) {
             while($currentrow = $results->fetch_assoc()) {
                 echo "<div class='title'><strong>" . $currentrow['user_firstName'] . " " . $currentrow['user_lastName'] . "</strong>".
                     "<p1> ". $currentrow['username']. "</p1>" .
-                    "<a href='updateuser.php?recordid=" . $currentrow["user_id"] . "'> Edit </a>" .
+                    "<a href='user_edit.php?recordid=" . $currentrow["user_id"] . "'> Edit </a>" .
                     "<br style='clear:both;'>";
 
             }
