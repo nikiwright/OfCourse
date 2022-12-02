@@ -121,6 +121,7 @@ if(empty($_REQUEST["recordid"])){
                 while($currentrow = $results -> fetch_assoc()){
                     echo $currentrow["password"];
                 }?>">
+                <br>
                 Security Level: <input type="number" name="securitylevel" value="<?php
                 $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
                 $results = $mysql -> query($sql);
