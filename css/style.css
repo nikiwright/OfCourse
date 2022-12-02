@@ -202,8 +202,8 @@ a:hover{
 }
 
 .button{
-    width: 300px;
-
+    width: 100px;
+    border: 1px solid black;
     border-radius: 10px;
     font-family: "Helvetica Neue";
     font-size: 10pt;
