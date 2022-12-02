@@ -50,16 +50,6 @@ include 'adminnavbar.php';
         <a href="userprofile_delete.php" class="adminbutton">
             DELETE
         </a><br><br>
-        <p1>WELLNESS BLOG:</p1>
-        <a href="wellnessblog_add.php" class="adminbutton">
-            ADD
-        </a>
-        <a href="wellnessblog_edit.php" class="adminbutton">
-            EDIT
-        </a>
-        <a href="wellnessblog_delete.php" class="adminbutton">
-            DELETE
-        </a><br><br>
         <p1>CLASSES:</p1>
         <a href="class_add.php" class="adminbutton">
             ADD
