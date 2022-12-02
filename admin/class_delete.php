@@ -62,6 +62,8 @@ include 'adminnavbar.php';
 <div id="mainbox">
     <div id="box1">
         <?php
+        if(empty($_REQUEST["confirm"])) {
+        //ask to confirm
         echo "Do you really want to delete this movie?";
         ?>
     </div>
@@ -71,7 +73,6 @@ include 'adminnavbar.php';
             <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"];?>">
             <input type='submit' name='save' value='YES, DELETE' id='submit' class='button'>
         </form>
-    </div>
         <?php
         } else {
             $sql = "DELETE FROM fun_classes
@@ -84,9 +85,9 @@ include 'adminnavbar.php';
             } else {
                 echo "Error: " . $mysql -> error;
             }
-
         }
         ?>
+    </div>
 </div>
 </body>
 </htmL>
