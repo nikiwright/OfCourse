@@ -200,16 +200,16 @@ while($currentrow = $results -> fetch_assoc()){
         } else {
             $sql = "UPDATE fun_classes
             SET
-            courseID = '" . $_REQUEST["courseid"] . "',
-            className = '" . $_REQUEST["className"] . "',
-            classBio = '" . $_REQUEST["classBio"] . "',
-            classDepartment = '" . $_REQUEST["classDepartment"] . "',
-            instructorName = '" . $_REQUEST["instructorName"] . "',
-            instructorRating = '" . $_REQUEST["instructorRating"] . "',
-            school_id = '" . $_REQUEST["school"] . "',
-            interest_id = '" . $_REQUEST["interest"] . "',
-            weekday_id = '" . $_REQUEST["weekday"] . "',
-            unit_id = '" . $_REQUEST["unit_num"] . "'
+            courseID = '" . $_POST["courseid"] . "',
+            className = '" . $_POST["className"] . "',
+            classBio = '" . $_POST["classBio"] . "',
+            classDepartment = '" . $_POST["classDepartment"] . "',
+            instructorName = '" . $_POST["instructorName"] . "',
+            instructorRating = '" . $_POST["instructorRating"] . "',
+            school_id = '" . $_POST["school"] . "',
+            interest_id = '" . $_POST["interest"] . "',
+            weekday_id = '" . $_POST["weekday"] . "',
+            unit_id = '" . $_POST["unit_num"] . "'
             WHERE
             fun_classes_id = " . $_REQUEST["recordid"];
 
