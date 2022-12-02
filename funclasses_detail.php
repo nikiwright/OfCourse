@@ -23,54 +23,6 @@ if($mysql->connect_errno) {
 <head>
     <title> Details Page </title>
     <link rel="stylesheet" href="./css/style.css">
-    <style>
-        #transparentbox {
-            text-align: center;
-            margin-left: 70%;
-            margin-top: 2%;
-            width: 25%;
-            position: relative;
-            background-color: rgba(255,255,255,.5);
-            border-radius: 20px;
-            height: auto;
-            padding: 1%;
-            z-index: 2;
-            box-shadow: 2px 2px 5px black;
-        }
-
-        a {
-            color: black;
-        }
-
-        #parentreviewbox {
-            text-align: center;
-            margin-left: 5%;
-            margin-top: 2%;
-            width: 60%;
-            position: relative;
-            background-color: rgba(255,255,255,.5);
-            border-radius: 20px;
-            height: auto;
-            padding: 1%;
-            z-index: 2;
-            box-shadow: 2px 2px 5px black;
-        }
-
-        #childreviewbox {
-            text-align: left;
-            margin-left: 10%;
-            margin-top: 2%;
-            width: 30%;
-            position: relative;
-            background-color: rgba(255,255,255,.5);
-            border-radius: 20px;
-            height: auto;
-            padding: 3%;
-            z-index: 2;
-            box-shadow: 2px 2px 5px black;
-        }
-
-    </style>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HR3PWKYET"></script>
@@ -122,11 +74,16 @@ if($mysql->connect_errno) {
     if(!$results){
         echo "ERROR: " . $mysql -> error;
     }
+    ?>
 
+    <div id="detailflexparent">
+        <div id="detailflexchild1">
+
+    <?php
     while ($currentrow = $results -> fetch_assoc()){
         echo "<div id='detailbox'>";
         echo "<div id='box1' style='background-color: white;'>";
-        echo "<h1 id='resultheader' style='color: black; line-height: 0px !important; margin-top: 10px;'>". $currentrow["className"]. " Details" ."</h1> <br>";
+        echo "<h1 id='resultheader' style='color: black; margin-top: 10px;'>". $currentrow["className"]. " Details" ."</h1> <br>";
         echo "</div>";
         echo "<div id='details'>";
         echo "<strong>"."Course Title: " ."</strong>". $currentrow["className"]. "<br>";
@@ -142,14 +99,15 @@ if($mysql->connect_errno) {
         echo "<strong>"."Instructor Rating (ratemyprofessor): " ."</strong>". $currentrow["instructorRating"]. "<br>"."<br>";
         $_SESSION['coursename'] = $currentrow["className"];
         $_SESSION['courseurl'] = $url;
+        echo "</div>";
+        echo "</div>";
+        echo "<br><br><br>";
     }
 
     ?>
-</div>
-</div>
 
 
-<div id="parentreviewbox">
+<div id="detailbox" style= "padding: 20px; width: 76%;">
     <?php
 
     if (!(empty($_POST['reviewtext']))) {
@@ -206,10 +164,12 @@ if($mysql->connect_errno) {
     }
     ?>
     </div>
-</div>
+        </div>
+
 
 <!-- start of email component-->
-<div id="floatingbox">
+<div id="detailflexchild2">
+    <div id="detailbox" style="padding: 20px;">
     <form action=""  method="post">
         <table width="250" border="0">
             <div class="pi">Fun classes are more fun together! <br> Send this class to a friend: </div>
@@ -260,9 +220,9 @@ if($mysql->connect_errno) {
     }
     ?>
 </div> <!-- end of email component-->
+<br><br><br>
 
-
-<div id="transparentbox"> <!-- start of "write a review" -->
+<div id="detailbox" style="padding: 20px;"> <!-- start of "write a review" -->
     <?php
     if ($_SESSION['logged_in'] == "yes")   // Checking whether the session is already there or not
     {
@@ -307,6 +267,9 @@ if (!(empty($_POST['reviewtext']))) {
 
 
              </div>
+</div>
+</div>
         </div>
+
     </body>
 </html>
