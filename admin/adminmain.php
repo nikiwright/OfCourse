@@ -19,27 +19,24 @@ if($mysql->connect_errno) {
 <title>Search Page</title>
 <header>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        #mainbox {
+            text-align: center;
+        }
+    </style>
 </header>
 
 <body id="body1">
-<div>
 <?php
 include 'adminnavbar.php';
 ?>
-</div>
-
-<div id="header">
-    <h1 style="margin-bottom: -10px;">ADMIN PAGE</h1><br>
-    <br>
-</div>
-<br>
-
+<h1 id="header">ADMIN PAGE</h1><br>
 
 <div id="mainbox">
     <div id="box1">
         <p1>ADMINISTRATIVE OPTIONS</p1>
     </div>
-    <div id="mainadmin">
+    <div id="box2">
         <p1>USER PROFILES:</p1>
         <a href="user_add.php" class="adminbutton">
             ADD
@@ -65,5 +62,6 @@ include 'adminnavbar.php';
             EDIT
         </a>
     </div>
+</div>
 </body>
 </htmL>

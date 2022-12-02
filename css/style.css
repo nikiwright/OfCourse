@@ -120,19 +120,12 @@ p1{
     font-size: 9pt;
 }
 
-#mainadmin{
-    padding: 20px;
-    background-color: #FFBD00;
-    text-decoration: none;
-    text-align: center;
-}
 .adminbutton{
     width: 50%;
-    border: 1px solid white;
+    border: 1px solid black;
     border-radius: 10px;
     font-family: "Helvetica Neue";
     font-size: 10pt;
-    background-color: white;
     margin: 5px;
     padding: 5px;
 }
