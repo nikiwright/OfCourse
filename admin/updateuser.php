@@ -26,65 +26,69 @@ if(empty($_REQUEST["recordid"])){
 <header>
     <link rel="stylesheet" href="../css/style.css">
 </header>
-<body id="body2">
-<div>
+<body>
     <?php
     include 'adminnavbar.php';
     ?>
-</div>
 
-<?php
-$sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
+    <div id="mainbox">
+        <div id="box1">
+            <?php
+            $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
 
-$results = $mysql -> query($sql);
+            $results = $mysql -> query($sql);
 
-if(!$results){
-    echo "ERROR: " . $mysql -> error;
-}
+            if(!$results){
+                echo "ERROR: " . $mysql -> error;
+            }
 
-while($currentrow = $results -> fetch_assoc()){
-    echo"<h1>Edit " . $currentrow["username"] . "</h1>";
+            while($currentrow = $results -> fetch_assoc()){
+                echo"<h1>Edit " . $currentrow["username"] . "</h1>";
 
-}
-?>
-<form action="submituserupdate.php">
+            }
+            ?>
+        </div>
+        <div id="box2">
+            <form action="submituserupdate.php">
 
-    <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"]; ?>">
+                <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"]; ?>">
 
-    <?php
+                <?php
 
-    $recorddata = $results -> fetch_assoc();
+                $recorddata = $results -> fetch_assoc();
 
-    ?>
-    First Name: <input type="text" name="fName" value="<?php
-    $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
-    $results = $mysql -> query($sql);
-    while($currentrow = $results -> fetch_assoc()){
-        echo $currentrow["user_firstName"];
-    }?>">
-    <br>
-    Last Name: <input type="text" name="lName" value="<?php
-    $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
-    $results = $mysql -> query($sql);
-    while($currentrow = $results -> fetch_assoc()){
-        echo $currentrow["user_lastName"];
-    }?>">
-    <br>
-    Username: <input type="text" name="username" value="<?php
-    $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
-    $results = $mysql -> query($sql);
-    while($currentrow = $results -> fetch_assoc()){
-        echo $currentrow["username"];
-    }?>">
-    <br>
-    Password: <input type="text" name="password" value="<?php
-    $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
-    $results = $mysql -> query($sql);
-    while($currentrow = $results -> fetch_assoc()){
-        echo $currentrow["password"];
-    }?>">
-   <br>
-    <input type="submit" value="Save Edits">
-</form>
+                ?>
+                First Name: <input type="text" name="fName" value="<?php
+                $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
+                $results = $mysql -> query($sql);
+                while($currentrow = $results -> fetch_assoc()){
+                    echo $currentrow["user_firstName"];
+                }?>">
+                <br>
+                Last Name: <input type="text" name="lName" value="<?php
+                $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
+                $results = $mysql -> query($sql);
+                while($currentrow = $results -> fetch_assoc()){
+                    echo $currentrow["user_lastName"];
+                }?>">
+                <br>
+                Username: <input type="text" name="username" value="<?php
+                $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
+                $results = $mysql -> query($sql);
+                while($currentrow = $results -> fetch_assoc()){
+                    echo $currentrow["username"];
+                }?>">
+                <br>
+                Password: <input type="text" name="password" value="<?php
+                $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
+                $results = $mysql -> query($sql);
+                while($currentrow = $results -> fetch_assoc()){
+                    echo $currentrow["password"];
+                }?>">
+               <br>
+                <input type="submit" value="Save Edits">
+            </form>
+        </div>
+    </div>
 </body>
 </htmL>
