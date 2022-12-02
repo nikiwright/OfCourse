@@ -50,14 +50,13 @@ if($mysql->connect_errno) {
 
 <div id="header">
     <h1 style="margin-bottom: -10px;">FUN CLASSES AT USC</h1><br>
-    <br>
 </div>
 <br>
 
 
 <div id="mainbox">
     <div id="box1">
-        <p1>FIND YOUR NEW FAVORITE CLASS TODAY</p1>
+        <p1>FIND YOUR NEW FAVORITE CLASS TODAY</p1><br>
     </div>
     <div id="box2">
         <form action="funclasses_result.php">

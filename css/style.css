@@ -65,11 +65,11 @@ img{
 }
 
 #header{
+    margin:auto;
     text-align: center;
-    margin: auto;
-    width:40%;
-
+    height: auto;
 }
+
 h1{
     font-size: 42pt;
     font-weight: bold;
