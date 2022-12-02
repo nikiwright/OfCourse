@@ -71,7 +71,7 @@ if(!$results){
         <br>
         Instructor Name: <input type="text" name="instructorname">
         <br>
-        Instructor Rating: <input type="text" name="instructorrating">
+        Instructor Rating: <input type="text" name="instructorrating" value="NULL">
         <br>
         School: <select name="school">
             <?php
