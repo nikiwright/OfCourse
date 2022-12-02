@@ -46,7 +46,7 @@ include 'adminnavbar.php';
         </a>
         <a href="userprofile_edit.php" class="adminbutton">
             EDIT
-        </a>
+        </a><br><br>
         <p1>CLASSES:</p1>
         <a href="class_add.php" class="adminbutton">
             ADD
