@@ -119,7 +119,7 @@ include 'sitenav.php';
         }
 
         if ($_SESSION['security_level'] == "0") {
-            echo "You have admin access. Go to". "<a href='admin/adminmain.php' id='admin'> Admin Page. </a>";
+            echo "You have admin access. Go to". "<a href='admin/adminmain.php' id='admin' target='_blank'> Admin Page. </a>";
         } else {
             "";
         }
