@@ -49,10 +49,9 @@ session_start();
 </script>
 <body>
 <?php
-include 'adminnavbar.php';
+include '../sitenav.php';
 ?>
 
-<hr>
 <h1 id="resultheader">Add User</h1><br>
 <div id="mainbox">
     <div id="box1">
