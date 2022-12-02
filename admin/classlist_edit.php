@@ -65,7 +65,7 @@ if($mysql->connect_errno) {
     <div id="box1">
         Administrative Manual Class Editing
     </div>
-    <div id="box2"></div>
+    <div id="box2">
         <?php
 
         $sql = "SELECT * FROM generalView WHERE 1=1";
