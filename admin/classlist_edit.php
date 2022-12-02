@@ -29,6 +29,9 @@ if($mysql->connect_errno) {
             background-color:#FFC72C;
             color: black;
         }
+        #box2 {
+            width: auto;
+        }
 
         #a {
             color: black;
