@@ -10,7 +10,6 @@
         <div class="dropdown-content">
             <a href="userprofile_add.php">ADD</a>
             <a href="userprofile_edit.php">EDIT</a>
-            <a href="userprofile_delete.php">DELETE</a>
         </div>
     </div>
     <div class="dropdown">
@@ -30,6 +29,5 @@
         <div class="dropdown-content">
             <a href="review_add.php">ADD</a>
             <a href="review_edit.php">EDIT</a>
-            <a href="review_delete.php">DELETE</a>
         </div>
     </div>
