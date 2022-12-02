@@ -122,7 +122,7 @@ if(empty($_REQUEST["recordid"])){
                     echo $currentrow["password"];
                 }?>">
                <br>
-                <input type="submit" value="Save Edits">
+                <input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'>
             </form>
         </div>
     </div>
