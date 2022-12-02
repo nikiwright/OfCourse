@@ -60,28 +60,20 @@ if(!$results){
         Administrative Manual Class Creation
     </div>
     <div id="box2">
-    <form action="insertclass.php">
-
-        <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"]; ?>">
-
-        <?php
-
-        $recorddata = $results -> fetch_assoc();
-
-        ?>
-        Course ID: <input type="text" name="courseid" value="<?php echo $recorddata["courseID"]; ?>">
+    <form action="" method="post">
+        Course ID: <input type="text" name="courseid">
         <br>
-        Class Name: <input type="text" name="classname" value="<?php echo $recorddata["className"]; ?>">
+        Class Name: <input type="text" name="classname">
         <br>
-        Class Bio: <input type="text" name="classbio" value="<?php echo $recorddata["classBio"]; ?>">
+        Class Bio: <input type="text" name="classbio">
         <br>
-        Class Department: <input type="text" name="classdepartment" value="<?php echo $recorddata["classDepartment"]; ?>">
+        Class Department: <input type="text" name="classdepartment">
         <br>
-        Instructor Name: <input type="text" name="instructorname" value="<?php echo $recorddata["instructorName"]; ?>">
+        Instructor Name: <input type="text" name="instructorname">
         <br>
-        Instructor Rating: <input type="text" name="instructorrating" value="<?php echo $recorddata["instructorRating"]; ?>">
+        Instructor Rating: <input type="text" name="instructorrating">
         <br>
-        School: <select name="school" value ="<?php echo $recorddata['school']; ?>">
+        School: <select name="school">
             <?php
             $sql = "SELECT * from schools";
             $results = $mysql -> query($sql);
@@ -91,7 +83,7 @@ if(!$results){
             ?>
         </select>
         <br>
-        Interest: <select name="interest" value ="<?php echo $recorddata['interest']; ?>">
+        Interest: <select name="interest">
             <?php
             $sql = "SELECT * from interests";
             $results = $mysql -> query($sql);
@@ -101,7 +93,7 @@ if(!$results){
             ?>
         </select>
         <br>
-        Weekday: <select name="weekday" value ="<?php echo $recorddata['weekday']; ?>">
+        Weekday: <select name="weekday">
             <?php
             $sql = "SELECT * from weekdays";
             $results = $mysql -> query($sql);
@@ -111,7 +103,7 @@ if(!$results){
             ?>
         </select>
         <br>
-        Units: <select name="unit" value ="<?php echo $recorddata['unit_num']; ?>">
+        Units: <select name="unit">
             <?php
             $sql = "SELECT * from units";
             $results = $mysql -> query($sql);
