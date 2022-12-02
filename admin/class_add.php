@@ -121,7 +121,7 @@ if(!$results){
         &(empty($_POST['classname']))
         &(empty($_POST['classbio']))
         &(empty($_POST['classdepartment']))) {
-            echo "";
+            echo "You must enter a Course Id, Class Name, Class Bio, Class Department.";
             exit();
         } else {
             $sql = "INSERT INTO fun_classes
