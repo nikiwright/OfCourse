@@ -63,11 +63,11 @@ if(!$results){
     <form action="" method="post">
         Course ID: <input type="text" name="courseid" required>
         <br>
-        Class Name: <input type="text" name="classname">
+        Class Name: <input type="text" name="classname" required>
         <br>
-        Class Bio: <input type="text" name="classbio">
+        Class Bio: <input type="text" name="classbio" required>
         <br>
-        Class Department: <input type="text" name="classdepartment">
+        Class Department: <input type="text" name="classdepartment" required>
         <br>
         Instructor Name: <input type="text" name="instructorname">
         <br>
