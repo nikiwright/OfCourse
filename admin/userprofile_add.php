@@ -33,7 +33,7 @@ session_start();
         #submit {
             background-color:#7BC950;
         }
-        h3{
+        h1{
             text-align: center;
         }
     </style>
