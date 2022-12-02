@@ -132,67 +132,23 @@ if(empty($_REQUEST["recordid"])){
                 echo "";
                 exit();
             } else {
+                $sql= "UPDATE users
+                    SET
+                    user_firstName = '". $_POST["fName"] ."',
+                    user_lastName = '". $_POST["lName"] ."',
+                    username = '". $_POST["username"] ."',
+                    password = '". $_POST["password"] ."'
+                    WHERE
+                    user_id = " . $_REQUEST["recordid"];
+                $results = $mysql -> query($sql);
 
-                $sql2 = "SELECT * FROM users WHERE 
-                        username='" . $_POST['username'] . "'";
-
-                $results2 = $mysql->query($sql2);
-
-                if (!$results2) {
-                    echo "<hr>Your SQL:<br> " . $sql2 . "<br><br>";
-                    echo "SQL Error: " . $mysql->error . "<hr>";
-                    exit();
-                }
-
-                if ($results2->num_rows === 1) {
-
-                    $row2 = mysqli_fetch_array($results2);
-
-                    if ($row2['username'] === $_POST['username']) {
-                        echo "Sorry! This username is already taken, try another one.";
-                        exit();
-
-                    } else {
-                        $sql= "UPDATE users
-                        SET
-                        user_firstName = '". $_POST["fName"] ."',
-                        user_lastName = '". $_POST["lName"] ."',
-                        username = '". $_POST["username"] ."',
-                        password = '". $_POST["password"] ."'
-                        WHERE
-                        user_id = " . $_REQUEST["recordid"] ;
-                        $results = $mysql -> query($sql);
-
-                        if($results){
+                    if($results){
                             echo $sql;
                             echo "<br><br> User Updated!";
                         } else{
                             echo "Error: " . $mysql->error;
                         }
-
-
                     }
-
-                } else {
-                    $sql= "UPDATE users
-                        SET
-                        user_firstName = '". $_POST["fName"] ."',
-                        user_lastName = '". $_POST["lName"] ."',
-                        username = '". $_POST["username"] ."',
-                        password = '". $_POST["password"] ."'
-                        WHERE
-                        user_id = " . $_REQUEST["recordid"] ;
-                    $results = $mysql -> query($sql);
-
-                    if($results){
-                        echo $sql;
-                        echo "<br><br> User Updated!";
-                    } else{
-                        echo "Error: " . $mysql->error;
-                    }
-
-                }
-            }
             ?>
         </div>
     </div>
