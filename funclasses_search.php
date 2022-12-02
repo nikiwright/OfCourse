@@ -15,17 +15,11 @@ if($mysql->connect_errno) {
     exit();
 }
 ?>
-<htmL>
+<html>
 
 <head>
     <title>Search Page</title>
     <link rel="stylesheet" href="./css/style.css">
-    <style>
-        #floatingbox {
-            width: 18%;
-            margin-left: 76%;
-        }
-    </style>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HR3PWKYET"></script>
@@ -42,7 +36,7 @@ if($mysql->connect_errno) {
     include 'sitenav.php';
 ?>
 
-<div id="floatingbox">
+<div id="detailbox" style="width: 15%; margin-right: 3%; margin-top: -5%; padding: 20px;float: right;">
     <?php
     if ($_SESSION['logged_in'] == "yes") {
         echo "Hello ". "<strong>".$_SESSION['first']. "! "."</strong>". "You are logged in."."<br><br>";
@@ -52,6 +46,7 @@ if($mysql->connect_errno) {
     }
     ?>
 </div>
+
 
 <div id="header">
     <h1 style="margin-bottom: -10px;">FUN CLASSES AT USC</h1><br>
@@ -156,15 +151,16 @@ if($mysql->connect_errno) {
 
     </div>
 </div>
+<br><br>
 <div id="text1">
-    <h2>LOOKING TO SWITCH UP YOUR SCHEDULE?</h2><br>
+    <h2 style="color: black;">LOOKING TO SWITCH UP YOUR SCHEDULE?</h2><br>
     <p1>
         OfCourse is a tool made by students for students to help you
-        find courses that boost your physical and mental wellbeing.</p1>
+        find courses that boost your physical and mental wellbeing.</p1><br><br>
 
-    <a href="sitepurpose.php"> Learn More </a>
+    <a href="sitepurpose.php" style="color: black"> Learn More </a>
 </div>
 
 
 </body>
-</htmL>
+</html>

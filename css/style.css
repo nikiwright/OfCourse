@@ -66,10 +66,8 @@ img{
 
 #header{
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
     margin: auto;
+    width:40%;
 
 }
 h1{
@@ -105,6 +103,7 @@ p1{
 #resultheader{
     margin:auto;
     text-align: center;
+    height: auto;
 }
 
 #nav{
@@ -117,7 +116,7 @@ p1{
 .navitem{
     margin-top: 30px;
     color: white;
-    font-size: 9pt;
+    font-size: 12pt;
 }
 
 #mainadmin{
@@ -164,7 +163,7 @@ a:hover{
     padding-top: 20px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    height: 40px;
+    height: auto;
     border-bottom: 3px solid black;
     width: auto;
 }
@@ -244,10 +243,10 @@ a:hover{
 
 #text1{
     position: relative;
-    margin-left: 100px;
-    margin-top: 30px;
-    width: 750px;
-    background-color: rgba(255,255,255,.5);
+    margin-left: 3%;
+    margin-top: 1%;
+    width: 30%;
+    background-color: rgba(255,255,255,.75);
     border-radius: 20px;
     height: auto;
     padding: 20px;
@@ -255,19 +254,18 @@ a:hover{
     box-shadow: 2px 2px 5px black;
 }
 
-#floatingbox{
-    position: relative;
-    margin-left: 80%;
-    margin-top: 0%;
-    width: 15%;
-    height: auto;
-    background-color: rgba(255,255,255,.5);
-    border-radius: 20px;
-    height: auto;
-    padding: 1%;
-    z-index: 2;
-    box-shadow: 2px 2px 5px black;
-}
+/*#floatingbox{*/
+/*    position: relative;*/
+/*    margin-top: 0%;*/
+/*    width: auto;*/
+/*    height: auto;*/
+/*    background-color: rgba(255,255,255);*/
+/*    border-radius: 20px;*/
+/*    height: auto;*/
+/*    padding: 1%;*/
+/*    z-index: 2;*/
+/*    box-shadow: 2px 2px 5px black;*/
+/*}*/
 
 #checkboxes {
     display: flex;
@@ -298,18 +296,35 @@ a:hover{
 
 
 #detailbox{
-    width: 50%;
+    width: 80%;
     background-color: white;
     border-radius: 20px;
     border: black solid 3px;
     height: auto;
     z-index: -1;
-    margin: auto;
     box-shadow: 2px 2px 5px black;
 }
 
 #details{
     padding: 20px;
+}
+
+#detailflexparent{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+
+}
+
+#detailflexchild1{
+    flex-grow: 1.5;
+}
+
+#detailflexchild2{
+    flex-grow: 1;
+    width: 50%;
 }
 
 
@@ -318,7 +333,7 @@ a:hover{
 /* Links inside the navbar */
 .navbar a {
     float: left;
-    font-size: 9pt;
+    font-size: 12pt;
     color: white;
     text-align: center;
     padding: 14px 16px;
