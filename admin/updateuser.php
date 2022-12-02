@@ -85,7 +85,7 @@ if(empty($_REQUEST["recordid"])){
             ?>
         </div>
         <div id="box2">
-            <form action="submituserupdate.php">
+            <form action="" method="post">
 
                 <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"]; ?>">
 
@@ -125,6 +125,28 @@ if(empty($_REQUEST["recordid"])){
                 <input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'>
             </form>
         </div>
+
+        <?php
+        $sql= "UPDATE users
+    SET
+    user_firstName = '". $_REQUEST["fName"] ."',
+    user_lastName = '". $_REQUEST["lName"] ."',
+    username = '". $_REQUEST["username"] ."',
+    password = '". $_REQUEST["password"] ."'
+    WHERE
+        user_id = " . $_REQUEST["recordid"] ;
+
+        echo $sql;
+
+        $results = $mysql -> query($sql);
+
+        if($results){
+            echo "<br><br> User Updated!";
+        } else{
+            echo "Error: " . $mysql->error;
+        }
+
+        ?>
     </div>
 </body>
 </htmL>

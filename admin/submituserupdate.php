@@ -18,18 +18,6 @@ if($mysql->connect_errno) {
 
 ?>
 
-<htmL>
-<title>Administrative User Edit Page</title>
-<header>
-    <link rel="stylesheet" href="../css/style.css">
-</header>
-<body id="body2">
-<div>
-    <?php
-    include 'adminnavbar.php';
-    ?>
-</div>
-
 <?php
 $sql= "UPDATE users
     SET
