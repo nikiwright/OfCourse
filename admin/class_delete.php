@@ -73,6 +73,7 @@ include 'adminnavbar.php';
             <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"];?>">
             <input type='submit' name='save' value='YES, DELETE' id='submit' class='button'>
         </form>
+    </div>
         <?php
         } else {
             $sql = "DELETE FROM fun_classes
@@ -88,7 +89,6 @@ include 'adminnavbar.php';
 
         }
         ?>
-    </div>
 </div>
 </body>
 </htmL>
