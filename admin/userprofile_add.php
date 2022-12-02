@@ -52,6 +52,7 @@ session_start();
 include 'adminnavbar.php';
 ?>
 
+<br>
 <h1 id="resultheader">Add User</h1><br>
 
 <div id="mainbox">
