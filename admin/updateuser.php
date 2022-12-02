@@ -79,7 +79,7 @@ if(empty($_REQUEST["recordid"])){
             }
 
             while($currentrow = $results -> fetch_assoc()){
-                echo"<h1>Edit " . $currentrow["username"] . "</h1>";
+                echo"Edit " . $currentrow["username"] . "";
 
             }
             ?>
@@ -121,7 +121,7 @@ if(empty($_REQUEST["recordid"])){
                 while($currentrow = $results -> fetch_assoc()){
                     echo $currentrow["password"];
                 }?>">
-               <br>
+               <br><br>
                 <input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'>
             </form>
         </div>
