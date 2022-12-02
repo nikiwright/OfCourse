@@ -35,15 +35,6 @@ if(empty($_REQUEST["recordid"])){
                 color: black;
             }
 
-            #a {
-                color: black;
-                font-weight: bold;
-            }
-
-            #submit {
-                background-color: #FF5E5B;
-            }
-
             #edit {
                 background-color: #7BC950;
                 font-weight: bold;
