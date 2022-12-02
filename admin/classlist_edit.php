@@ -30,7 +30,7 @@ if($mysql->connect_errno) {
             color: black;
         }
         #box2 {
-            flex-grow: 6;
+            flex-grow: 100;
         }
 
     </style>
