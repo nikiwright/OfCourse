@@ -47,9 +47,6 @@ include 'adminnavbar.php';
         <a href="userprofile_edit.php" class="adminbutton">
             EDIT
         </a>
-        <a href="userprofile_delete.php" class="adminbutton">
-            DELETE
-        </a><br><br>
         <p1>CLASSES:</p1>
         <a href="class_add.php" class="adminbutton">
             ADD
@@ -66,9 +63,6 @@ include 'adminnavbar.php';
         </a>
         <a href="review_edit.php" class="adminbutton">
             EDIT
-        </a>
-        <a href="review_delete.php" class="adminbutton">
-            DELETE
         </a>
     </div>
 </body>
