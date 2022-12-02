@@ -320,13 +320,11 @@ a:hover{
 
 #detailflexchild1{
     flex-grow: 1.5;
-    border: black solid 3px;
 }
 
 #detailflexchild2{
     flex-grow: 1;
     width: 50%;
-    border: red solid 3px;
 }
 
 
