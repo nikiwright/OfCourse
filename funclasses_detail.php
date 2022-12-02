@@ -159,7 +159,7 @@ if($mysql->connect_errno) {
 
     echo "<strong>"."Course Reviews: "."</strong>"."<br>";
     while ($currentrow = $results -> fetch_assoc()){
-        echo"<div id='childreviewbox'>". " '". $currentrow["review"]. "'". " - ". $currentrow["username"]."<br>"."</div>";
+        echo "<br>"."<div id='childreviewbox'>". " '". $currentrow["review"]. "'". " - ". $currentrow["username"]."<br>"."</div>";
         "<br style='clear:both;'>";
     }
     ?>
