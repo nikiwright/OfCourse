@@ -117,9 +117,6 @@ if(!$results){
         <input type="submit" name="classcreate" value="Create Class" id="submit" class="button">
     </form>
         <?php
-        if (empty($_POST['instructorrating']) {
-
-        }
         if ((empty($_POST['courseid']))
         &(empty($_POST['classname']))
         &(empty($_POST['classbio']))
