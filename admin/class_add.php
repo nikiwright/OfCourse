@@ -61,7 +61,7 @@ if(!$results){
     </div>
     <div id="box2">
     <form action="" method="post">
-        Course ID: <input type="text" name="courseid">
+        Course ID: <input type="text" name="courseid" required>
         <br>
         Class Name: <input type="text" name="classname">
         <br>
@@ -121,7 +121,7 @@ if(!$results){
         &(empty($_POST['classname']))
         &(empty($_POST['classbio']))
         &(empty($_POST['classdepartment']))) {
-            echo "You must enter a Course Id, Class Name, Class Bio, Class Department.";
+            echo "";
             exit();
         } else {
             $sql = "INSERT INTO fun_classes
