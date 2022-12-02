@@ -249,6 +249,7 @@ if($mysql->connect_errno) {
     }
     ?> <!-- end of "write a review" -->
 </div>
+    <br><br>
 
 
 <!--    insert review code start-->
