@@ -1,5 +1,6 @@
 <?php
 session_start();
+//var_dump($_SESSION);
 
 include 'nwloginvariables.php';
 
@@ -40,6 +41,35 @@ if($mysql->connect_errno) {
         a {
             color: black;
         }
+
+        #parentreviewbox {
+            text-align: center;
+            margin-left: 5%;
+            margin-top: 2%;
+            width: 60%;
+            position: relative;
+            background-color: rgba(255,255,255,.5);
+            border-radius: 20px;
+            height: auto;
+            padding: 1%;
+            z-index: 2;
+            box-shadow: 2px 2px 5px black;
+        }
+
+        #childreviewbox {
+            text-align: left;
+            margin-left: 10%;
+            margin-top: 2%;
+            width: 30%;
+            position: relative;
+            background-color: rgba(255,255,255,.5);
+            border-radius: 20px;
+            height: auto;
+            padding: 3%;
+            z-index: 2;
+            box-shadow: 2px 2px 5px black;
+        }
+
     </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -53,6 +83,8 @@ if($mysql->connect_errno) {
 </script>
 
 <body id="body3">
+
+
 <div id="container">
     <?php
     include 'sitenav.php';
@@ -112,27 +144,68 @@ if($mysql->connect_errno) {
         $_SESSION['courseurl'] = $url;
     }
 
-    $sql2 = "SELECT * from reviewsView
+    ?>
+</div>
+</div>
+
+
+<div id="parentreviewbox">
+    <?php
+
+    if (!(empty($_POST['reviewtext']))) {
+
+        $sql = "INSERT INTO reviews
+        (review, user_id)
+
+        VALUES
+         ('" .$_POST["reviewtext"] . "', " . $_SESSION["id"] .")";
+
+        $results = $mysql->query($sql);
+
+        if (!$results) {
+            echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
+            echo "SQL Error: " . $mysql->error . "<hr>";
+            exit();
+
+        } else {
+            $newid = $mysql -> insert_id;
+
+            //            insert into assoc table, use $newid and $_REQUEST["recordid"]
+            $sql2 = "INSERT INTO review_class
+             (review_id, fun_classes_id)
+
+             VALUES
+                 ('" .$newid . "', 
+                 '".$_REQUEST['recordid']."')";
+            $results2 = $mysql->query($sql2);
+
+            if (!$results2) {
+                echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
+                echo "SQL Error: " . $mysql->error . "<hr>";
+                exit(); }
+
+        }
+    }
+
+    $sql2 = "SELECT * from reviewsView3
          WHERE fun_classes_id =" .
         $_REQUEST['recordid'];
 
 //    echo "SQL: ". $sql2. "<br>"."<br>";
 
     $results = $mysql -> query($sql2);
-
+//    echo $results -> num_rows . " Reviews.";
     if(!$results){
         echo "ERROR: " . $mysql -> error;
     }
 
     echo "<strong>"."Course Reviews: "."</strong>"."<br>";
     while ($currentrow = $results -> fetch_assoc()){
-        echo $currentrow["review"]."<br>";
+        echo"<div id='childreviewbox'>". " '". $currentrow["review"]. "'". " - ". $currentrow["username"]."<br>"."</div>";
         "<br style='clear:both;'>";
     }
-    echo"</div>";
-    echo "</div>";
-    echo "</div>";
     ?>
+    </div>
 </div>
 
 <!-- start of email component-->
@@ -188,60 +261,50 @@ if($mysql->connect_errno) {
     ?>
 </div> <!-- end of email component-->
 
-<!-- start of "write a review" -->
-<div id="transparentbox">
+
+<div id="transparentbox"> <!-- start of "write a review" -->
     <?php
     if ($_SESSION['logged_in'] == "yes")   // Checking whether the session is already there or not
     {
-    ?>
-    <form action=""  method="post">
-        <table width="250" border="0">
-            <div class="pi"> Have you taken this class? <br> Tell others about it! </div>
-            <br>
-            <tr>
-                <td> Your Review</td>
-                <td> <textarea maxlength="500" name="reviewtext" required> </textarea></td>
-            </tr>
-            <tr>
-                <td> <br> <input type="submit" id="submit" class="button" name="sharereview" value="SHARE"></td>
-                <td></td>
-            </tr>
-        </table>
-        <br style="clear:both;">
-    </form>
+        ?>
+        <form action=""  method="post">
+            <table width="250" border="0">
+                <div class="pi"> Have you taken this class? <br> Tell others about it! </div>
+                <br>
+                <tr>
+                    <td> Your Review</td>
+                    <td> <textarea maxlength="500" name="reviewtext" required> </textarea></td>
+                </tr>
+                <tr>
+                    <td> <br> <input type="submit" id="submit" class="button" name="sharereview" value="SHARE"></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br style="clear:both;">
+        </form>
 
         <?php
     } else {
         echo "<a href='login.php'> Log In </a>". "to write a review for this course.";
     }
-    ?>
+    ?> <!-- end of "write a review" -->
+</div>
 
-    <?php
-    if (!(empty($_POST['reviewtext']))) {
 
-        $sql = "INSERT INTO reviews
-        (review)
-        
-        VALUES
-          " . $_POST["reviewtext"] . ")";
+<!--    insert review code start-->
+<?php
+if (!(empty($_POST['reviewtext']))) {
 
-        $results = $mysql->query($sql);
-
-        if (!$results) {
-            echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
-            echo "SQL Error: " . $mysql->error . "<hr>";
-            exit();
-
-        } else {
-            echo "You have successfully added a review for this course! 
+        echo "You have successfully added a review for this course!  It is reviewID " . $newid . ".
                 Thank you for your input.";
-        }
-    } else {
-        echo "";
-        exit();
-    }
 
-    ?>
+    } else {
+    echo "";
+    exit();
+}
+
+?> <!--    insert review code end-->
+
 
              </div>
         </div>

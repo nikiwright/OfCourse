@@ -15,6 +15,7 @@ if($mysql->connect_errno) {
 }
 
 session_start();   // session starts
+//var_dump($_SESSION);
 ?>
 
 
@@ -59,6 +60,34 @@ session_start();   // session starts
 
         #admin {
             color: black;
+        }
+
+        #parentreviewbox {
+            text-align: center;
+            margin-left: 20%;
+            margin-top: 2%;
+            width: 60%;
+            position: relative;
+            background-color: rgba(255,255,255,.5);
+            border-radius: 20px;
+            height: auto;
+            padding: 1%;
+            z-index: 2;
+            box-shadow: 2px 2px 5px black;
+        }
+
+        #childreviewbox {
+            text-align: left;
+            margin-left: 10%;
+            margin-top: 2%;
+            width: 60%;
+            position: relative;
+            background-color: rgba(255,255,255,.5);
+            border-radius: 20px;
+            height: auto;
+            padding: 3%;
+            z-index: 2;
+            box-shadow: 2px 2px 5px black;
         }
 
     </style>
@@ -120,13 +149,31 @@ include 'sitenav.php';
     </div>
 </div>
 
-<div id="">
+<div id="parentreviewbox">
     <?php
     if ($_SESSION['logged_in'] == "yes") {
-        echo "Your reviews" . "<br>";
-        "<br style='clear:both;'>";
+        echo "<strong>"."Your Reviews "."</strong>"."<br>";
+
+        $sql2 = "SELECT * from reviewsView3
+         WHERE user_id =" .
+            $_SESSION['id'];
+
+//        echo "SQL: ". $sql2. "<br>"."<br>";
+
+        $results = $mysql -> query($sql2);
+        echo " You have written ". $results -> num_rows . " reviews:" . "<br><br>";
+        if(!$results){
+            echo "ERROR: " . $mysql -> error;
+        }
+
+        while ($currentrow = $results -> fetch_assoc()){
+            echo "<div id='childreviewbox'>".$currentrow["className"].":". " '". $currentrow["review"]. "'". "<br>". "</div>";
+//            "<br style='clear:both;'>";
+        }
+
     }
     ?>
+
 </div>
 </body>
 </html>

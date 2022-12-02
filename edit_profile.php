@@ -97,18 +97,18 @@ include 'sitenav.php';
                     <td> Password: </td>
                     <td><input type="text" name="password" minlength="8" placeholder="<?php
                         echo $_SESSION['pass']
-                        ?>" required></td>
+                        ?>" required> </td>
                 </tr>
-                <tr>  <td> <input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'></td>  </tr>
-                <tr>  <td>  <?php
-                        echo "<a href='user_profile.php'>"."<br>".
-                            "<input type='submit' name='discard' value='DISCARD' id='submit' class='button'>".
-                            "</a>";
-                        ?>
-                    </td>
+                <tr>
+                  <td> <br><input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'></td>
                 </tr>
             </table>
         </form>
+        <?php
+        echo "<a href='user_profile.php'>"."<br>".
+            "<input type='submit' name='discard' value='DISCARD' id='submit' class='button'>".
+            "</a>";
+        ?>
     </div>
 </div>
 </body>
