@@ -20,7 +20,7 @@ session_start();
 <html>
 <head>
     <title>Add User</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <style>
         body {
             background-color:#9BA2FF;
