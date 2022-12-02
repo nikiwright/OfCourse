@@ -145,7 +145,6 @@ include 'sitenav.php';
                     } else {
 //                      echo $results;
                         echo "You have successfully created an account! ";
-                        echo "Click" . "<a href='login.php'> here </a>" . " to log in!";
                     }
 
                 }
