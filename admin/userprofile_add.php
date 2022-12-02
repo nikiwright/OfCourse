@@ -1,8 +1,6 @@
 <?php
 
-session_start();
-
-include '../nwloginvariables.php';
+include 'nwloginvariables.php';
 
 $mysql = new mysqli(
     $host,
@@ -15,93 +13,174 @@ if($mysql->connect_errno) {
     echo "db connection error : " . $mysql->connect_error;
     exit();
 }
+
+session_start();
 ?>
 
-<htmL>
-<title>Add User</title>
-<header>
-    <link rel="stylesheet" href="../css/style.css">
-</header>
-<body id="body2">
-<div>
-    <?php
-    include 'adminnavbar.php';
-    ?>
-</div>
+<html>
+<head>
+    <title>Add User</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        body {
+            background-color:#9BA2FF;
+        }
+
+        #box1 {
+            background-color:#7BC950;
+        }
+
+        #submit {
+            background-color:#7BC950;
+        }
+        h3{
+            text-align: center;
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7HR3PWKYET"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7HR3PWKYET');
+</script>
+<body>
 <?php
-$sql = "SELECT * from fun_classes WHERE 1=1";
-
-$results = $mysql -> query($sql);
-
-if(!$results){
-    echo "ERROR: " . $mysql -> error;
-}
-
-echo "<br><br><br><h1>Add User</h1><br>";
+include 'sitenav.php';
 ?>
-<form action="insertuser.php">
 
-    <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"]; ?>">
+<h1 id="resultheader">Add User</h1><br>
 
-    <?php
+<div id="mainbox">
+    <div id="box1">
+        Administrative Manual User Creation
+    </div>
+    <div id="box2">
 
-    $recorddata = $results -> fetch_assoc();
+        <form action ="" method="post">
+            <table width="250" border="0">
+                <tr>
+                    <td> First Name: </td>
+                    <td><input type="text" name="firstName" required></td>
+                </tr>
+                <tr>
+                    <td> Last Name: </td>
+                    <td><input type="text" name="lastName" required></td>
+                </tr>
+                <tr>
+                    <td> Username: </td>
+                    <td><input type="text" name="username" minlength="5" required></td>
+                </tr>
+                <tr>
+                    <td> Password: </td>
+                    <td><input type="text" name="password" minlength="8" required></td>
+                </tr>
+                <tr>
+                    <td> <br> <input type="submit" name="signup" value="SIGN UP" id="submit" class="button"></td>
+                    <td></td>
+                </tr>
 
-    ?>
-    Course ID: <input type="text" name="courseid" value="<?php echo $recorddata["courseID"]; ?>">
-    <br>
-    Class Name: <input type="text" name="classname" value="<?php echo $recorddata["className"]; ?>">
-    <br>
-    Class Bio: <input type="text" name="classbio" value="<?php echo $recorddata["classBio"]; ?>">
-    <br>
-    Class Department: <input type="text" name="classdepartment" value="<?php echo $recorddata["classDepartment"]; ?>">
-    <br>
-    Instructor Name: <input type="text" name="instructorname" value="<?php echo $recorddata["instructorName"]; ?>">
-    <br>
-    Instructor Rating: <input type="text" name="instructorrating" value="<?php echo $recorddata["instructorRating"]; ?>">
-    <br>
-    School: <select name="school" value ="<?php echo $recorddata['school']; ?>">
+            </table>
+
+
+        </form>
+
         <?php
-        $sql = "SELECT * from schools";
-        $results = $mysql -> query($sql);
-        while($currentrow = $results -> fetch_assoc()){
-            echo"<option value='" . $currentrow["school_id"] . "'>" . $currentrow["school"] . "</option>";
+
+
+        if ($_SESSION['logged_in'] == "yes")   // Checking whether the session is already there or not
+        {
+            // all good
+//            echo "Logged in!";
+//            print_r($_SESSION);
+            header('Location:user_profile.php');
+
+        }
+
+        if ((empty($_POST['firstName']))
+            &(empty($_POST['lastName']))
+            &(empty($_POST['username']))
+            &(empty($_POST['password']))) {
+            echo "";
+            exit();
+        } else {
+
+            $sql2 = "SELECT * FROM users WHERE 
+                        username='" . $_POST['username'] . "'";
+
+            $results2 = $mysql->query($sql2);
+
+            if (!$results2) {
+                echo "<hr>Your SQL:<br> " . $sql2 . "<br><br>";
+                echo "SQL Error: " . $mysql->error . "<hr>";
+                exit();
+            }
+
+            if ($results2->num_rows === 1) {
+
+                $row2 = mysqli_fetch_array($results2);
+
+                if ($row2['username'] ===  $_POST['username']) {
+                    echo "Sorry! This username is already taken, try another one.";
+                    exit();
+
+                } else {
+                    $sql = "INSERT INTO users 
+                 (user_firstName, user_lastName, username, password) 
+    
+                 VALUES ('" . $_POST['firstName'] . "',
+                 '" . $_POST['lastName'] . "',
+                 '" . $_POST['username'] . "',
+                 '" . $_POST['password'] . "' )";
+
+                    $results = $mysql->query($sql);
+
+                    if (!$results) {
+                        echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
+                        echo "SQL Error: " . $mysql->error . "<hr>";
+                        exit();
+                    } else {
+//                      echo $results;
+                        echo "You have successfully created an account! ";
+                        echo "Click" . "<a href='login.php'> here </a>" . " to log in!";
+                    }
+
+                }
+
+            } else {
+                $sql = "INSERT INTO users 
+                 (user_firstName, user_lastName, username, password) 
+    
+                 VALUES ('" . $_POST['firstName'] . "',
+                 '" . $_POST['lastName'] . "',
+                 '" . $_POST['username'] . "',
+                 '" . $_POST['password'] . "' )";
+
+                $results = $mysql->query($sql);
+
+                if (!$results) {
+                    echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
+                    echo "SQL Error: " . $mysql->error . "<hr>";
+                    exit();
+                } else {
+//                  echo $results;
+                    echo "You have successfully created an account!";
+                }
+
+            }
         }
         ?>
-    </select>
-    <br>
-    Interest: <select name="interest" value ="<?php echo $recorddata['interest']; ?>">
-        <?php
-        $sql = "SELECT * from interests";
-        $results = $mysql -> query($sql);
-        while($currentrow = $results -> fetch_assoc()){
-            echo"<option value='" . $currentrow["interest_id"] . "'>" . $currentrow["interest"] . "</option>";
-        }
-        ?>
-    </select>
-    <br>
-    Weekday: <select name="weekday" value ="<?php echo $recorddata['weekday']; ?>">
-        <?php
-        $sql = "SELECT * from weekdays";
-        $results = $mysql -> query($sql);
-        while($currentrow = $results -> fetch_assoc()){
-            echo"<option value='" . $currentrow["weekday_id"] . "'>" . $currentrow["weekday"] . "</option>";
-        }
-        ?>
-    </select>
-    <br>
-    Units: <select name="unit" value ="<?php echo $recorddata['unit_num']; ?>">
-        <?php
-        $sql = "SELECT * from units";
-        $results = $mysql -> query($sql);
-        while($currentrow = $results -> fetch_assoc()){
-            echo"<option value='" . $currentrow["unit_id"] . "'>" . $currentrow["unit_num"] . "</option>";
-        }
-        ?>
-    </select>
-    <br><br>
 
-    <input type="submit" value="Save Edits" id="adminsubmit">
-</form>
+    </div>
+</div>
+
+
+
+
 </body>
+
+
 </html>
