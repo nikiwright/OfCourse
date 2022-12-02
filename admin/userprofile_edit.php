@@ -69,27 +69,27 @@ if($mysql->connect_errno) {
         </div>
 
         <div id="box2">
-    <?php
+            <?php
 
-    $sql = "SELECT * FROM users WHERE 1=1";
+            $sql = "SELECT * FROM users WHERE 1=1";
 
 
-    $results = $mysql->query($sql);
+            $results = $mysql->query($sql);
 
-    if(!$results) {
-        echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
-        echo "SQL Error: " . $mysql->error . "<hr>";
-        exit();
-    }
+            if(!$results) {
+                echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
+                echo "SQL Error: " . $mysql->error . "<hr>";
+                exit();
+            }
 
-    while($currentrow = $results->fetch_assoc()) {
-        echo "<div class='title'><strong>" . $currentrow['user_firstName'] . " " . $currentrow['user_lastName'] . "</strong>".
-            "<p1> ". $currentrow['username']. "</p1>" .
-            "<a href='updateuser.php?recordid=" . $currentrow["user_id"] . "'> Edit </a>" .
-            "<br style='clear:both;'>";
+            while($currentrow = $results->fetch_assoc()) {
+                echo "<div class='title'><strong>" . $currentrow['user_firstName'] . " " . $currentrow['user_lastName'] . "</strong>".
+                    "<p1> ". $currentrow['username']. "</p1>" .
+                    "<a href='updateuser.php?recordid=" . $currentrow["user_id"] . "'> Edit </a>" .
+                    "<br style='clear:both;'>";
 
-    }
-    ?>
+            }
+            ?>
         </div>
 
 </div>
