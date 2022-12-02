@@ -31,3 +31,4 @@
             <a href="review_edit.php">EDIT</a>
         </div>
     </div>
+</div>
