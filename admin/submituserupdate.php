@@ -19,7 +19,7 @@ if($mysql->connect_errno) {
 ?>
 
 <htmL>
-<title>Add Page</title>
+<title>Administrative User Edit Page</title>
 <header>
     <link rel="stylesheet" href="../css/style.css">
 </header>
