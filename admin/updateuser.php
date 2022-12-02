@@ -121,6 +121,12 @@ if(empty($_REQUEST["recordid"])){
                 while($currentrow = $results -> fetch_assoc()){
                     echo $currentrow["password"];
                 }?>">
+                Security Level: <input type="number" name="securitylevel" value="<?php
+                $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
+                $results = $mysql -> query($sql);
+                while($currentrow = $results -> fetch_assoc()){
+                    echo $currentrow["security_level"];
+                }?>">
                <br><br>
                 <input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'>
             </form>
@@ -128,7 +134,8 @@ if(empty($_REQUEST["recordid"])){
             if ((empty($_POST['fName']))
                 & (empty($_POST['lName']))
                 & (empty($_POST['username']))
-                & (empty($_POST['password']))) {
+                & (empty($_POST['password']))
+                & (empty($_POST['securitylevel']))) {
                 echo "";
                 exit();
             } else {
@@ -137,7 +144,8 @@ if(empty($_REQUEST["recordid"])){
                     user_firstName = '". $_POST["fName"] ."',
                     user_lastName = '". $_POST["lName"] ."',
                     username = '". $_POST["username"] ."',
-                    password = '". $_POST["password"] ."'
+                    password = '". $_POST["password"] ."',
+                    security_level = '". $_POST["securitylevel"] ."'
                     WHERE
                     user_id = " . $_REQUEST["recordid"];
                 $results = $mysql -> query($sql);
