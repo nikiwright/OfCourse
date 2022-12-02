@@ -35,6 +35,9 @@ if ($_SESSION['logged_in'] == "yes")   // Checking whether the session is alread
         <a href="sitepurpose.php" class="navitem">
             SITE PURPOSE
         </a><br>
+        <a href="add_course.phpp" class="navitem">
+            ADD A COURSE
+        </a><br>
 </div>
 
 <?php
