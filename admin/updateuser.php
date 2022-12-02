@@ -70,7 +70,7 @@ if(empty($_REQUEST["recordid"])){
             }
 
             while($currentrow = $results -> fetch_assoc()){
-                echo"Edit " . $currentrow["username"] . "";
+                echo"Edit " . $currentrow["username"];
 
             }
             ?>
