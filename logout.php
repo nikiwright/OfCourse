@@ -30,7 +30,16 @@ include 'sitenav.php';
         #transparentbox {
             text-align: center;
             width: 30%;
+            margin-left: 35%;
             font-size: 16pt;
+            position: relative;
+            height: auto;
+            background-color: rgba(255,255,255,.5);
+            border-radius: 20px;
+            height: auto;
+            padding: 1%;
+            z-index: 2;
+            box-shadow: 2px 2px 5px black;
         }
         #a {
             color: black;
@@ -44,7 +53,7 @@ include 'sitenav.php';
     <?php
     // logout routine
     session_start();
-    //unset($_SESSION["loggedin"]);
+    //unset($_SESSION["logged_in"]);
 
     session_unset();
 

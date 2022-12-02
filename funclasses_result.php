@@ -17,10 +17,19 @@ if($mysql->connect_errno) {
 }
 ?>
 <html>
-<header>
+<head>
     <title> Results Page </title>
     <link rel="stylesheet" href="./css/style.css">
-</header>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7HR3PWKYET"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7HR3PWKYET');
+</script>
 <body id="body2">
 <?php
 include 'sitenav.php';
@@ -130,7 +139,7 @@ include 'sitenav.php';
                 $start = $_REQUEST["start"];
             }
 
-            $end = $start + 5;
+            $end = $start + 4;
 
             if ($results->num_rows < $end) {
                 $end = $results->num_rows;
@@ -144,7 +153,7 @@ include 'sitenav.php';
                 ?>
                 <form action="" method="get">
                     <input type="hidden" name="start"
-                           value="<?= ($start - 6) ?>">
+                           value="<?= ($start - 5) ?>">
                     <input type="hidden" name="interest"
                            value="<?= $_REQUEST["interest"] ?>">
                     <input type="hidden" name="school"
@@ -162,7 +171,7 @@ include 'sitenav.php';
                     <input type="hidden" name="friday"
                            value="<?= $_REQUEST["friday"] ?>">
 
-                    <input type="submit" value="Previous">
+                    <input type="submit" value="Previous" id="submit" class="button">
                 </form>
                 <?php
             }
@@ -170,7 +179,7 @@ include 'sitenav.php';
                 ?>
                 <form action="" method="get">
                     <input type="hidden" name="start"
-                           value="<?= ($start + 6) ?>">
+                           value="<?= ($start + 5) ?>">
                     <input type="hidden" name="interest"
                            value="<?= $_REQUEST["interest"] ?>">
                     <input type="hidden" name="school"
@@ -188,7 +197,7 @@ include 'sitenav.php';
                     <input type="hidden" name="friday"
                            value="<?= $_REQUEST["friday"] ?>">
 
-                    <input type="submit" value="Next">
+                    <input type="submit" value="Next" id="submit" class="button">
                 </form>
                 <?php
             }

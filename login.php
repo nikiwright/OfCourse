@@ -37,8 +37,17 @@ session_start();   // session starts
 
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7HR3PWKYET"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-7HR3PWKYET');
+</script>
 <body>
+
 <?php
 include 'sitenav.php';
 ?>
@@ -48,22 +57,22 @@ include 'sitenav.php';
 <div id="mainbox">
     <div id="box1">
         Need an account? <a href="signup.php"> Sign Up </a>
+
     </div>
     <div id="box2">
         <form action="" method="post">
 
             <table width="200" border="0">
                 <tr>
-                    <td> UserName</td>
+                    <td> Username</td>
                     <td><input type="text" name="user" required></td>
                 </tr>
                 <tr>
-                    <td> PassWord</td>
+                    <td> Password</td>
                     <td><input type="password" name="pass" required></td>
                 </tr>
                 <tr>
                     <td> <br> <input type="submit" name="login" value="LOGIN" id="submit" class="button"></td>
-                    <td></td>
                 </tr>
             </table>
         </form>
@@ -81,7 +90,7 @@ include 'sitenav.php';
 
         }
 
-        if ($_SESSION['loggedin'] == "yes")   // Checking whether the session is already there or not
+        if ($_SESSION['logged_in'] == "yes")   // Checking whether the session is already there or not
         {
             // all good
 //            echo "Logged in!";
@@ -103,13 +112,15 @@ include 'sitenav.php';
 
                 $row = mysqli_fetch_array($results);
 
-                if ($row['username'] === $user && $row['password'] === $pass) {
+               if ($row['username'] === $user && $row['password'] === $pass) {
 
-                    $_SESSION['loggedin'] = "yes";
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['first'] = $row['user_firstName'];
                     $_SESSION['last'] = $row['user_lastName'];
                     $_SESSION['id'] = $row['user_id'];
+                    $_SESSION['pass'] = $row['password'];
+                   $_SESSION['security_level'] = $row['security_level'];
+                    $_SESSION['logged_in'] = "yes";
                     header('Location:user_profile.php');
                     exit();
 
@@ -124,7 +135,9 @@ include 'sitenav.php';
         }
 
         ?>
+
     </div>
+
 </div>
 
 

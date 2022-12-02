@@ -17,20 +17,36 @@ if($mysql->connect_errno) {
 ?>
 <htmL>
 
-<header>
+<head>
     <title>Search Page</title>
     <link rel="stylesheet" href="./css/style.css">
-</header>
+    <style>
+        #floatingbox {
+            width: 18%;
+            margin-left: 76%;
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7HR3PWKYET"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-7HR3PWKYET');
+</script>
 <body id="body1">
+
 <?php
     include 'sitenav.php';
 ?>
 
-<div id="text2">
+<div id="floatingbox">
     <?php
-    if ($_SESSION['loggedin'] == "yes") {
-        echo "Hello ". "<strong>".$_SESSION['first']. "! "."</strong>". "You are logged in."."<br>";
+    if ($_SESSION['logged_in'] == "yes") {
+        echo "Hello ". "<strong>".$_SESSION['first']. "! "."</strong>". "You are logged in."."<br><br>";
+        echo "Your most recently viewed class: "."<a href=". $_SESSION['courseurl']. ">".  $_SESSION['coursename']."</a>" . "<br>";
     } else {
        echo "You are not logged in. Click" ."<a id='a' href='login.php'> here </a>" . " to log in/signup!";
     }
@@ -133,14 +149,22 @@ if($mysql->connect_errno) {
             </div>
             <br><space></space><space></space><space></space><space></space><br>
 
-            <input type="submit" value="Submit" id="submit" class="button">
+            <input type="submit" value="SUBMIT" id="submit" class="button">
+
         </form>
+        OR <a href="funclasses_result.php?interest=ALL&school=ALL&unit_num=ALL"> VIEW ALL </a>
+
     </div>
 </div>
 <div id="text1">
     <h2>LOOKING TO SWITCH UP YOUR SCHEDULE?</h2><br>
-    <p1>OfCourse believes in the importance of taking advantage of the wide range of classes that USC has to offer. Taking classes outside your major/minor requirements can be a great opportunity for growth and relaxation. But we know that a hindrance for many students is not knowing which classes to take. OfCourse is a tool made by students for students to help you find courses that boost your physical and mental wellbeing.</p1>
+    <p1>
+        OfCourse is a tool made by students for students to help you
+        find courses that boost your physical and mental wellbeing.</p1>
+
+    <a href="sitepurpose.php"> Learn More </a>
 </div>
+
 
 </body>
 </htmL>

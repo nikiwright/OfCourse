@@ -40,6 +40,15 @@ session_start();
         }
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7HR3PWKYET"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7HR3PWKYET');
+</script>
 <body>
 <?php
 include 'sitenav.php';
@@ -84,7 +93,7 @@ include 'sitenav.php';
     <?php
 
 
-    if ($_SESSION['loggedin'] == "yes")   // Checking whether the session is already there or not
+    if ($_SESSION['logged_in'] == "yes")   // Checking whether the session is already there or not
     {
         // all good
 //            echo "Logged in!";
