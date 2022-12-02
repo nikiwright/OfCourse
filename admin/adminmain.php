@@ -58,7 +58,7 @@ include 'adminnavbar.php';
         <a href="review_add.php" class="adminbutton">
             ADD
         </a>
-        <a href="review_edit.php" class="adminbutton">
+        <a href="reviewlist_edit.php" class="adminbutton">
             EDIT
         </a>
     </div>

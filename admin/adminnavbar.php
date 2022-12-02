@@ -28,7 +28,7 @@
         </button>
         <div class="dropdown-content">
             <a href="review_add.php">ADD</a>
-            <a href="review_edit.php">EDIT</a>
+            <a href="reviewlist_edit.php">EDIT</a>
         </div>
     </div>
 </div>
