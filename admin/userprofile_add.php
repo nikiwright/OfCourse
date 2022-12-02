@@ -52,7 +52,7 @@ session_start();
 include 'adminnavbar.php';
 ?>
 
-<br><br><br>
+<h1 id="resultheader">Add User</h1><br>
 <div id="mainbox">
     <div id="box1">
         Administrative Manual User Creation
