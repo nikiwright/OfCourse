@@ -18,7 +18,7 @@ session_start();
 ?>
 
 <html>
-<head>
+<header>
     <title>Add User</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
@@ -37,7 +37,7 @@ session_start();
             text-align: center;
         }
     </style>
-</head>
+</header>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HR3PWKYET"></script>
 <script>
