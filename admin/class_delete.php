@@ -61,15 +61,7 @@ include 'adminnavbar.php';
 
 <div id="mainbox">
     <div id="box1">
-        <?php
-        if(!empty($_REQUEST["confirm"])) {
-            echo "Deleting movie...";
-            }
-        if(empty($_REQUEST["confirm"])) {
-        //ask to confirm
-        echo "Do you really want to delete this movie?";
-        ?>
-
+        Do you really want to delete this movie?
     </div>
     <div id="box2">
         <form action="class_delete.php">
