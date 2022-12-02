@@ -65,16 +65,19 @@ include 'adminnavbar.php';
         if(empty($_REQUEST["confirm"])) {
             //ask to confirm
             echo "Do you really want to delete this movie?";
+        } else {
+            echo "Deleting movie...";
         }
         ?>
     </div>
     <div id="box2">
-        <form action="class_delete.php">
+        <form action="" method="post">
             <input type="hidden" name="confirm" value="1">
             <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"];?>">
             <input type='submit' name='save' value='YES, DELETE' id='submit' class='button'>
         </form>
         <?php
+        if(!empty($_POST["confirm"])) {
             $sql = "DELETE FROM fun_classes
             WHERE fun_classes_id= " . $_REQUEST["recordid"];
 
@@ -84,6 +87,7 @@ include 'adminnavbar.php';
                 echo "Class deleted.";
             } else {
                 echo "Error: " . $mysql -> error;
+            }
             }
         ?>
     </div>
