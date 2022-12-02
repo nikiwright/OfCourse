@@ -65,7 +65,10 @@ if($mysql->connect_errno) {
 
     <div id="mainbox">
         <div id="box1">
+            Administrative Manual User Editing
+        </div>
 
+        <div id="box2">
     <?php
 
     $sql = "SELECT * FROM users WHERE 1=1";
