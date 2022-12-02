@@ -89,16 +89,6 @@ include 'adminnavbar.php';
 
         <?php
 
-
-        if ($_SESSION['logged_in'] == "yes")   // Checking whether the session is already there or not
-        {
-            // all good
-//            echo "Logged in!";
-//            print_r($_SESSION);
-            header('Location:user_profile.php');
-
-        }
-
         if ((empty($_POST['firstName']))
             &(empty($_POST['lastName']))
             &(empty($_POST['username']))
