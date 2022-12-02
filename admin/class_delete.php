@@ -36,6 +36,22 @@ if(empty($_REQUEST["recordid"])){
             color: black;
         }
 
+        #submit {
+            background-color: #7BC950;
+            font-weight: bold;
+            border-width: 2px;
+            text-align: center;
+            padding: 2px;
+            color: white;
+            width: 120px;
+            margin-left: 3%;
+        }
+
+        #submit:hover{
+            background-color: white;
+            color: black;
+        }
+
     </style>
 </header>
 <body>
@@ -55,7 +71,7 @@ include 'adminnavbar.php';
         <form action="class_delete.php">
             <input type="hidden" name="confirm" value="1">
             <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"];?>">
-            <input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'>
+            <input type='submit' name='save' value='YES, DELETE' id='submit' class='button'>
         </form>
         <?php
         } else {
