@@ -20,7 +20,7 @@ session_start();
 <html>
 <head>
     <title>Add User</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <style>
         body {
             background-color:#9BA2FF;
@@ -49,7 +49,7 @@ session_start();
 </script>
 <body>
 <?php
-include 'sitenav.php';
+include 'adminnavbar.php';
 ?>
 
 <h1 id="resultheader">Add User</h1><br>
