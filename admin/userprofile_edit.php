@@ -30,31 +30,6 @@ if($mysql->connect_errno) {
             color: black;
         }
 
-        #a {
-            color: black;
-            font-weight: bold;
-        }
-
-        #submit {
-            background-color: #FF5E5B;
-        }
-
-        #edit {
-            background-color: #7BC950;
-            font-weight: bold;
-            border-width: 2px;
-            text-align: center;
-            padding: 2px;
-            color: white;
-            width: 120px;
-            margin-left: 3%;
-        }
-
-        #edit:hover{
-            background-color: white;
-            color: black;
-        }
-
     </style>
 </header>
 <body>
