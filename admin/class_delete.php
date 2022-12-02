@@ -62,7 +62,7 @@ include 'adminnavbar.php';
 <div id="mainbox">
     <div id="box1">
         <?php
-        if(!empty($_REQUEST["confirm"]) {
+        if(!empty($_REQUEST["confirm"])) {
             echo "Deleting movie...";
             }
         if(empty($_REQUEST["confirm"])) {
