@@ -79,7 +79,7 @@ include 'sitenav.php';
                     <td><input type="text" name="password" minlength="8" required></td>
                 </tr>
                 <tr>
-                    <td> <br> <input type="submit" name="signup" value="SIGN UP" id="submit" class="button"></td>
+                    <td> <br> <input type="submit" name="usercreate" value="Create User" id="submit" class="button"></td>
                     <td></td>
                 </tr>
 
