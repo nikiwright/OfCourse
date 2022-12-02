@@ -17,8 +17,8 @@ if($mysql->connect_errno) {
 }
 ?>
 <htmL>
-<title>Administrative Manual User Edit</title>
 <header>
+    <title>Administrative Manual User Edit</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
         body {

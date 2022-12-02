@@ -22,10 +22,46 @@ if(empty($_REQUEST["recordid"])){
 }
 ?>
 <htmL>
-<title>Administrative User Edit Page</title>
-<header>
-    <link rel="stylesheet" href="../css/style.css">
-</header>
+    <header>
+        <title>Administrative User Edit Page</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <style>
+            body {
+                background-color:#9BA2FF;
+            }
+
+            #box1 {
+                background-color:#FFC72C;
+                color: black;
+            }
+
+            #a {
+                color: black;
+                font-weight: bold;
+            }
+
+            #submit {
+                background-color: #FF5E5B;
+            }
+
+            #edit {
+                background-color: #7BC950;
+                font-weight: bold;
+                border-width: 2px;
+                text-align: center;
+                padding: 2px;
+                color: white;
+                width: 120px;
+                margin-left: 3%;
+            }
+
+            #edit:hover{
+                background-color: white;
+                color: black;
+            }
+
+        </style>
+    </header>
 <body>
     <?php
     include 'adminnavbar.php';
