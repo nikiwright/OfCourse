@@ -58,7 +58,7 @@ if($mysql->connect_errno) {
  VALUES ('firstName',
  'lastName',
  'username',
- 'password')"
+ 'password')";
 
 echo $sql;
 ?>
