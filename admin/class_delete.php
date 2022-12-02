@@ -75,8 +75,6 @@ include 'adminnavbar.php';
         </form>
         <?php
         } else {
-            Echo "Deleting movie . . .";
-
             $sql = "DELETE FROM fun_classes
             WHERE fun_classes_id= " . $_REQUEST["recordid"];
 
