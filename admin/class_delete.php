@@ -44,37 +44,37 @@ include 'adminnavbar.php';
 ?>
 
 <div id="mainbox">
-<?php
-if(empty($_REQUEST["confirm"])) {
-    //ask to confirm
-    echo "Do you really want to delete this movie?";
+    <div id="box1">
+        <?php
+        if(empty($_REQUEST["confirm"])) {
+        //ask to confirm
+        echo "Do you really want to delete this movie?";
+        ?>
+    </div>
+    <div id="box2">
+        <form action="class_delete.php">
+            <input type="hidden" name="confirm" value="1">
+            <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"];?>">
+            <input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'>
+        </form>
+        <?php
+        } else {
+            Echo "Deleting movie . . .";
 
-?>
+            $sql = "DELETE FROM fun_classes
+            WHERE fun_classes_id= " . $_REQUEST["recordid"];
 
-<form action="class_delete.php">
-    <input type="hidden" name="confirm" value="1">
-    <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"];?>">
-    <input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'>
-</form>
+            $results = $mysql -> query($sql);
 
+            if($results) {
+                echo "<br> Class deleted.";
+            } else {
+                echo "Error: " . $mysql -> error;
+            }
 
-<?php
-} else {
-    Echo "Deleting movie . . .";
-
-    $sql = "DELETE FROM fun_classes
-    WHERE fun_classes_id= " . $_REQUEST["recordid"];
-
-    $results = $mysql -> query($sql);
-
-    if($results) {
-        echo "<br> Class deleted.";
-    } else {
-        echo "Error: " . $mysql -> error;
-    }
-
-}
-?>
+        }
+        ?>
+    </div>
 </div>
 </body>
 </htmL>
