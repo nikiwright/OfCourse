@@ -47,12 +47,7 @@ if($mysql->connect_errno) {
     ?>
 </div>
 
-
-<div id="header">
-    <h1 style="margin-bottom: -10px;">FUN CLASSES AT USC</h1><br>
-</div>
-<br>
-
+<h1 id="header">FUN CLASSES AT USC</h1><br>
 
 <div id="mainbox">
     <div id="box1">
