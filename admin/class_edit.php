@@ -70,7 +70,7 @@ if(!$results){
 }
 
 while($currentrow = $results -> fetch_assoc()){
-    echo"Edit " . $currentrow["className"];
+    echo"Edit " . $currentrow["courseID"];
 
 }
 ?>
