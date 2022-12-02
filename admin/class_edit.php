@@ -60,20 +60,20 @@ include 'adminnavbar.php';
 
 <div id="mainbox">
     <div id="box1">
-<?php
-$sql = "SELECT * from fun_classes WHERE fun_classes_id = " . $_REQUEST["recordid"];
+        <?php
+        $sql = "SELECT * from fun_classes WHERE fun_classes_id = " . $_REQUEST["recordid"];
 
-$results = $mysql -> query($sql);
+        $results = $mysql -> query($sql);
 
-if(!$results){
-    echo "ERROR: " . $mysql -> error;
-}
+        if(!$results){
+            echo "ERROR: " . $mysql -> error;
+        }
 
-while($currentrow = $results -> fetch_assoc()){
-    echo"Edit " . $currentrow["courseID"];
+        while($currentrow = $results -> fetch_assoc()){
+            echo"Edit " . $currentrow["courseID"];
 
-}
-?>
+        }
+        ?>
     </div>
     <div id="box2">
         <form action="" method="post">

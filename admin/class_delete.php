@@ -23,17 +23,27 @@ if(empty($_REQUEST["recordid"])){
 
 ?>
 <htmL>
-<title>Add Page</title>
 <header>
+    <title>Delete Page</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            background-color:#9BA2FF;
+        }
+
+        #box1 {
+            background-color:#FFC72C;
+            color: black;
+        }
+
+    </style>
 </header>
-<body id="body2">
-<div>
+<body>
 <?php
 include 'adminnavbar.php';
 ?>
-</div>
 
+<div id="mainbox">
 <?php
 if(empty($_REQUEST["confirm"])) {
     //ask to confirm
@@ -44,7 +54,7 @@ if(empty($_REQUEST["confirm"])) {
 <form action="class_delete.php">
     <input type="hidden" name="confirm" value="1">
     <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"];?>">
-    <input type="submit" value="YES">
+    <input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'>
 </form>
 
 
@@ -65,5 +75,6 @@ if(empty($_REQUEST["confirm"])) {
 
 }
 ?>
+</div>
 </body>
 </htmL>
