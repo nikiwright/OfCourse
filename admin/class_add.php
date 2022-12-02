@@ -32,6 +32,7 @@ if($mysql->connect_errno) {
 
         #submit {
             background-color:#7BC950;
+            width: 100px;
         }
         h1{
             text-align: center;
