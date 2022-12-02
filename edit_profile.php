@@ -57,6 +57,7 @@ session_start();   // session starts
             color: black;
         }
 
+
     </style>
 </head>
 <body>
@@ -104,11 +105,8 @@ include 'sitenav.php';
                 </tr>
             </table>
         </form>
-        <?php
-        echo "<a href='user_profile.php'>"."<br>".
-            "<input type='submit' name='discard' value='DISCARD' id='submit' class='button'>".
-            "</a>";
-        ?>
+         <a href='user_profile.php'> <input type='submit' name='discard' value='DISCARD' id='submit' class='button'> </a>
+
     </div>
 </div>
 </body>

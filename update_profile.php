@@ -25,7 +25,7 @@ $sql = "UPDATE users
     password = '". $_REQUEST["password"] ."'
     WHERE 
     user_id =  ".$_SESSION["id"];
-echo $sql;
+//echo $sql;
 
 $results = $mysql -> query($sql);
 

@@ -58,6 +58,23 @@ session_start();   // session starts
             color: black;
         }
 
+        #review {
+            background-color: #9BA2FF;
+            font-weight: bold;
+            border-width: 2px;
+            text-align: center;
+            padding: 2px;
+            color: white;
+            width: 120px;
+            margin-left: 3%;
+        }
+
+        #review:hover{
+            background-color: white;
+            color: black;
+        }
+
+
         #admin {
             color: black;
         }
@@ -155,8 +172,8 @@ include 'sitenav.php';
         echo "<strong>"."Your Reviews "."</strong>"."<br>";
 
         $sql2 = "SELECT * from reviewsView3
-         WHERE user_id =" .
-            $_SESSION['id'];
+         WHERE user_id ="
+            . $_SESSION['id'];
 
 //        echo "SQL: ". $sql2. "<br>"."<br>";
 
@@ -167,7 +184,14 @@ include 'sitenav.php';
         }
 
         while ($currentrow = $results -> fetch_assoc()){
-            echo "<div id='childreviewbox'>".$currentrow["className"].":". " '". $currentrow["review"]. "'". "<br>". "</div>";
+            echo "<div id='childreviewbox'>".
+                "<strong>".$currentrow["className"].":</strong>". " '". $currentrow["review"]. "'". "<br>";
+                 echo "<br>".
+                     "<a href='edit_review.php?recordid=" . $currentrow["review_id"]. "'>".
+                     "<input type='submit' name='editreview' value='EDIT REVIEW' id='review' class='button'>".
+                     "</a>".
+                "</div>";
+
 //            "<br style='clear:both;'>";
         }
 
