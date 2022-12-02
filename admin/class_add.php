@@ -71,7 +71,7 @@ if(!$results){
         <br>
         Instructor Name: <input type="text" name="instructorname">
         <br>
-        Instructor Rating: <input type="number" name="instructorrating">
+        Instructor Rating: <input type="text" name="instructorrating">
         <br>
         School: <select name="school">
             <?php
@@ -132,7 +132,7 @@ if(!$results){
             '" . $_REQUEST["classbio"] . "',
             '" . $_REQUEST["classdepartment"] . "',
             '" . $_REQUEST["instructorname"] . "',
-            '" . $_REQUEST["instructorrating"] . "',
+            " . $_REQUEST["instructorrating"] . ",
             " . $_REQUEST["school"] . ",
             " . $_REQUEST["interest"] . ",
             " . $_REQUEST["weekday"] . ",
