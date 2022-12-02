@@ -81,7 +81,7 @@ include 'adminnavbar.php';
             $results = $mysql -> query($sql);
 
             if($results) {
-                echo "<br> Class deleted.";
+                echo "Class deleted.";
             } else {
                 echo "Error: " . $mysql -> error;
             }
