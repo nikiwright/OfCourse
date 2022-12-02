@@ -186,21 +186,21 @@ while($currentrow = $results -> fetch_assoc()){
                 }
                 ?>
             </select>
-            <br>
+            <br><br>
 
             <input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'>
         </form>
         <?php
-        if ((empty($_POST['courseid']))
-            & (empty($_POST['classname']))
-            & (empty($_POST['classbio']))
-            & (empty($_POST['classdepartment']))) {
+        if ((empty($_POST['courseID']))
+            & (empty($_POST['className']))
+            & (empty($_POST['classBio']))
+            & (empty($_POST['classDepartment']))) {
             echo "";
             exit();
         } else {
             $sql = "UPDATE fun_classes
             SET
-            courseID = '" . $_POST["courseid"] . "',
+            courseID = '" . $_POST["courseID"] . "',
             className = '" . $_POST["className"] . "',
             classBio = '" . $_POST["classBio"] . "',
             classDepartment = '" . $_POST["classDepartment"] . "',
@@ -217,11 +217,11 @@ while($currentrow = $results -> fetch_assoc()){
 
             $results = $mysql->query($sql);
 
-            if ($results) {
-                echo "<br><br> Class Updated!";
-            } else {
-                echo "Error: " . $mysql->error;
-            }
+                if ($results) {
+                    echo "<br><br> Class Updated!";
+                } else {
+                    echo "Error: " . $mysql->error;
+                }
         }
         ?>
     </div>
