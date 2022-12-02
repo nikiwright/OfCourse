@@ -57,14 +57,14 @@ if($mysql->connect_errno) {
 
     </style>
 </header>
-<body id="body3">
-<div>
+<body>
     <?php
     include 'adminnavbar.php';
     ?>
-</div>
-<div id="container">
-    <h1>Choose a user to edit:<hr></h1>
+    <h1 id="resultheader">Edit User</h1><br>
+
+    <div id="mainbox">
+        <div id="box1">
 
     <?php
 
@@ -87,6 +87,7 @@ if($mysql->connect_errno) {
 
     }
     ?>
+        </div>
 
 </div>
 
