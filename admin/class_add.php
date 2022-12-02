@@ -116,6 +116,39 @@ if(!$results){
 
         <input type="submit" name="classcreate" value="Create Class" id="submit" class="button">
     </form>
+        <?php
+        if ((empty($_POST['courseid']))
+        &(empty($_POST['classname']))
+        &(empty($_POST['classbio']))
+        &(empty($_POST['classdepartment']))) {
+            echo "";
+            exit();
+        } else {
+            $sql = "INSERT INTO fun_classes
+            (courseID, className, classBio, classDepartment, instructorName, instructorRating, school_id, interest_id, weekday_id, unit_id)
+            VALUES
+            ('" . $_REQUEST["courseid"] . "',
+            '" . $_REQUEST["classname"] . "',
+            '" . $_REQUEST["classbio"] . "',
+            '" . $_REQUEST["classdepartment"] . "',
+            '" . $_REQUEST["instructorname"] . "',
+            '" . $_REQUEST["instructorrating"] . "',
+            " . $_REQUEST["school"] . ",
+            " . $_REQUEST["interest"] . ",
+            " . $_REQUEST["weekday"] . ",
+            " . $_REQUEST["unit"] . ")";
+            echo "<hr>" . $sql;
+
+            $results = $mysql->query($sql);
+
+            if (!$results) {
+                echo "ERROR! " . $mysql->error;
+                echo "<hr><br><br>" . $sql;
+            } else {
+                echo "<br><br>SUCCESS! Class added to fun_classes db.";
+            }
+        }
+        ?>
     </div>
 </div>
 </body>
