@@ -108,7 +108,6 @@ include 'sitenav.php';
 
     echo "<div id='bigclassreviewparent'>";
     while($currentrow = $results2 -> fetch_assoc()){
-        echo $currentrow['fun_classes_id'];
         echo " <div class='vizclassreviewparent' style='width: " . (floatval($currentrow["totalclassreviews"]*60)) . "
         ; font-size: " . (floatval($currentrow["totalclassreviews"]*10)) . "'><a style='color: black !important;' href='funclasses_detail.php?recordid=". $currentrow['fun_classes_id'] . "'><div class='vizclassname'>" . $currentrow["className"] . ": " .
             "</div><div class='dot' style='width:" . (floatval($currentrow["totalclassreviews"]*50)) . "px; 
