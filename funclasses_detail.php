@@ -159,7 +159,7 @@ if($mysql->connect_errno) {
 
     echo "<strong>"."Course Reviews: "."</strong>"."<br>";
     while ($currentrow = $results -> fetch_assoc()){
-        echo"<div id='childreviewbox'>". " '". $currentrow["review"]. "'". " - ". $currentrow["username"]."<br>"."</div>";
+        echo "<br>"."<div id='childreviewbox'>". " '". $currentrow["review"]. "'". " - ". $currentrow["username"]."<br>"."</div>";
         "<br style='clear:both;'>";
     }
     ?>
@@ -256,8 +256,8 @@ if($mysql->connect_errno) {
 <?php
 if (!(empty($_POST['reviewtext']))) {
 
-        echo "You have successfully added a review for this course!  It is reviewID " . $newid . ".
-                Thank you for your input.";
+        echo "You have successfully added a review for this course! Thank you for your input.";
+//        echo "It is reviewID " . $newid;
 
     } else {
     echo "";

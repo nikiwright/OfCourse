@@ -17,7 +17,7 @@ if($mysql->connect_errno) {
 ?>
 <html>
 <head>
-    <title>Movie counts</title>
+    <title>User Review Counts</title>
     <style>
         .bar {
             background-color: red;
@@ -28,12 +28,12 @@ if($mysql->connect_errno) {
 </head>
 <body>
 <div id="container">
-    <h1>Movie totals<hr></h1>
+    <h1>User Review Counts<hr></h1>
 
     <?php
 
-    $sql = "SELECT COUNT(*) AS totalreviews FROM reviews";
-    $sql2 = "SELECT COUNT(*) AS totalreviews, user_id FROM reviews GROUP BY user_id";
+    $sql = "SELECT COUNT(*) AS totalreviews FROM reviewsView3";
+    $sql2 = "SELECT COUNT(*) AS totalreviews, username FROM reviewsView3 GROUP BY username";
 
     $results = $mysql ->query($sql);
 
@@ -51,7 +51,7 @@ if($mysql->connect_errno) {
 
 
     while($currentrow = $results2 -> fetch_assoc()){
-        echo $currentrow["user_id"] . ": " . $currentrow["totalreviews"] .
+        echo $currentrow["username"] . ": " . $currentrow["totalreviews"] .
             "<div class='box bar' style='width:" . $currentrow["totalreviews"] . "px;'> &nbsp;" .
             "<br style='clear:both'><br>";
 
