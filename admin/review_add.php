@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+//var_dump($_SESSION);
 
 include '../nwloginvariables.php';
 
@@ -89,31 +90,71 @@ include 'adminnavbar.php';
             </table>
             <br style="clear:both;">
         </form>
-        <?php
-        if ((empty($_POST['reviewtext']))) {
-            echo "";
-            exit();
-        } else {
-            $sql= "UPDATE reviewsView3
-                    SET
-                    className = '". $_REQUEST["className"] ."',
-                    review= '". $_POST["reviewtext"] ."',
-                    user_id = '5',
-                    username = 'Ofcourse',
-                    user_firstName = 'Ofcourse',
-                    user_lastName = 'Team'
-                    WHERE
-                    fun_classes_id = " . $_REQUEST["recordid"];
-            $results = $mysql -> query($sql);
+<!--        --><?php
+//        if ((empty($_POST['reviewtext']))) {
+//            echo "";
+//            exit();
+//        } else {
+//            $sql= "UPDATE reviewsView3
+//                    SET
+//                    className = '". $_REQUEST["className"] ."',
+//                    review= '". $_POST["reviewtext"] ."',
+//                    user_id = '5',
+//                    username = 'Ofcourse',
+//                    user_firstName = 'Ofcourse',
+//                    user_lastName = 'Team'
+//                    WHERE
+//                    fun_classes_id = " . $_REQUEST["recordid"];
+//            $results = $mysql -> query($sql);
+//
+//            if($results){
+//                echo $sql;
+//                echo "<br><br> Review Added!";
+//            } else{
+//                echo "Error: " . $mysql->error;
+//            }
+//        ?>
 
-            if($results){
+         <?php
+    if (!(empty($_POST['reviewtext']))) {
+
+        $sql = "INSERT INTO reviews
+        (review, user_id)
+
+        VALUES
+         ('" .$_POST["reviewtext"] . "', " . $_SESSION["id"] .")";
+
+        $results = $mysql->query($sql);
+
+        if (!$results) {
+            echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
+            echo "SQL Error: " . $mysql->error . "<hr>";
+            exit();
+
+        } else {
+            $newid = $mysql -> insert_id;
+
+            //            insert into assoc table, use $newid and $_REQUEST["recordid"]
+            $sql2 = "INSERT INTO review_class
+             (review_id, fun_classes_id)
+
+             VALUES
+                 ('" .$newid . "', 
+                 '".$_REQUEST['recordid']."')";
+            $results2 = $mysql->query($sql2);
+
+            if (!$results2) {
+                echo "<hr>Your SQL:<br> " . $sql . "<br><br>";
+                echo "SQL Error: " . $mysql->error . "<hr>";
+                exit(); } else {
                 echo $sql;
                 echo "<br><br> Review Added!";
-            } else{
-                echo "Error: " . $mysql->error;
             }
+
         }
-        ?>
+    }
+?>
+
     </div>
 </div>
 </body>
