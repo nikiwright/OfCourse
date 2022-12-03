@@ -58,10 +58,10 @@ if($mysql->connect_errno) {
 
     <?php
 
-    if (empty($_REQUEST["recordid"])){
-        echo "Error! please go through the search page";
-        exit();
-    }
+//    if (empty($_REQUEST["recordid"])){
+//        echo "Error! please go through the search page";
+//        exit();
+//    }
 
     $sql = "SELECT * from generalView
          WHERE fun_classes_id =" .

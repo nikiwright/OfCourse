@@ -141,10 +141,12 @@ if($mysql->connect_errno) {
             <input type="submit" value="SUBMIT" id="submit" class="button">
 
         </form>
-        OR <a href="funclasses_result.php?interest=ALL&school=ALL&unit_num=ALL"> VIEW ALL </a>
+        OR <a href="funclasses_result.php?interest=ALL&school=ALL&unit_num=ALL"> VIEW ALL </a><br><br>
+        <a href="classreviewviz.php" style="font-size: 12pt; color: black; text-decoration: underline;">See the most reviewed classes</a>
 
     </div>
 </div>
+
 <div id="text1">
     <h2 style="color: black;">LOOKING TO SWITCH UP YOUR SCHEDULE?</h2><br>
     <p1>
