@@ -61,7 +61,7 @@ include 'adminnavbar.php';
 <div id="mainbox">
     <div id="box1">
         <?php
-        $sql = "SELECT distinct className from reviewsView3 WHERE fun_classes_id = " . $_REQUEST["recordid"];
+        $sql = "SELECT * from reviewsView3 WHERE fun_classes_id = " . $_REQUEST["recordid"];
 
         $results = $mysql -> query($sql);
 
@@ -70,7 +70,7 @@ include 'adminnavbar.php';
         }
 
         while($currentrow = $results -> fetch_assoc()){
-            echo "Add review to " . $currentrow["className"];
+            echo "Edit review for " . $currentrow["className"];
 
         }
         ?>
