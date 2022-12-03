@@ -51,10 +51,6 @@ session_start();   // session starts
             color: black;
         }
 
-        /*textarea {*/
-        /*    width: 300px;*/
-        /*    height: 150px;*/
-        /*}*/
     </style>
 </head>
 <body>
@@ -62,7 +58,7 @@ session_start();   // session starts
 include 'sitenav.php';
 ?>
 
-Session Variables: <em><?= print_r($_SESSION) ?></em>
+<!--Session Variables: <em>--><?//= print_r($_SESSION) ?><!--</em>-->
 
 <h1 id="resultheader">EDIT YOUR REVIEW</h1><br>
 
@@ -77,7 +73,7 @@ Session Variables: <em><?= print_r($_SESSION) ?></em>
           " AND user_id =" .$_SESSION['id'];
        $_SESSION['reviewID'] = $_REQUEST['recordid'];
 
-                  echo "SQL: ". $sql. "<br>"."<br>";
+//                  echo "SQL: ". $sql. "<br>"."<br>";
 
           $results = $mysql->query($sql);
           if (!$results) {

@@ -47,17 +47,11 @@ if($mysql->connect_errno) {
     ?>
 </div>
 
-
-<div id="header">
-    <h1 style="margin-bottom: -10px;">FUN CLASSES AT USC</h1><br>
-    <br>
-</div>
-<br>
-
+<h1 id="header">FUN CLASSES AT USC</h1><br>
 
 <div id="mainbox">
     <div id="box1">
-        <p1>FIND YOUR NEW FAVORITE CLASS TODAY</p1>
+        <p1>FIND YOUR NEW FAVORITE CLASS TODAY</p1><br>
     </div>
     <div id="box2">
         <form action="funclasses_result.php">
@@ -151,14 +145,12 @@ if($mysql->connect_errno) {
 
     </div>
 </div>
-<br><br>
 <div id="text1">
     <h2 style="color: black;">LOOKING TO SWITCH UP YOUR SCHEDULE?</h2><br>
     <p1>
         OfCourse is a tool made by students for students to help you
-        find courses that boost your physical and mental wellbeing.</p1><br><br>
-
-    <a href="sitepurpose.php" style="color: black"> Learn More </a>
+        find courses that boost your physical and mental wellbeing.</p1>
+    <a href="sitepurpose.php" style="color: #FFBD00"> Learn More </a>
 </div>
 
 
