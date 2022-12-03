@@ -55,7 +55,7 @@ include 'adminnavbar.php';
             DELETE
         </a><br><br>
         <p1>REVIEWS:</p1>
-        <a href="review_add.php" class="adminbutton">
+        <a href="reviewlist_add.php" class="adminbutton">
             ADD
         </a>
         <a href="reviewlist_edit.php" class="adminbutton">

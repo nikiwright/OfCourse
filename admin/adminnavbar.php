@@ -27,7 +27,7 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="review_add.php">ADD</a>
+            <a href="reviewlist_add.php">ADD</a>
             <a href="reviewlist_edit.php">EDIT</a>
         </div>
     </div>
