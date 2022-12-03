@@ -23,7 +23,7 @@ if(empty($_REQUEST["recordid"])){
 ?>
 <htmL>
 <header>
-    <title>Administrative User Edit Page</title>
+    <title>Administrative Review Add Page</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
         body {
@@ -61,7 +61,7 @@ include 'adminnavbar.php';
 <div id="mainbox">
     <div id="box1">
         <?php
-        $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
+        $sql = "SELECT distinct className from reviewsView3 WHERE fun_classes_id = " . $_REQUEST["recordid"];
 
         $results = $mysql -> query($sql);
 
@@ -70,81 +70,45 @@ include 'adminnavbar.php';
         }
 
         while($currentrow = $results -> fetch_assoc()){
-            echo"Edit " . $currentrow["username"];
+            echo "Add review to " . $currentrow["className"];
 
         }
         ?>
     </div>
     <div id="box2">
-        <form action="" method="post">
-
-            <input type="hidden" name="recordid" value="<?php echo $_REQUEST["recordid"]; ?>">
-
-            <?php
-
-            $recorddata = $results -> fetch_assoc();
-
-            ?>
-            First Name: <input type="text" name="fName" value="<?php
-            $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
-            $results = $mysql -> query($sql);
-            while($currentrow = $results -> fetch_assoc()){
-                echo $currentrow["user_firstName"];
-            }?>">
-            <br>
-            Last Name: <input type="text" name="lName" value="<?php
-            $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
-            $results = $mysql -> query($sql);
-            while($currentrow = $results -> fetch_assoc()){
-                echo $currentrow["user_lastName"];
-            }?>">
-            <br>
-            Username: <input type="text" name="username" value="<?php
-            $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
-            $results = $mysql -> query($sql);
-            while($currentrow = $results -> fetch_assoc()){
-                echo $currentrow["username"];
-            }?>">
-            <br>
-            Password: <input type="text" name="password" value="<?php
-            $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
-            $results = $mysql -> query($sql);
-            while($currentrow = $results -> fetch_assoc()){
-                echo $currentrow["password"];
-            }?>">
-            <br>
-            Security Level: <input type="number" name="securitylevel" value="<?php
-            $sql = "SELECT * from users WHERE user_id = " . $_REQUEST["recordid"];
-            $results = $mysql -> query($sql);
-            while($currentrow = $results -> fetch_assoc()){
-                echo $currentrow["security_level"];
-            }?>">
-            <br><br>
-            <input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'>
+        <form action ="" method="post">
+            <table width="250" border="0">
+                <tr>
+                    <td> Add Review</td>
+                    <td> <textarea maxlength="500" name="reviewtext" required>
+                        </textarea> </td>
+                </tr>
+                <tr>
+                    <td> <br><input type='submit' name='save' value='SAVE CHANGES' id='edit' class='button'></td>
+                </tr>
+            </table>
+            <br style="clear:both;">
         </form>
         <?php
-        if ((empty($_POST['fName']))
-            & (empty($_POST['lName']))
-            & (empty($_POST['username']))
-            & (empty($_POST['password']))
-            & (empty($_POST['securitylevel']))) {
+        if ((empty($_POST['reviewtext']))) {
             echo "";
             exit();
         } else {
-            $sql= "UPDATE users
+            $sql= "UPDATE reviewsView3
                     SET
-                    user_firstName = '". $_POST["fName"] ."',
-                    user_lastName = '". $_POST["lName"] ."',
-                    username = '". $_POST["username"] ."',
-                    password = '". $_POST["password"] ."',
-                    security_level = '". $_POST["securitylevel"] ."'
+                    className = '". $_REQUEST["className"] ."',
+                    review= '". $_POST["reviewtext"] ."',
+                    user_id = '5',
+                    username = 'Ofcourse',
+                    user_firstName = 'Ofcourse',
+                    user_lastName = 'Team'
                     WHERE
-                    user_id = " . $_REQUEST["recordid"];
+                    fun_classes_id = " . $_REQUEST["recordid"];
             $results = $mysql -> query($sql);
 
             if($results){
                 echo $sql;
-                echo "<br><br> User Updated!";
+                echo "<br><br> Review Added!";
             } else{
                 echo "Error: " . $mysql->error;
             }
