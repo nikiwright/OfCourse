@@ -122,7 +122,7 @@ include 'adminnavbar.php';
         (review, user_id)
 
         VALUES
-         ('" .$_POST["reviewtext"] . "', " . $_SESSION["id"] .")";
+         ('" .$_POST["reviewtext"] . "', " . $_REQUEST["recordid"] .")";
 
         $results = $mysql->query($sql);
 
