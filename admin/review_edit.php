@@ -76,11 +76,35 @@ include 'adminnavbar.php';
         ?>
     </div>
     <div id="box2">
-        <form action ="" method="post">
+        <?php
+
+        $sql = "SELECT * from reviewsView3
+                WHERE 1=1 
+                AND fun_classes_id ="
+            . $_REQUEST['recordid'];
+
+        //                  echo "SQL: ". $sql. "<br>"."<br>";
+
+        $results = $mysql->query($sql);
+        if (!$results) {
+            echo "ERROR: " . $mysql->error;
+        }
+
+        ?>
+    </div>
+    <div id="box2">
+        <form action ="update_review.php" method="post">
             <table width="250" border="0">
                 <tr>
-                    <td> Add Review</td>
+                    <td> Your Review</td>
                     <td> <textarea maxlength="500" name="reviewtext" required>
+                        <?php
+                        $results = $mysql->query($sql);
+                        while ($currentrow = $results->fetch_assoc()) {
+                            echo $currentrow["review"];
+                        }
+
+                        ?>
                         </textarea> </td>
                 </tr>
                 <tr>
@@ -89,31 +113,6 @@ include 'adminnavbar.php';
             </table>
             <br style="clear:both;">
         </form>
-        <?php
-        if ((empty($_POST['reviewtext']))) {
-            echo "";
-            exit();
-        } else {
-            $sql= "UPDATE reviewsView3
-                    SET
-                    className = '". $_REQUEST["className"] ."',
-                    review= '". $_POST["reviewtext"] ."',
-                    user_id = '5',
-                    username = 'Ofcourse',
-                    user_firstName = 'Ofcourse',
-                    user_lastName = 'Team'
-                    WHERE
-                    fun_classes_id = " . $_REQUEST["recordid"];
-            $results = $mysql -> query($sql);
-
-            if($results){
-                echo $sql;
-                echo "<br><br> Review Added!";
-            } else{
-                echo "Error: " . $mysql->error;
-            }
-        }
-        ?>
     </div>
 </div>
 </body>
