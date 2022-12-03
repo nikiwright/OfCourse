@@ -61,7 +61,7 @@ include 'adminnavbar.php';
 <div id="mainbox">
     <div id="box1">
         <?php
-        $sql = "SELECT * from reviewsView3 WHERE fun_classes_id = " . $_REQUEST["recordid"];
+        $sql = "SELECT distinct className from reviewsView3 WHERE fun_classes_id = " . $_REQUEST["recordid"];
 
         $results = $mysql -> query($sql);
 
