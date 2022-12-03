@@ -152,7 +152,7 @@ if($mysql->connect_errno) {
     <p1>
         OfCourse is a tool made by students for students to help you
         find courses that boost your physical and mental wellbeing.</p1>
-    <a href="sitepurpose.php" style="color: #FFBD00"> Learn More </a>
+    <a href="sitepurpose.php" style="color: black"> Learn More </a>
 </div>
 
 
