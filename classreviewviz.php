@@ -28,10 +28,18 @@ if($mysql->connect_errno) {
             //padding: 20px;
         }
 
+        /*.dot:hover{*/
+        /*    transform: scale(110%);*/
+        /*    transition-timing-function: ease-in-out;*/
+        /*    transition-duration: 0.3s;*/
+        /*}*/
+
+
         .vizreviewnum{
             font-size: 20px;
             text-align: center;
         }
+
 
         .vizclassname{
             width: auto;
@@ -47,6 +55,12 @@ if($mysql->connect_errno) {
             text-align: center;
 
 
+        }
+
+        .vizclassreviewparent:hover{
+            transform: scale(110%);
+            transition-timing-function: ease-in-out;
+            transition-duration: 0.3s;
         }
 
         #bigclassreviewparent{
@@ -75,7 +89,7 @@ include 'sitenav.php';
     <?php
 
     $sql = "SELECT COUNT(*) AS totalclassreviews FROM reviewsView3";
-    $sql2 = "SELECT COUNT(*) AS totalclassreviews, className FROM reviewsView3 GROUP BY className";
+    $sql2 = "SELECT COUNT(*) AS totalclassreviews, className, fun_classes_id FROM reviewsView3 GROUP BY className";
 
     $results = $mysql ->query($sql);
 
@@ -94,12 +108,13 @@ include 'sitenav.php';
 
     echo "<div id='bigclassreviewparent'>";
     while($currentrow = $results2 -> fetch_assoc()){
+        echo $currentrow['fun_classes_id'];
         echo " <div class='vizclassreviewparent' style='width: " . (floatval($currentrow["totalclassreviews"]*60)) . "
-        ; font-size: " . (floatval($currentrow["totalclassreviews"]*10)) . "'><div class='vizclassname'>" . $currentrow["className"] . ": " .
+        ; font-size: " . (floatval($currentrow["totalclassreviews"]*10)) . "'><a style='color: black !important;' href='funclasses_detail.php?recordid=". $currentrow['fun_classes_id'] . "'><div class='vizclassname'>" . $currentrow["className"] . ": " .
             "</div><div class='dot' style='width:" . (floatval($currentrow["totalclassreviews"]*50)) . "px; 
             height:" . (floatval($currentrow["totalclassreviews"]*50)) . "px;
             background-color: rgba(212, 3, 217, calc(1/". $currentrow["totalclassreviews"]."))
-            '><div class='vizreviewnum'>".$currentrow["totalclassreviews"] ." </div></div></div>&nbsp;" .
+            '><div class='vizreviewnum'>".$currentrow["totalclassreviews"] ." </div></div></a></div>&nbsp;" .
             "<br style='clear:both'>";
 
     }
